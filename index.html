@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SultanSeeds</title>
+    <!-- Swiper style -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- Style -->
     <link rel="stylesheet" href="./style/style.css" />
   </head>
@@ -109,56 +115,125 @@
               </ul>
             </nav>
             <div class="header__language-switcher">
-                <button class="header__language-button">
+              <button class="header__language-button">
+                <div class="header__language-box">
+                  <img
+                    src="./photo/icon/GB.png"
+                    alt="Selected Language Flag"
+                    class="header__language-flag"
+                    id="selected-lang-flag"
+                  />
+                  <span id="selected-lang-text">English</span>
+                  <img
+                    src="./photo/icon/arrow-ios-down.png"
+                    alt="Arrow"
+                    class="header__arrow-icon"
+                  />
+                </div>
+              </button>
+              <div class="header__language-options">
+                <button class="header__language-option" data-lang="en">
                   <div class="header__language-box">
                     <img
                       src="./photo/icon/GB.png"
-                      alt="Selected Language Flag"
+                      alt="English Flag"
                       class="header__language-flag"
-                      id="selected-lang-flag"
                     />
-                    <span id="selected-lang-text">English</span>
-                    <img
-                      src="./photo/icon/arrow-ios-down.png"
-                      alt="Arrow"
-                      class="header__arrow-icon"
-                    />
+                    <span class="header__language-text">English</span>
                   </div>
                 </button>
-                <div class="header__language-options">
-                  <button class="header__language-option" data-lang="en">
-                    <div class="header__language-box">
-                      <img
-                        src="./photo/icon/GB.png"
-                        alt="English Flag"
-                        class="header__language-flag"
-                      />
-                      <span class="header__language-text">English</span>
-                    </div>
-                  </button>
-                  <button class="header__language-option" data-lang="ru">
-                    <div class="header__language-box">
-                      <img
-                        src="./photo/icon/RU.png"
-                        alt="Russian Flag"
-                        class="header__language-flag"
-                      />
-                      <span class="header__language-text">Russian</span>
-                    </div>
-                  </button>
-                </div>
+                <button class="header__language-option" data-lang="ru">
+                  <div class="header__language-box">
+                    <img
+                      src="./photo/icon/RU.png"
+                      alt="Russian Flag"
+                      class="header__language-flag"
+                    />
+                    <span class="header__language-text">Russian</span>
+                  </div>
+                </button>
               </div>
-              
+            </div>
           </div>
         </div>
       </header>
 
       <!-- main -->
-      <main></main>
+      <main>
+        <section class="intro">
+          <div class="container">
+            <h1>Intro</h1>
+          </div>
+        </section>
+        <section class="about">
+          <div class="about__container container">
+            <div class="about__photo">
+              <img
+                src="./photo/sunflower1.png"
+                alt="img1"
+                class="about__photo-image"
+              />
+              <img
+                src="./photo/sunflower2.png"
+                alt="img2"
+                class="about__photo-image"
+              />
+            </div>
+            <div class="about__content">
+              <h2 class="about__title">About Us</h2>
+              <p class="about__description">
+                We are a manufacturer and exporter company of sunflower seeds,
+                specialized in supplying 3 types of sunflower seeds: white,
+                striped, and black. The main feature of our company is that we
+                keep sunflower seeds up to 100 tons in our warehouse and
+                strictly adhere to the agreed quality requirements. We are ready
+                for prompt delivery.
+              </p>
+              <div class="about__export-info">
+                <div class="about__export-info-item">
+                  <h3 class="about__export-info-title">
+                    Experience exporting sunflower seeds to:
+                  </h3>
+                  <b class="about__export-info-details">
+                    Bulgaria, Moldova, Kazakhstan, Belarus.
+                  </b>
+                </div>
+
+                <div class="about__export-info-item">
+                  <h3 class="about__export-info-title">
+                    Only 2023 – the company manufactured and exported:
+                  </h3>
+                  <b class="about__export-info-details">
+                    450 tons of white sunflower seeds
+                  </b>
+                </div>
+
+                <div class="about__export-info-item">
+                  <h3 class="about__export-info-title">
+                    Business owner’s experience in international trading
+                    business:
+                  </h3>
+                  <b class="about__export-info-details">More than 10 years</b>
+                </div>
+              </div>
+            </div>
+            <div class="about__sub-photo">
+              <img
+                src="./photo/barg.png"
+                alt="img3"
+                class="about__photo-image--top-right"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
 
       <!-- footer -->
       <footer></footer>
 
+      <!-- swiper js  -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="./js/swiper.js"></script>
       <!-- main.js file -->
       <script src="./js/main.js"></script>
     </div>
