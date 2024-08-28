@@ -372,7 +372,7 @@ html {
 
 /* Sunflower section */
 .sunflower {
-  margin-top: 3rem;
+  margin: 3rem 0 6.6rem 0;
 }
 
 .sunflower__title {
@@ -422,4 +422,85 @@ html {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 2rem;
+}
+
+/* quality */
+.quality {
+  padding-top: 13rem;
+  background: url(../photo/quality.png);
+  background-repeat: no-repeat;
+  min-height: 34rem;
+}
+
+.quality__title {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.quality__descr {
+  color: #fff;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+}
+
+/* working */
+.working {
+  margin-top: 6.75rem;
+  position: relative;
+}
+
+.working__description {
+  margin-bottom: 3.75rem;
+}
+
+.working__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25.3rem, 1fr));
+  gap: 2rem;
+}
+
+.working__title {
+  color: #272a2f;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.working__description {
+  color: #2f3641;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  margin-bottom: 3.75rem;
+}
+
+.working__item-title {
+  color: #272a2f;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.working__item-description {
+  color: #2f3641;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.working__item-photo-icon {
+  margin-bottom: 1.5rem;
+}
+
+.working__sub-photo {
+  position: absolute;
+  top: -15rem;
+  right: -12px;
 }
