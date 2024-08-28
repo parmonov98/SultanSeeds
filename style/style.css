@@ -362,7 +362,7 @@ html {
 
 .features__sub-photo-image {
   position: relative;
-  bottom: -5rem;
+  bottom: -4rem;
 }
 
 .features__sub-photo-leaf {
@@ -372,7 +372,7 @@ html {
 
 /* Sunflower section */
 .sunflower {
-  margin-top: 3.91rem;
+  margin-top: 3rem;
 }
 
 .sunflower__title {
