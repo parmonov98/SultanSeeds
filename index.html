@@ -456,8 +456,8 @@
           </div>
         </section>
         <!-- Orders-->
-        <!-- <section class="order">
-          <div class="container">
+        <section class="order">
+          <div class="order__container container">
             <h2 class="order__title">
               Ready For A Reliable Supplier For Your Bulk Orders?
             </h2>
@@ -465,33 +465,63 @@
               Contact us for wholesale inquiries.
             </p>
             <div class="order__form">
-              <form>
-                <div class="form__control">
-                  <label for="name">Your name</label>
-                  <input type="text" placeholder="Enter" required />
+              <form class="order__form-element">
+                <div class="order__form-control">
+                  <label for="name" class="order__label">Your name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter"
+                    required
+                    class="order__input"
+                  />
                 </div>
-                <div class="form__control">
-                  <label for="company__email"
-                    >Your company email example@gmail.com</label
+                <div class="order__form-control">
+                  <label for="company__email" class="order__label">
+                    Your company email example@gmail.com
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="example@gmail.com"
+                    required
+                    class="order__input"
+                  />
+                </div>
+                <div class="order__form-control">
+                  <label for="phone__number" class="order__label"
+                    >Your phone number +998</label
                   >
-                  <input type="text" placeholder="example@gmail.com" required />
+                  <input
+                    type="text"
+                    placeholder="+998"
+                    required
+                    class="order__input"
+                  />
                 </div>
-                <div class="form__control">
-                  <label for="phone__number">Your phone number +998</label>
-                  <input type="text" placeholder="+998" required />
+                <div class="order__form-control">
+                  <label for="select" class="order__label"
+                    >Type your topic e.g</label
+                  >
+                  <div class="order__form-control order__select-wrapper">
+                    <div class="order__select-display" id="selectedTopic">
+                      Select topic
+                    </div>
+                    <div class="order__select-options">
+                      <div class="order__select-option" data-value="sunflower">
+                        Sunflower seeds
+                      </div>
+                      <div class="order__select-option" data-value="other">
+                        Other seeds
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="form__control">
-                  <label for="select">Type your topic e.g</label>
-                  <select name="select" id="select">
-                    <option value="default">Select topic</option>
-                    <option value="sunflower">Sunflower seeds</option>
-                    <option value="other">Other seeds</option>
-                  </select>
+                <div class="order__form-control">
+                  <button class="order__button">Get Offer</button>
                 </div>
               </form>
             </div>
           </div>
-        </section> -->
+        </section>
       </main>
 
       <!-- footer -->

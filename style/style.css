@@ -451,6 +451,7 @@ html {
 /* working */
 .working {
   margin-top: 6.75rem;
+  margin-bottom: 6.25rem;
   position: relative;
 }
 
@@ -503,4 +504,117 @@ html {
   position: absolute;
   top: -15rem;
   right: -12px;
+}
+
+/* order */
+.order {
+  background: #fafafc;
+  padding: 5.5rem 0;
+}
+
+.order__title {
+  color: #272a2f;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.order__description {
+  color: #2f3641;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  margin-bottom: 5rem;
+}
+
+.order__form-element {
+  width: 100%;
+  max-width: 55rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.order__form-control {
+  width: 100%;
+}
+
+.order__input,
+.order__label,
+.order__select {
+  width: 100%;
+}
+
+.order__label {
+  color: #272a2f;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.order__input,
+.order__select-display,
+.order__select {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f1f2f4;
+  background: #fff;
+  outline: none;
+  /* text */
+  color: #6b7278;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+/* Basic styling for the form */
+.order__select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.order__select-display {
+  cursor: pointer;
+}
+
+.order__select-options {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  z-index: 1;
+}
+
+.order__select-option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.order__select-option:hover {
+  background-color: #f0f0f0;
+}
+
+.order__form-control:nth-child(5){
+  text-align: center;
+}
+
+.order__button {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  background: #9a430e;
+  /* text */
+  color: #fff;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
