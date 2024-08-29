@@ -304,7 +304,7 @@ html {
 
 .about__sub-photo {
   position: absolute;
-  top: -5rem;
+  top: -7rem;
   right: 0;
 }
 
@@ -716,4 +716,83 @@ html {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+}
+
+/* footer */
+.footer {
+  min-height: 30.9375rem;
+  background: #272a2f;
+  background-image: url(../photo/texture.png);
+  padding-top: 6.24rem;
+}
+
+.footer_top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 5.19rem;
+}
+
+.footer__logo {
+  margin-bottom: 1.3rem;
+}
+
+.footer__description {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  max-width: 25rem;
+  width: 100%;
+  margin-bottom: 2.38rem;
+}
+
+.footer__top-item-social ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.25rem;
+}
+
+.footer__title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 3.12rem;
+}
+
+.footer__menu-link,
+.footer__contact-link a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.footer__menu-item:not(:last-child),
+.footer__contact-item:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.footer__contact-link {
+  padding-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+/* footer bottom */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__bottom p,
+.footer__bottom a {
+  color: #636c79;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
 }
