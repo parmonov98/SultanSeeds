@@ -57,30 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dastlabki tanlangan tilni yangilash
   updateSelectedLang();
 
-  // JavaScript to handle the custom select dropdown
-  const selectDisplay = document.getElementById("selectedTopic");
-  const optionsContainer = document.querySelector(".order__select-options");
-  const optionsList = document.querySelectorAll(".order__select-option");
+  //Multiple options dropdown
+  //https://codepen.io/gatoledo1/pen/QWmpWjK
 
-  selectDisplay.addEventListener("click", function () {
-    optionsContainer.style.display =
-      optionsContainer.style.display === "none" ||
-      optionsContainer.style.display === ""
-        ? "block"
-        : "none";
+  const selectMenu = document.querySelector(".select-menu"),
+    selectButton = selectMenu.querySelector(".select-menu__button"),
+    options = selectMenu.querySelectorAll(".select-menu__option"),
+    selectButtonText = selectMenu.querySelector(".select-menu__button-text");
+
+  selectButton.addEventListener("click", () => {
+    selectMenu.classList.toggle("select-menu--active");
   });
 
-  optionsList.forEach((option) => {
-    option.addEventListener("click", function () {
-      selectDisplay.textContent = this.textContent;
-      selectDisplay.setAttribute("data-value", this.getAttribute("data-value"));
-      optionsContainer.style.display = "none";
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      let selectedOption = option.querySelector(
+        ".select-menu__option-text"
+      ).innerText;
+      selectButtonText.innerText = selectedOption;
+
+      selectMenu.classList.remove("select-menu--active");
     });
-  });
-
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".order__select-wrapper")) {
-      optionsContainer.style.display = "none";
-    }
   });
 });
