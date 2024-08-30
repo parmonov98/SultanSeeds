@@ -1417,7 +1417,8 @@ body.no-scroll {
   }
   /* header */
   .intro {
-    height: 31.4rem;
+    height: 34.4rem;
+    background-image: url(../photo/380-intro.png);
   }
   .header__logo img {
     width: 9.49075rem;
