@@ -56,7 +56,6 @@ html {
 
 .header__contact-info {
   height: 3.75rem;
-  padding: 0.625rem 20rem;
   background: var(--Dark-Green, #2f4135);
   display: flex;
   align-items: center;
@@ -400,6 +399,13 @@ html {
   background-position: top;
 }
 
+.features__sub-photo-1144-leaf {
+  display: none;
+  position: absolute;
+  top: -5rem;
+  left: 0;
+}
+
 .back__cover {
   position: absolute;
   width: 100%;
@@ -453,6 +459,13 @@ html {
   gap: 2rem;
   flex-shrink: 0;
   text-align: center;
+}
+
+.sunflower__item-content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
 }
 
 .sunflower__item-title {
@@ -552,6 +565,13 @@ html {
 }
 
 .working__sub-photo {
+  position: absolute;
+  top: -15rem;
+  right: -12px;
+}
+
+.working__image--top-right-1144 {
+  display: none;
   position: absolute;
   top: -15rem;
   right: -12px;
@@ -755,7 +775,7 @@ html {
   background-color: #fafafc;
   background-image: url(../photo/newsletter.png);
   background-size: cover;
-  background-position: ;
+  /* background-position: ; */
   padding-top: 11.6rem;
   height: 34.25rem;
 }
@@ -856,7 +876,7 @@ html {
 }
 
 .footer__logo {
-  margin-bottom:0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer__description {
@@ -902,6 +922,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: start;
+  gap: 0.62rem;
+  border-bottom: 1px solid #2e3540;
 }
 
 /* footer bottom */
@@ -924,4 +946,180 @@ html {
   align-items: start;
   justify-content: space-between;
   gap: 22.5rem;
+}
+
+/* media */
+/* 1400px  */
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: calc(100% - 2rem);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* core medai */
+  .title {
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  /* intro */
+  .intro {
+    height: 37.75rem;
+  }
+
+  /* about section */
+  .about__container {
+    padding: 6.76rem 0 5.98rem 0;
+    align-items: start;
+    gap: 6.26rem;
+  }
+
+  .about__photo {
+    top: 0;
+  }
+
+  .about__title {
+    font-size: 2rem;
+  }
+
+  .about__photo-image:nth-child(1) {
+    width: 22.48988rem;
+    height: 22.48988rem;
+    flex-shrink: 0;
+  }
+
+  .about__photo-image:nth-child(2) {
+    width: 17.68625rem;
+    height: 11.92181rem;
+    left: 9.56rem;
+    top: 13.1rem;
+  }
+
+  .about__photo-image--top-right {
+    display: none;
+  }
+
+  .about__description,
+  .about__export-info-title {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .about__export-info-title {
+    margin: 0;
+  }
+
+  .about__export-info-details {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+
+  .about__export-info-item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  /* features media */
+  .features__container {
+    padding-top: 3.75rem;
+  }
+
+  .features__description {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .features__items {
+    margin-top: 3rem;
+  }
+
+  .features__item,
+  .features__item:nth-child(3) {
+    gap: 0;
+  }
+
+  .features__sub-photo-leaf {
+    display: none;
+  }
+
+  .features__sub-photo-1144-leaf {
+    display: inline-block;
+    top: 3rem;
+  }
+
+  .back__cover {
+    height: 3rem;
+  }
+
+  /* sunflower media */
+  .sunflower {
+    margin-bottom: 8rem;
+  }
+
+  .sunflower__container {
+    padding-top: 5rem;
+  }
+
+  .sunflower__descr {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+  }
+
+  .sunflower__items {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .sunflower__item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .sunflower__item-content {
+    align-items: start;
+    text-align: start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 44.5rem;
+  }
+
+  .sunflower__item-descr {
+    text-align: start;
+  }
+
+  /* quality media */
+  .quality {
+    min-height: 20.41106rem;
+    padding-top: 6rem;
+  }
+  /* working media */
+  .working {
+    margin-top: 5.75em;
+  }
+  .working__image--top-right-1144 {
+    display: inline-block;
+    top: 3rem;
+    right: 12px;
+  }
+
+  .working__image--top-right {
+    display: none;
+  }
+
+  .working__description {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+  }
+
+  .working__items {
+    column-gap: 1rem;
+    row-gap: 4.5rem;
+  }
 }
