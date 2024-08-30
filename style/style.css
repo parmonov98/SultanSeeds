@@ -590,6 +590,12 @@ html {
   left: 0;
 }
 
+.order__sub-photo-leaf-1144 {
+  position: absolute;
+  top: 3rem;
+  display: none;
+}
+
 .order__title {
   color: #272a2f;
   text-align: center;
@@ -684,6 +690,8 @@ html {
 .select-menu__arrow {
   /* font-size: 25px; */
   transition: 0.3s;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .select-menu__options {
@@ -952,7 +960,7 @@ html {
 /* 1400px  */
 @media screen and (max-width: 1400px) {
   .container {
-    max-width: calc(100% - 2rem);
+    max-width: calc(100% - 4rem);
   }
 }
 
@@ -967,9 +975,15 @@ html {
     height: 37.75rem;
   }
 
+  /* intro */
+
+  .intro {
+    background-image: url(../photo/intro-1144.png);
+  }
+
   /* about section */
   .about__container {
-    padding: 6.76rem 0 5.98rem 0;
+    padding: 4.76rem 0 7.98rem 0;
     align-items: start;
     gap: 6.26rem;
   }
@@ -1022,12 +1036,15 @@ html {
   }
 
   /* features media */
+  .features {
+    min-height: 33.75rem;
+  }
   .features__container {
     padding-top: 3.75rem;
   }
 
   .features__description {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
   }
@@ -1039,6 +1056,14 @@ html {
   .features__item,
   .features__item:nth-child(3) {
     gap: 0;
+  }
+
+  .features__item:nth-child(3) .features__item-text {
+    margin-top: 1rem;
+  }
+
+  .features__item:nth-child(3) {
+    padding: 1.2rem 1.1rem;
   }
 
   .features__sub-photo-leaf {
@@ -1120,6 +1145,70 @@ html {
 
   .working__items {
     column-gap: 1rem;
-    row-gap: 4.5rem;
+    row-gap: 3.5rem;
+  }
+
+  /* order media */
+  .order {
+    padding-top: 7.25rem;
+  }
+  .order__sub-photo-leaf {
+    display: none;
+  }
+
+  .order__sub-photo-leaf-1144 {
+    display: inline-block;
+  }
+
+  .order__description {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    margin-bottom: 5.2rem;
+  }
+
+  .order__form-element {
+    max-width: 42.5rem;
+  }
+
+  .order__input,
+  .order__select-display,
+  .order__select {
+    margin-top: 0.3rem;
+  }
+
+  /* newsletter media*/
+  .newsletter {
+    height: 29.27863rem;
+    padding-top: 8.6rem;
+    background-image: url(../photo/union-1144.png);
+  }
+
+  /* footer media */
+  .footer {
+    padding-top: 6rem;
+    height: 30.9375rem;
+  }
+
+  .footer__top {
+    gap: 7.44rem;
+  }
+
+  .footer__top-items {
+    gap: 4.25rem;
+  }
+
+  .footer__top-item--menu {
+    width: 100%;
+    min-width: 15.4375rem;
+  }
+
+  .footer__top-item--contact {
+    width: 100%;
+    min-width: 18.75rem;
+  }
+
+  .footer__description {
+    margin-bottom: 1.38rem;
   }
 }
