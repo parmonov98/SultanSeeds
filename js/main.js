@@ -79,4 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
       selectMenu.classList.remove("select-menu--active");
     });
   });
+
+  // open menu
+  const menuIcon = document.querySelector(".hamburger");
+  menuIcon.addEventListener("click", () => {
+    document.querySelector("header").classList.toggle("active");
+    document.querySelector("#hamburger").classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+  });
 });
