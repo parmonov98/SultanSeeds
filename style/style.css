@@ -226,7 +226,7 @@ body.no-scroll {
 .intro {
   width: 100%;
   height: 52.1875rem;
-  background: url("../photo/Video\ header.png");
+  background: url("../photo/Video\ header.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top bottom center;
@@ -494,7 +494,7 @@ body.no-scroll {
 /* quality */
 .quality {
   padding-top: 13rem;
-  background: url(../photo/quality.png);
+  background: url(../photo/quality.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -795,7 +795,7 @@ body.no-scroll {
 /* newsletter */
 .newsletter {
   background-color: #fafafc;
-  background-image: url(../photo/newsletter.png);
+  background-image: url(../photo/newsletter.webp);
   background-size: cover;
   /* background-position: ; */
   padding-top: 11.6rem;
