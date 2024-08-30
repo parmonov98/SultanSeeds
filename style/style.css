@@ -1418,7 +1418,7 @@ body.no-scroll {
   /* header */
   .intro {
     height: 34.4rem;
-    background-image: url(../photo/380-intro.png);
+    background-image: url('https://ik.imagekit.io/testcloud/SultanSeeds/photo/380-intro.png?updatedAt=1725041162137');
   }
   .header__logo img {
     width: 9.49075rem;
