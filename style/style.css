@@ -17,6 +17,27 @@ body.no-scroll {
   overflow: hidden !important;
 }
 
+.status-liner {
+  background: var(--Dark-Green, #2f4135);
+  position: fixed;
+  width: 100%;
+  height: 0.5rem;
+  top: 0; /* Yuqoridan masofa */
+  left: 0; /* Chapdan masofa */
+  z-index: 1000; /* Boshqa elementlardan yuqorida bo'lishi uchun */
+  scale: 0 1;
+  display: none;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+
 .wrapper {
   overflow: hidden;
 }
@@ -242,6 +263,10 @@ body.no-scroll {
   height: 28.8rem;
   overflow: hidden;
   position: relative;
+}
+
+.swiper {
+  height: 22rem;
 }
 
 .swiper-fraction {
@@ -1110,12 +1135,40 @@ body.no-scroll {
   /* intro */
   .intro {
     height: 37.75rem;
+    padding-top: 5.99rem;
+  }
+
+  .swiper-container {
+    width: 100%;
+    /* height: 22rem; */
+  }
+
+  .swiper-slide {
+    padding: 2.69rem 0 2.69rem 7rem;
+  }
+  .swiper-title {
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 51rem;
+  }
+
+  .swiper-pagination {
+    top: 3.2rem !important;
+    left: 0.3rem !important;
+  }
+
+  .swiper-fraction {
+    bottom: 8.2rem;
+  }
+
+  .swiper-description {
+    font-size: 1rem;
   }
 
   /* intro */
 
   .intro {
-    background-image: url(../photo/intro-1144.png);
+    background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/intro-1144.png?updatedAt=1725085293558");
   }
 
   /* about section */
@@ -1352,6 +1405,10 @@ body.no-scroll {
 }
 /* 1024 */
 @media screen and (max-width: 1024px) {
+  /* status liner */
+  .status-liner {
+    display: inline-block;
+  }
   /* header */
   .header__contact-info {
     display: none;
@@ -1387,7 +1444,7 @@ body.no-scroll {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    z-index: 11;
   }
 
   .active .header__nav-list {
@@ -1409,7 +1466,7 @@ body.no-scroll {
     outline: none;
     cursor: pointer;
     position: relative;
-    z-index: 3;
+    z-index: 100;
   }
 
   .hamburger {
@@ -1477,6 +1534,10 @@ body.no-scroll {
 }
 /* 972 */
 @media screen and (max-width: 972px) {
+  /* intro */
+  .swiper-title {
+    font-size: 2rem;
+  }
   /* about */
   .about__container {
     flex-direction: column-reverse;
@@ -1540,13 +1601,51 @@ body.no-scroll {
   }
   /* header */
   .intro {
-    height: 34.4rem;
+    height: 32.4rem;
     background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/380-intro.png?updatedAt=1725041162137");
+    padding-top: 4.93rem;
+    padding-bottom: 0;
   }
   .header__logo img {
     width: 9.49075rem;
     height: 2.08138rem;
   }
+
+  /* intro */
+  .swiper-fraction {
+    display: none;
+  }
+
+  .swiper-slide {
+    padding: 0;
+  }
+
+  .swiper-slide {
+    text-align: center;
+  }
+
+  .swiper-button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .swiper-description {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .swiper-pagination {
+    bottom: 10rem !important;
+    top: 67.5% !important;
+    left: 50% !important;
+    padding: 0;
+  }
+
+  .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 1.56rem !important;
+  }
+
   /* features */
   .features__sub-photo-1144-leaf {
     top: -65rem;
