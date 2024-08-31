@@ -1521,6 +1521,10 @@ body.no-scroll {
     padding-bottom: 0.7rem;
   }
 
+  .footer__bottom p:nth-child(2) {
+    margin-top: 1rem;
+  }
+
   .footer__top-item,
   .footer__contact-list {
     display: flex;
