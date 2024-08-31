@@ -230,31 +230,154 @@ body.no-scroll {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top bottom center;
+  padding: 10rem 0;
 }
 /* swiper intro */
-.swiper {
-  padding-top: 5rem;
-  width: 80rem;
-  height: 48rem;
-  padding-left: 5.12rem;
+
+.swiper-container {
+  padding-bottom: 30px;
+  box-sizing: content-box;
+  width: 100%;
+  max-width: 80rem;
+  height: 28.8rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-fraction {
+  color: white;
+  position: absolute;
+  left: 0.62rem;
+  bottom: 4.5rem;
+  z-index: 10;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 7rem;
+  height: 28.8rem;
 }
 
 .swiper-pagination {
-  display: flex;
-  flex-direction: column;
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 6.5rem !important;
+  left: 0.62rem !important;
+  transform: translateX(-50%);
+  gap: 0.75rem;
+  padding: 0.62rem;
 }
 
-.swiper-pagination-fraction {
-  color: var(--White, #fff);
-  font-family: Gilroy;
+.swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 1;
+  transition: background-color 0.3s, width 0.3s, height 0.3s, border 0.3s;
+}
+
+.swiper-pagination-bullet {
+  margin-top: 1.56rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s, width 0.3s, height 0.3s, border 0.3s;
+  position: relative;
+}
+
+.swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  border: 1px solid #fff;
+}
+
+.swiper-fraction {
+  height: 11.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.swiper-fraction .current,
+.swiper-fraction .total {
+  color: #fff;
   font-size: 1rem;
   font-weight: 500;
-  background-color: #4caf50;
-  width: 11.8rem;
+}
+
+/* Scrollbar Container */
+.swiper-scrollbar {
+  background-color: Gray; /* Scrollbar containerning orqa fon rangi */
+  border-radius: 10px; /* Scrollbar containerning yumaloq burchaklari */
+  height: 2px;
+  width: 0.125rem !important;
+  height: 7.78rem !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
+
+/* Scrollbar Draggable Element */
+.swiper-scrollbar-drag {
+  background-color: orange; /* Draggable elementning rangi (scrollbar tugmasi) */
+  border-radius: 10px;
+  height: 2px;
+}
+
+/* Scrollbar Draggable Element - Hover Effect */
+.swiper-scrollbar-drag:hover {
+  background-color: #0056b3; /* Hover holatida scrollbar tugmasining rangi */
+}
+
+.swiper-title {
+  width: 100%;
+  max-width: 50rem;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.swiper-description {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2.1875rem; /* 175% */
+}
+
+.swiper-button {
+  display: flex;
+  width: 8.75rem;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+  background: #9a430e;
+  /* text */
+  color: #fff;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 /* swiper */
 
@@ -1418,7 +1541,7 @@ body.no-scroll {
   /* header */
   .intro {
     height: 34.4rem;
-    background-image: url('https://ik.imagekit.io/testcloud/SultanSeeds/photo/380-intro.png?updatedAt=1725041162137');
+    background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/380-intro.png?updatedAt=1725041162137");
   }
   .header__logo img {
     width: 9.49075rem;
