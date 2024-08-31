@@ -179,6 +179,7 @@ body.no-scroll {
   display: flex;
   align-items: center;
   gap: 0.31rem;
+  cursor: pointer;
 }
 
 .header__language-flag {
@@ -1632,12 +1633,7 @@ body.no-scroll {
 
   .swiper-slide {
     text-align: center;
-  }
-
-  .swiper-button {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    align-items: center;
   }
 
   .swiper-description {
@@ -1764,5 +1760,13 @@ body.no-scroll {
 
   .footer__contact-link {
     justify-content: center;
+  }
+}
+
+/* 380 */
+@media screen and (max-width: 380px) {
+  /* intro */
+  .swiper-title {
+    font-size: 1.5rem;
   }
 }

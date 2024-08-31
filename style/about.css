@@ -1,0 +1,225 @@
+/* intro */
+.about-page__intro {
+  background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/about-page__intro.png?updatedAt=1725101210202");
+  height: 16.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.about-page__title,
+.history__title {
+  color: #fff;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.about-page__description {
+  padding: 4rem 0;
+  color: #272a2f;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+}
+
+.about-page__photo img {
+  width: 100%;
+  border-radius: 0.93rem;
+}
+
+.about-page__photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38rem, 1fr));
+  margin-top: 2rem;
+  gap: 2rem;
+  margin-bottom: 3.38rem;
+}
+
+.about-page__photo-item-title {
+  color: #272a2f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.25rem; /* 150% */
+  margin: 2rem 0 1rem 0;
+}
+
+.about-page__photo-item-description {
+  color: #272a2f;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2.25rem; /* 180% */
+}
+/* advantages */
+.advantages__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(39rem, 1fr));
+  gap: 2rem;
+  padding-bottom: 3.87rem;
+}
+
+.advantages__item {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.advantages__title {
+  color: #272a2f;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3.81rem;
+}
+
+/* our history */
+.history {
+  background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/about-page__intro.png?updatedAt=1725101210202");
+  height: 21.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.history__description {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
+/* media */
+/* 1200 */
+@media screen and (max-width: 1350px) {
+  /* about */
+  .about-page__photos {
+    grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
+    gap: 1rem;
+  }
+
+  .about-page__photo-item img {
+    width: 100%;
+  }
+
+  .about-page__photo img {
+    height: 100%;
+  }
+  /* advantages */
+  .advantages__items {
+    grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* 1024 */
+@media screen and (max-width: 1140px) {
+  /* about */
+  .about-page__photo img {
+    height: 100%;
+    height: 30rem;
+    object-fit: cover;
+  }
+
+  /* advantages */
+  .advantages__items {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* 768 */
+@media screen and (max-width: 767px) {
+  /* about */
+  .about-page__photo img {
+    height: 25rem;
+  }
+
+  .about-page__photos {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 1rem;
+  }
+
+  /* advantages */
+  .advantages__items {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* 680 */
+@media screen and (max-width: 680px) {
+  .about-page__intro {
+    height: 5.9rem;
+  }
+
+  .about-page__description {
+    padding: 1.5rem 0 2rem 0;
+  }
+
+  .about-page__photos {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-page__title,
+  .history__title {
+    font-size: 1.5rem;
+  }
+
+  .about-page__photo-item-title {
+    font-size: 1.25rem;
+  }
+
+  .about-page__photo-item-description,
+  .about-page__description {
+    font-size: 0.87rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  /* advantages */
+  .advantages__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .advantages__items {
+    gap: 2rem;
+  }
+
+  .advantages__item-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .advantages__item-description {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  /* history */
+  .history {
+    height: 18rem;
+  }
+
+  .history__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .history__description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* 480 */
+@media screen and (max-width: 480px) {
+  /* about */
+  .about-page__photo img {
+    height: 15rem;
+  }
+}
