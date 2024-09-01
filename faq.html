@@ -11,7 +11,7 @@
     />
     <!-- Style -->
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/product.css" />
+    <link rel="stylesheet" href="./style/faq.css">
   </head>
   <body>
     <!-- status liner -->
@@ -105,10 +105,10 @@
                   <a href="/about.html" class="header__nav-link">About Us</a>
                 </li>
                 <li class="header__nav-item">
-                  <a href="./product.html" class="header__nav-link">Products</a>
+                  <a href="/product.html" class="header__nav-link">Products</a>
                 </li>
                 <li class="header__nav-item">
-                  <a href="./faq.html" class="header__nav-link">FAQ</a>
+                  <a href="/faq" class="header__nav-link">FAQ</a>
                 </li>
                 <li class="header__nav-item">
                   <a href="/contacts" class="header__nav-link">Contacts</a>
@@ -170,166 +170,107 @@
 
       <!-- main -->
       <main>
-        <!-- products intro -->
-        <section class="products-intro">
-          <h2 class="products-intro__title">Products</h2>
+        <!-- faq intro -->
+        <section class="faq-intro">
+          <h2 class="faq-intro__title">F.A.Q</h2>
         </section>
 
-        <!-- our products -->
-        <section class="products">
-          <div class="products__container">
-            <div class="products__items">
-              <div class="products__item">
-                <div class="container products__item-container products__item-our-products">
-                  <div class="products__item-content">
-                    <h3 class="products__item-content-title">Our Products</h3>
-                    <p class="products__item-content-description">
-                      At Sultanseeds.uz, we are proud to offer a diverse
-                      selection of high-quality sunflower seeds perfect for
-                      various culinary and snacking purposes. With over 10 years
-                      of experience in exporting sunflower seeds, we are
-                      committed to delivering top-notch products to our
-                      international clients. Our premium selection includes
-                      white sunflower seeds, striped sunflower seeds, and black
-                      sunflower seeds, each renowned for their distinct flavors
-                      and health benefits. Explore our range to find the perfect
-                      seeds that meet your needs.
-                    </p>
-                  </div>
-                  <div class="products__item-photo">
-                    <img
-                      src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/products1.webp?updatedAt=1725162401563"
-                      alt="Products photo"
-                    />
-                  </div>
+        <section class="faq-accordion">
+            <div class="faq-accordion__container container">
+                <h2 class="faq-accordion__title">Frequently asked questions</h2>
+                <div class="accordion">
+                    <div class="top">
+                        <div class="text">When is the best time to buy/contract the sunflower seeds?</div>
+                        <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        <input type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <div class="text">What are the terms of delivery? (i.e. EXW or DAP?)
+                            We offer various delivery options, including EXW (Ex Works), FCA (Free Carrier), DAP (Delivered at Place) CIF(Cost, insurance, and freight), CFR (Cost and freight).
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="products__item">
-                <div class="container products__item-container products__item-white-seeds">
-                  <div class="products__item-content">
-                    <h3 class="products__item-content-title">
-                      White Sunflower Seeds
-                    </h3>
-                    <p class="products__item-content-description">
-                      Our white sunflower seeds are known for their mild, nutty
-                      flavor and smooth texture, making them a popular choice
-                      among health enthusiasts and chefs. These seeds are ideal
-                      for adding a nutritious boost to salads, granola, and
-                      baked goods. Rich in essential nutrients like vitamin E,
-                      magnesium, and selenium, our white sunflower seeds support
-                      overall health and well-being. Whether enjoyed raw or
-                      roasted, they offer a versatile ingredient that enhances
-                      any dish.
-                    </p>
-                  </div>
-                  <div class="products__item-photo">
-                    <img
-                      src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower3.png?updatedAt=1725041161839"
-                      alt="Products photo"
-                    />
-                  </div>
+                <div class="accordion">
+                    <div class="top">
+                        <div class="text">Can I have a fixed price for an annual contract?</div>
+                        <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        <input type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio eligendi vero suscipit minima officiis rerum ullam, consectetur expedita ipsam praesentium! Nesciunt, consequuntur.</div>
+                    </div>
                 </div>
-              </div>
-              <div class="products__item">
-                <div class="container products__item-container products__item-striped-seeds">
-                  <div class="products__item-content">
-                    <h3 class="products__item-content-title">
-                      Striped Sunflower Seeds
-                    </h3>
-                    <p class="products__item-content-description">
-                      Striped sunflower seeds are prized for their distinctive
-                      appearance and robust flavor. These seeds are perfect for
-                      snacking and can be enjoyed on their own or added to trail
-                      mixes and other snacks. The thick shell of striped
-                      sunflower seeds makes them excellent for roasting,
-                      providing a satisfying crunch with every bite. Packed with
-                      protein, healthy fats, and dietary fiber, they are a
-                      wholesome snack that keeps you energized throughout the
-                      day. Experience the delightful taste and health benefits
-                      of our striped sunflower seeds.
-                    </p>
-                  </div>
-                  <div class="products__item-photo">
-                    <img
-                      src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower4.png?updatedAt=1725041169666"
-                      alt="Products photo"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="products__item">
-                <div class="container products__item-container products__item-kernels-seeds">
-                  <div class="products__item-content">
-                    <h3 class="products__item-content-title">
-                      Sunflower Seed Kernels
-                    </h3>
-                    <p class="products__item-content-description">
-                      Our black sunflower seeds are a favorite for those who
-                      appreciate a rich, earthy flavor. Known for their high oil
-                      content, these seeds are excellent for pressing into
-                      sunflower oil or incorporating into bird feed. The deep
-                      black color indicates their nutrient density, containing
-                      significant amounts of vitamins, minerals, and
-                      antioxidants. Enjoy the full-bodied taste and nutritional
-                      advantages of our black sunflower seeds, perfect for
-                      various culinary and agricultural applications.
-                    </p>
-                  </div>
-                  <div class="products__item-photo">
-                    <img
-                      src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower5.png?updatedAt=1725041162007"
-                      alt="Products photo"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="products__item">
-                <div class="container products__item-container products__item-premium">
-                  <div class="products__item-content">
-                    <h3 class="products__item-content-title">
-                      Our Premium Sunflower Seeds
-                    </h3>
-                    <p class="products__item-content-description">
-                      At Sultanseeds.uz, we cater to diverse preferences by
-                      offering both raw and fried sunflower seed options. Our
-                      raw seeds retain their natural flavor and maximum
-                      nutritional value, while our fried seeds provide a
-                      deliciously crispy alternative for those who enjoy a more
-                      indulgent snack. Each batch is meticulously processed to
-                      maintain quality and freshness, ensuring you receive the
-                      best product possible. Choose from our range of sunflower
-                      seeds and taste the difference that comes from our
-                      dedication to excellence.
-                    </p>
-                  </div>
-                  <div class="products__item-photo">
-                    <img
-                      src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/products2.webp?updatedAt=1725162511997"
-                      alt="products"
-                    />
-                  </div>
-                </div>
-              </div>
+        
+                <div class="accordion">
+                    <div class="top">
+                        <div class="text">Can you send laboratory analysis before delivery?</div>
+                        <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        <input type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis in ullam, a nobis asperiores reprehenderit magni itaque facere, quidem impedit iste suscipit quasi ducimus voluptate quod numquam ea nisi quia.
+                        </div>
+                    </div>
             </div>
-          </div>
-        </section>
-        <!-- products order -->
-        <section class="products-order">
-          <div class="container products-order__container">
-            <h2 class="products-order__title">
-              Order Your Sunflower Seeds Today
-            </h2>
-            <p class="products-order__description">
-              Discover the superior quality of Sultanseeds.uz sunflower seeds
-              and elevate your culinary creations. Whether you're a
-              health-conscious consumer or a gourmet enthusiast, our premium
-              seeds are sure to impress. Order today and taste the excellence
-              that has made Sultanseeds.uz a trusted name in sunflower seed
-              export.
-            </p>
-            <button class="products-order__button">Order now</button>
-          </div>
-        </section>
+            <div class="accordion">
+                <div class="top">
+                    <div class="text">Can I use your product directly for consumption?</div>
+                    <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    <input type="checkbox">
+                </div>
+                <div class="bottom">
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ea!
+                    </div>
+                </div>
+        </div>
+            <div class="accordion">
+                <div class="top">
+                    <div class="text">What are the terms of delivery? (i.e. EXW or DAP?)</div>
+                    <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    <input type="checkbox">
+                </div>
+                <div class="bottom">
+                    <div class="text">We offer various delivery options, including EXW (Ex Works), FCA (Free Carrier), DAP (Delivered at Place) CIF(Cost, insurance, and freight), CFR (Cost and freight).
+                    </div>
+                </div>
+        </div>
+          </section>
+
+          <!-- send faq section -->
+           <section class="faq">
+            <div class="faq__container container">
+                <h2 class="faq__title">Do you have questions too?</h2>
+                <p class="faq__description">We will try to answer you as soon as possible</p>
+                <button class="faq__button">Ask a question</button>
+            </div>
+           </section>
+          
       </main>
 
       <!-- footer -->
@@ -418,7 +359,7 @@
                     >
                   </li>
                   <li class="footer__menu-item">
-                    <a href="./faq.html" class="footer__menu-link">FAQs</a>
+                    <a href="#!" class="footer__menu-link">FAQs</a>
                   </li>
                   <li class="footer__menu-item">
                     <a href="#!" class="footer__menu-link">Contacts</a>

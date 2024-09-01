@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const listItems = document.querySelectorAll(".facts__country-list li");
   const svg = document.getElementById("country-map");
-  
+
   if (!svg) {
     console.error("SVG element topilmadi.");
     return;
   }
-  
+
   const infoDiv = document.getElementById("country-info");
-  
+
   const removeActive = () => {
     listItems.forEach((li) => li.classList.remove("active"));
     svg.querySelectorAll("path").forEach((path) => {
@@ -38,45 +38,47 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
-  
+
   const showInfo = (element, bbox) => {
     infoDiv.textContent = element.textContent;
     infoDiv.style.display = "block";
-  
+
     // SVG elementining markazini olish
     const svgRect = svg.getBoundingClientRect();
-  
+
     // infoDiv elementining o'lchamini olish
     const infoDivRect = infoDiv.getBoundingClientRect();
-  
+
     // infoDiv ni markazlashtirish va yuqoriga ko'chirish
-    infoDiv.style.left = `${svgRect.left + bbox.x + bbox.width / 2 - infoDivRect.width / 2}px`;
+    infoDiv.style.left = `${
+      svgRect.left + bbox.x + bbox.width / 2 - infoDivRect.width / 2
+    }px`;
     infoDiv.style.top = `${svgRect.top + bbox.y - infoDivRect.height - 10}px`; // 10px yuqoriga
   };
-  
+
   const defaultId = "kz"; // Default davlat idsi
   const defaultItem = document.getElementById(defaultId);
   const defaultPath = svg.querySelector(`#${defaultId}`);
-  
+
   if (defaultItem && defaultPath) {
     removeActive();
     defaultItem.classList.add("active");
     defaultPath.classList.add("active");
-  
+
     const bbox = defaultPath.getBBox();
     showInfo(defaultItem, bbox);
   } else {
     infoDiv.style.display = "none";
   }
-  
+
   listItems.forEach((item) => {
     item.addEventListener("click", () => {
       removeActive();
       item.classList.add("active");
-  
+
       const selectedId = item.id;
       const selectedPath = svg.querySelector(`#${selectedId}`);
-  
+
       if (selectedPath) {
         selectedPath.classList.add("active");
         const bbox = selectedPath.getBBox();
@@ -86,28 +88,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+
   svg.querySelectorAll("path").forEach((path) => {
     path.addEventListener("click", (event) => {
       removeActive();
-  
+
       if (event.target.id) {
         const selectedId = event.target.id;
         const selectedItem = document.getElementById(selectedId);
-  
+
         if (selectedItem) {
           selectedItem.classList.add("active");
           const bbox = event.target.getBBox();
           showInfo(selectedItem, bbox);
         }
-  
+
         event.target.classList.add("active");
       } else {
         infoDiv.style.display = "none";
       }
     });
   });
-  
+
   document.addEventListener("click", (event) => {
     if (
       !event.target.closest("#country-map") &&
@@ -116,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoDiv.style.display = "none";
     }
   });
-  
+
   window.addEventListener("resize", () => {
     const activePath = svg.querySelector(".active");
     if (activePath) {
@@ -124,5 +126,22 @@ document.addEventListener("DOMContentLoaded", () => {
       showInfo(document.getElementById(activePath.id), bbox);
     }
   });
-  
+
+  // accordion
+  document.querySelectorAll(".faq-accordion__button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+
+      // Toggle the display of the content
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        // Close all other open contents
+        document.querySelectorAll(".faq-accordion__content").forEach((item) => {
+          item.style.display = "none";
+        });
+        content.style.display = "block";
+      }
+    });
+  });
 });
