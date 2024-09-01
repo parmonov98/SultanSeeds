@@ -3,6 +3,33 @@ import { setupHamburgerMenu } from "./hamburgerMenuToggle.js";
 import { initializeSelectMenu } from "./selectMenu.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // modal
+  const openModal = document.querySelector(".faq__button");
+
+  if (openModal) {
+    openModal.addEventListener("click", () => {
+      document.querySelector(".ask-modal").classList.add("show");
+      document.querySelector("body").classList.add("no-scroll");
+      document.querySelector(".ask-modal svg").addEventListener("click", () => {
+        document.querySelector(".ask-modal").classList.remove("show");
+        document.querySelector("body").classList.remove("no-scroll");
+      });
+      document
+        .querySelector(".ask-modal__button")
+        .addEventListener("click", () => {
+          document.querySelector(".ask-modal").classList.remove("show");
+          document.querySelector("body").classList.remove("no-scroll");
+        });
+      document.querySelector(".ask-modal").addEventListener("click", () => {
+        document.querySelector(".ask-modal").classList.remove("show");
+        document.querySelector("body").classList.remove("no-scroll");
+      });
+    });
+    console.log(openModal);
+  } else {
+    console.log("Element topilmadi!");
+  }
+
   initLanguageSwitcher({
     switcherSelector: ".header__language-switcher",
     buttonSelector: ".header__language-button",
