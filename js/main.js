@@ -3,28 +3,36 @@ import { setupHamburgerMenu } from "./hamburgerMenuToggle.js";
 import { initializeSelectMenu } from "./selectMenu.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // modal
+  // Modal ochish
   const openModal = document.querySelector(".faq__button");
 
   if (openModal) {
     openModal.addEventListener("click", () => {
-      document.querySelector(".ask-modal").classList.add("show");
+      const modal = document.querySelector(".ask-modal");
+      modal.classList.add("show");
       document.querySelector("body").classList.add("no-scroll");
-      document.querySelector(".ask-modal svg").addEventListener("click", () => {
-        document.querySelector(".ask-modal").classList.remove("show");
-        document.querySelector("body").classList.remove("no-scroll");
-      });
-      document
-        .querySelector(".ask-modal__button")
-        .addEventListener("click", () => {
-          document.querySelector(".ask-modal").classList.remove("show");
+
+      // Modal ichidagi tugmalar va SVG uchun
+      const closeModalButtons = modal.querySelectorAll(
+        "svg, .ask-modal__button"
+      );
+
+      closeModalButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          modal.classList.remove("show");
           document.querySelector("body").classList.remove("no-scroll");
         });
-      document.querySelector(".ask-modal").addEventListener("click", () => {
-        document.querySelector(".ask-modal").classList.remove("show");
-        document.querySelector("body").classList.remove("no-scroll");
+      });
+
+      // Modalning tashqarisidagi bosish uchun
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.classList.remove("show");
+          document.querySelector("body").classList.remove("no-scroll");
+        }
       });
     });
+
     console.log(openModal);
   } else {
     console.log("Element topilmadi!");
