@@ -3,6 +3,7 @@ let swiper;
 function initializeSwiper() {
   const direction = window.innerWidth <= 768 ? "horizontal" : "vertical";
 
+  const progressCircle = document.querySelector(".swiper-progress");
   swiper = new Swiper(".swiper-container", {
     direction: direction,
     spaceBetween: 20,
@@ -14,38 +15,25 @@ function initializeSwiper() {
       el: ".swiper-pagination",
       clickable: true,
     },
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    on: {
-      slideChange: () => {
-        current.textContent = (swiper.realIndex + 1)
-          .toString()
-          .padStart(2, "0");
-        total.textContent = slideCount.toString().padStart(2, "0");
-      },
-    },
   });
 }
 
 // Swiper'ni birinchi marta ishga tushirish
 initializeSwiper();
+const timerEnd = document.querySelector("#fraction .total");
+const timerStart = document.querySelector("#fraction .current");
+const progressThumb = document.querySelector(".swiper-progress");
 
-// Ekran o'lchami o'zgarganda Swiper'ni qayta ishga tushirish
-window.addEventListener("resize", () => {
-  swiper.destroy(true, true); // Avvalgi Swiper instance'ini yo'q qiladi
-  initializeSwiper(); // Yangi parametrlar bilan Swiper'ni qayta yaratadi
-});
+let counter = 0;
+timerEnd.innerHTML = `05`;
 
-const fraction = document.getElementById("fraction");
-const slides = document.querySelectorAll(".swiper-slide");
-const current = document.querySelector(".current");
-const total = document.querySelector(".total");
-const slideCount = slides.length;
-current.textContent = (swiper.realIndex + 1).toString().padStart(2, "0");
-total.textContent = slideCount.toString().padStart(2, "0");
+setInterval(() => {
+  counter++;
+  timerStart.innerHTML = `0${counter}`;
+  progressThumb.style.height = `${20 * counter}%`;
+
+
+  if (counter === 5) {
+    counter = 0;
+  }
+}, 1000);
