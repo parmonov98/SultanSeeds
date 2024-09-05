@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const showInfo = (element, bbox) => {
     infoDiv.textContent = element.textContent;
-    infoDiv.style.display = "block";
+    // infoDiv.style.display = "block";
 
     const svgRect = svg.getBoundingClientRect();
     const infoDivRect = infoDiv.getBoundingClientRect();
