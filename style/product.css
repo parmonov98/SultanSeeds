@@ -132,9 +132,20 @@
   }
 }
 
+/* 680 */
+@media screen and (max-width: 680px) {
+  .products-intro__title {
+    font-size: 1.5rem;
+  }
+}
+
 /* 480 */
 @media screen and (max-width: 480px) {
   /* products */
+  .products-intro {
+    height: 5.25rem;
+    margin-bottom: 2rem;
+  }
   .products__item-container {
     gap: 1.5rem;
     padding: 2.12rem 0;
