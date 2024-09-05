@@ -347,13 +347,14 @@ body.no-scroll {
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
+  width: 25px;
 }
 
 /* Scrollbar Container */
 .swiper-timer {
   position: absolute;
-  background-color: Gray; /* Scrollbar containerning orqa fon rangi */
-  border-radius: 10px; /* Scrollbar containerning yumaloq burchaklari */
+  background-color: Gray;
+  border-radius: 10px;
   height: 2px;
   width: 0.125rem !important;
   height: 7.78rem !important;
@@ -362,17 +363,49 @@ body.no-scroll {
   transform: translate(-50%, -50%);
 }
 
-/* Scrollbar Draggable Element */
-.swiper-progress {
-  background-color: orange; /* Draggable elementning rangi (scrollbar tugmasi) */
-  border-radius: 10px;
-  width: 90%;
-  height: 0%;
-  transition: 1s linear;
+.swiper-progress-bar {
+  position: absolute;
+  width: 100%;
+  display: block;
+  z-index: 1;
+  height: 2px;
+  width: 7.78rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.swiper-progress.increase {
-  transition: height 1s linear;
+.swiper-progress-bar .slide_progress-bar {
+  position: absolute;
+  height: 2px;
+  background: gray;
+  width: auto;
+  clear: both;
+  opacity: 0;
+  left: 0;
+  right: 0;
+}
+
+.swiper-progress-bar .slide_progress-bar:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ea9901;
+  height: 100%;
+  width: 0;
+  content: "";
+  transition: 0.1s width linear;
+}
+
+.swiper-progress-bar.active .slide_progress-bar {
+  opacity: 1;
+}
+
+.swiper-progress-bar.animate .slide_progress-bar:after {
+  transition: width linear;
+  transition-delay: unset;
+  width: 100%;
+  transition-duration: 5s;
 }
 
 /* swiper timer */
@@ -1507,6 +1540,15 @@ body.no-scroll {
     transform: translateY(-10px) rotate(-45deg);
   }
 
+  /* swiper */
+  .swiper-progress-bar {
+    top: unset;
+  }
+
+  .swiper-pagination {
+    left: 3.3rem !important;
+  }
+
   /* footer */
   .footer {
     min-height: unset;
@@ -1764,6 +1806,11 @@ body.no-scroll {
 
   .footer__contact-link {
     justify-content: center;
+  }
+
+  .footer__logo img {
+    width: 14.73213rem;
+    height: 3.22763rem;
   }
 }
 
