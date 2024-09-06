@@ -197,6 +197,10 @@ body.no-scroll {
   padding: 1rem;
 }
 
+.header__nav-link:hover {
+  color: #9a430e;
+}
+
 /* language switcher */
 .header__language-switcher {
   border-radius: 3.125rem;
