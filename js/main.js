@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loader = document.querySelector(".main-page-loader");
   loader.classList.add("show");
-  console.log(loader);
 
   setInterval(() => {
     loader.classList.remove("show");
