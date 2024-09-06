@@ -48,9 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // loader
 
   const loader = document.querySelector(".main-page-loader");
-
+  if (loader) {
+    document.body.classList.add("no-scroll");
+  }
   setInterval(() => {
     loader.classList.remove("show");
+    document.body.classList.remove("no-scroll");
   }, 5000);
 
   initLanguageSwitcher({
@@ -70,9 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleScroll() {
     if (window.scrollY > 0) {
       header.classList.add("sticky");
-      document.body.classList.add("no-scroll");
     } else {
-      document.body.classList.remove("no-scroll");
       header.classList.remove("sticky");
     }
   }
