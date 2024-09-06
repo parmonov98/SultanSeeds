@@ -1365,60 +1365,6 @@ body.no-scroll {
     background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/intro-1144.png?updatedAt=1725085293558");
   }
 
-  /* about section */
-  /* .about__container {
-    padding: 4.76rem 0 7.98rem 0;
-    align-items: start;
-    gap: 6.26rem;
-  } */
-
-  /* .about__photo {
-    top: 0;
-  }
-
-  .about__title {
-    font-size: 2rem;
-  }
-
-  .about__photo-image:nth-child(1) {
-    width: 22.48988rem;
-    height: 22.48988rem;
-    flex-shrink: 0;
-  }
-
-  .about__photo-image:nth-child(2) {
-    width: 17.68625rem;
-    height: 11.92181rem;
-    left: 9.56rem;
-    top: 13.1rem;
-  }
-
-  .about__photo-image--top-right {
-    display: none;
-  }
-
-  .about__description,
-  .about__export-info-title {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-    margin: 1rem 0;
-  }
-
-  .about__export-info-title {
-    margin: 0;
-  }
-
-  .about__export-info-details {
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.75rem;
-  }
-
-  .about__export-info-item:not(:last-child) {
-    margin-bottom: 1rem;
-  } */
-
   /* features media */
   .features {
     min-height: 33.75rem;
@@ -1488,6 +1434,7 @@ body.no-scroll {
     width: 100%;
     flex-direction: row;
     justify-content: start;
+    gap: 1.5rem;
   }
 
   .sunflower__item-content {
