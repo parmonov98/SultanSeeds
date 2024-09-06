@@ -129,10 +129,11 @@ function initializeSwiper() {
     console.log(swiper.activeIndex);
 
     // Hozirgi slaydni ko‘rsatish
-    document.querySelector("#fraction .current").textContent =
-      (currentSlide % totalSlides) + 1;
+    document.querySelector("#fraction .current").textContent = `0${
+      (currentSlide % totalSlides) + 1
+    }`;
     // Jami slaydlar sonini ko‘rsatish
-    document.querySelector("#fraction .total").textContent = totalSlides;
+    document.querySelector("#fraction .total").textContent = `0${totalSlides}`;
 
     console.log(swiper);
 

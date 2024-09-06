@@ -385,8 +385,6 @@ body.no-scroll {
   font-size: 1rem;
   font-weight: 500;
   width: 25px;
-  position: relative;
-  right: -7px;
 }
 
 /* Scrollbar Container */
