@@ -151,14 +151,14 @@
 }
 
 .facts__svg-map .active {
-  fill: black; /* Faol (aktiv) bo'lganda rangni qora qilish */
+  fill: #2f4135;
 }
 .facts__svg-map .inactive {
-  fill: initial; /* Har qanday boshqa holat uchun boshlang'ich rangni qaytarish */
+  fill: initial;
 }
 .facts__country-list li.active {
-  background-color: black; /* Ro'yxatdagi faol element orqa rangini qora qilish */
-  color: white; /* Matn rangini oq qilish */
+  background-color: #2f4135;
+  color: white;
 }
 
 /* our history */
@@ -199,6 +199,11 @@
   .advantages__items {
     grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
     gap: 1.5rem;
+  }
+
+  /* map */
+  .facts__country-list-item {
+    font-size: 0.93rem;
   }
 }
 
@@ -301,6 +306,10 @@
     font-size: 0.875rem;
     line-height: 1.5rem;
   }
+  /* facts */
+  .facts__title {
+    font-size: 1.5rem;
+  }
 }
 
 /* 480 */
@@ -308,5 +317,23 @@
   /* about */
   .about-page__photo img {
     height: 15rem;
+  }
+  /* facts */
+  .facts {
+    padding: 3.75rem 0;
+  }
+
+  .facts__country-list-item {
+    font-size: 0.75rem;
+    padding: 0.125rem 1rem;
+  }
+
+  .facts__country-list {
+    gap: 1rem;
+  }
+
+  .facts__svg-map,
+  .facts__svg-map svg {
+    height: 10.8rem;
   }
 }
