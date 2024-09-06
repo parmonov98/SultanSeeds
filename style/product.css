@@ -89,6 +89,10 @@
   font-weight: 500;
 }
 
+.products-order__button:hover {
+  background-color: #bd5c21;
+}
+
 /* media */
 /* 1300 */
 @media screen and (max-width: 1300px) {
