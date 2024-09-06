@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleScroll() {
     if (window.scrollY > 0) {
       header.classList.add("sticky");
+      document.body.classList.add("no-scroll");
     } else {
+      document.body.classList.remove("no-scroll");
       header.classList.remove("sticky");
     }
   }
