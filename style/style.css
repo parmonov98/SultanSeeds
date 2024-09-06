@@ -1912,6 +1912,27 @@ body.no-scroll {
     width: 14.73213rem;
     height: 3.22763rem;
   }
+
+  /* footer */
+  .footer {
+    padding-top: 5.19rem;
+  }
+
+  .footer__logo {
+    margin-bottom: 0;
+  }
+
+  .footer__description {
+    margin: 2rem 0;
+  }
+
+  .footer_top {
+    gap: 3rem;
+  }
+
+  .footer__title {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* 380 */
