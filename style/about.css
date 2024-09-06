@@ -178,6 +178,35 @@
   font-weight: 500;
   line-height: 1.75rem;
 }
+/* more info */
+.more-info {
+  padding: 4rem 0;
+}
+
+.more-info__container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.more-info__item {
+  min-width: 39rem;
+  width: 100%;
+}
+
+.more-info__info {
+  color: #272a2f;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.more-info__status {
+  color: #272a2f;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 
 /* media */
 /* 1200 */
@@ -205,6 +234,16 @@
   .facts__country-list-item {
     font-size: 0.93rem;
   }
+
+  /* more info */
+
+  .more-info__container {
+    gap: 1.5rem;
+  }
+
+  .more-info__item {
+    min-width: 33rem;
+  }
 }
 
 /* 1024 */
@@ -220,6 +259,18 @@
   .advantages__items {
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     gap: 1.5rem;
+  }
+
+  /* more info */
+  .more-info__item {
+    min-width: unset;
+  }
+}
+
+/* 1024 */
+@media screen and (max-width: 1024px) {
+  .more-info__container {
+    flex-direction: column;
   }
 }
 
@@ -335,5 +386,22 @@
   .facts__svg-map,
   .facts__svg-map svg {
     height: 10.8rem;
+  }
+
+  /* more info */
+  .more-info {
+    padding: 2rem 0;
+  }
+  .more-info__container {
+    gap: 1.5rem;
+  }
+
+  .more-info__info {
+    font-size: 0.87rem;
+    margin-bottom: 1rem;
+  }
+
+  .more-info__status {
+    font-size: 1.25rem;
   }
 }
