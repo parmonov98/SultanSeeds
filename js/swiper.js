@@ -108,7 +108,7 @@ function initializeSwiper() {
     on: {
       init: function () {
         updateProgressBar();
-        startTimer();
+        // startTimer();
       },
       slideChangeTransitionStart: function () {
         updateProgressBar();
@@ -117,6 +117,31 @@ function initializeSwiper() {
         updateProgressBar();
       },
     },
+  });
+
+  // slide count
+  swiper.on("slideChange", function () {
+    // Joriy slayd indeksini olish
+    const currentSlide = swiper.activeIndex;
+    // Jami slaydlar sonini olish
+    const totalSlides = swiper.slides.length;
+
+    console.log(swiper.activeIndex);
+
+    // Hozirgi slaydni ko‘rsatish
+    document.querySelector("#fraction .current").textContent =
+      (currentSlide % totalSlides) + 1;
+    // Jami slaydlar sonini ko‘rsatish
+    document.querySelector("#fraction .total").textContent = totalSlides;
+
+    console.log(swiper);
+
+    if (currentSlide + 1 === totalSlides) {
+      setInterval(() => {
+        console.log("teng bo'ldi");
+        swiper.slideTo(0);
+      }, autoplayDelay);
+    }
   });
 }
 
@@ -134,21 +159,21 @@ function updateProgressBar() {
   }
 }
 
-function startTimer() {
-  const timerEnd = document.querySelector("#fraction .total");
-  const timerStart = document.querySelector("#fraction .current");
-  let counter = 0;
-  timerEnd.innerHTML = `05`;
+// function startTimer() {
+//   const timerEnd = document.querySelector("#fraction .total");
+//   const timerStart = document.querySelector("#fraction .current");
+//   let counter = 0;
+//   timerEnd.innerHTML = `05`;
 
-  timerInterval = setInterval(() => {
-    counter++;
-    timerStart.innerHTML = counter < 10 ? `0${counter}` : counter;
+//   timerInterval = setInterval(() => {
+//     counter++;
+//     timerStart.innerHTML = counter < 10 ? `0${counter}` : counter;
 
-    if (counter === 5) {
-      counter = 0;
-    }
-  }, autoplayDelay / 5);
-}
+//     if (counter === 5) {
+//       counter = 0;
+//     }
+//   }, autoplayDelay / 5);
+// }
 
 function stopTimer() {
   clearInterval(timerInterval);
