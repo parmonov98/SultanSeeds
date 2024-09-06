@@ -99,6 +99,10 @@ body.no-scroll {
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #bd5c21;
+}
+
 /* root */
 :root {
   --Dark-Green: #2f4135;
@@ -492,6 +496,10 @@ body.no-scroll {
   text-align: center;
   font-size: 0.9375rem;
   font-weight: 500;
+}
+
+.swiper-button:hover {
+  background-color: #bd5c21;
 }
 /* swiper */
 
@@ -1110,6 +1118,10 @@ body.no-scroll {
   padding: 0.75rem 1rem;
 }
 
+.newsletter__form-control:first-child input::placeholder {
+  color: #fff;
+}
+
 .newsletter__input {
   border-radius: 0.5rem;
   border: 1px solid #78714c;
@@ -1145,6 +1157,9 @@ body.no-scroll {
 .newsletter__terms-boox {
   width: 100%;
   max-width: 37.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.62rem;
 }
 
 .newsletter__terms-label {

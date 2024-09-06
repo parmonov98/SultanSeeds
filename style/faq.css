@@ -167,6 +167,10 @@ img {
   font-weight: 500;
 }
 
+.faq__button:hover, .ask-modal__button:hover {
+  background-color: #bd5c21;
+}
+
 /* ask modal */
 .ask-modal {
   position: fixed;

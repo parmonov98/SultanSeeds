@@ -170,6 +170,10 @@
   font-weight: 500;
 }
 
+.contact-us__button:hover {
+  background-color: #bd5c21;
+}
+
 /* media -> 1200*/
 @media screen and (max-width: 1200px) {
   .contact-details__contact {
