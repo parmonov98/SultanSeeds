@@ -172,6 +172,16 @@ body.no-scroll {
   padding: 1.5rem 0;
 }
 
+.header__bottom.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #ffffffcf;
+  z-index: 100;
+  backdrop-filter: blur(1rem);
+}
+
 .header__nav .header__nav-list {
   display: flex;
   align-items: center;

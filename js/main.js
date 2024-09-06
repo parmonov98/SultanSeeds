@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // loader
 
   const loader = document.querySelector(".main-page-loader");
-  loader.classList.add("show");
 
   setInterval(() => {
     loader.classList.remove("show");
@@ -62,6 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
     flagSelector: "#selected-lang-flag",
     textSelector: "#selected-lang-text",
   });
+
+  // header sticky
+  // Get the header element
+  const header = document.querySelector(".header__bottom");
+
+  // Function to check scroll position and update header class
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+
+  // Add scroll event listener to window
+  window.addEventListener("scroll", handleScroll);
+
+  // Initial check in case the page is already scrolled on load
+  handleScroll();
 
   initializeSelectMenu();
   setupHamburgerMenu(".hamburger", "header", "#hamburger", "no-scroll");
