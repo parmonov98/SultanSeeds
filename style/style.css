@@ -205,6 +205,11 @@ body.no-scroll {
   color: #9a430e;
 }
 
+/* language switcher nav*/
+.nav-language-switcher {
+  display: none;
+}
+
 /* language switcher */
 .header__language-switcher {
   border-radius: 3.125rem;
@@ -1571,6 +1576,9 @@ body.no-scroll {
 
   .active .header__nav {
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
   .active .header__language-switcher {
     display: none;
@@ -1593,6 +1601,31 @@ body.no-scroll {
   .active .header__nav-link {
     color: #fff;
   }
+
+  /* language wtiche nav */
+  .nav-language-switcher {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem;
+    gap: 2rem;
+    background-color: #fafafc;
+    border-radius: 0.5rem;
+    position: relative;
+  }
+
+  .nav-language-switcher a {
+    color: #000;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-language-switcher.en a:last-child {
+    color: #ff5733;
+  }
+  .nav-language-switcher.ru a:first-child {
+    color: #ff5733;
+  }
+
   /* hamburger icon */
   .header__mobile-icon {
     display: flex;

@@ -45,6 +45,58 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Element topilmadi!");
   }
 
+  // language switcher
+  const langSwitcher = document.querySelector(".nav-language-switcher");
+
+  // URL parametrlarini olish
+  const params = new URLSearchParams(window.location.search);
+  const urlLanguage = params.get("lang") || "ru"; // URL parametridan tilni olish yoki 'ru' ni standart qilib qo'yish
+
+  // LocalStorage`da saqlangan tilni olish
+  const savedLanguage = localStorage.getItem("language") || urlLanguage;
+
+  // URL tilini o'zgartirish (agar URLda til parametr bo'lsa)
+  if (urlLanguage !== savedLanguage) {
+    params.set("lang", savedLanguage);
+    window.history.replaceState(
+      {},
+      "",
+      `${window.location.pathname}?${params}`
+    );
+  }
+
+  // Til almashtirgich klasslarini yangilash
+  if (savedLanguage === "ru") {
+    langSwitcher.classList.add("ru");
+    langSwitcher.classList.remove("en");
+  } else {
+    langSwitcher.classList.add("en");
+    langSwitcher.classList.remove("ru");
+  }
+
+  langSwitcher.addEventListener("click", () => {
+    // Saqlangan tilni olish
+    const currentLanguage = langSwitcher.classList.contains("ru") ? "ru" : "en";
+
+    // Yangi tilni aniqlash
+    const newLanguage = currentLanguage === "ru" ? "en" : "ru";
+
+    // LocalStorage`da yangi tilni saqlash
+    localStorage.setItem("language", newLanguage);
+
+    // URL parametrlarini yangilash
+    params.set("lang", newLanguage);
+    window.history.replaceState(
+      {},
+      "",
+      `${window.location.pathname}?${params}`
+    );
+
+    // Til almashtirgich klasslarini yangilash
+    langSwitcher.classList.remove(currentLanguage);
+    langSwitcher.classList.add(newLanguage);
+  });
+
   // loader
 
   const loader = document.querySelector(".main-page-loader");
