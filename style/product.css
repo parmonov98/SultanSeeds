@@ -110,6 +110,9 @@
   }
 }
 @media screen and (max-width: 680px) {
+  .products-intro {
+    height: 5.9rem;
+  }
   .products-intro__title {
     font-size: 1.5rem;
   }
