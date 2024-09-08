@@ -1,0 +1,23 @@
+.features__item {
+  min-height: unset;
+  max-height: unset;
+}
+
+.features__sub-photo-leaf {
+  top: -2rem;
+}
+
+.header__language-options {
+  width: unset;
+}
+
+.header__language-box a {
+  display: flex;
+  align-items: center;
+  gap: 0.31rem;
+  cursor: pointer;
+}
+
+.header__language-switcher{
+  width: unset;
+}

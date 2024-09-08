@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SultanSeeds</title>
+    <!-- Swiper style -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/faq.css">
+  </head>
+  <body>
+    <!-- status liner -->
+    <div class="wrapper">
+      <!-- header -->
+      <header>
+        <div class="header__contact-info">
+          <div class="container">
+            <div class="header__contact-details">
+              <p class="header__phone">
+                Есть вопросы?
+                <a href="tel: +998994690007">+998(99) 469-00-07</a>
+              </p>
+              <div class="header__separator"></div>
+              <p class="header__email">
+                Email
+                <a href="mailto: info@sultanseed.uz">info@sultanseed.uz</a>
+              </p>
+            </div>
+            <div class="header__contact-social">
+              <div class="header__separator"></div>
+              <p>Контакты</p>
+              <ul>
+                <li>
+                  <a href="#!">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12.3583 9.38245C11.3857 9.78701 9.44176 10.6243 6.52656 11.8945C6.05318 12.0827 5.8052 12.2669 5.78262 12.4469C5.74447 12.7513 6.12558 12.8711 6.64454 13.0343C6.71513 13.0565 6.78828 13.0795 6.86326 13.1039C7.37385 13.2698 8.06067 13.464 8.41772 13.4717C8.7416 13.4787 9.10309 13.3452 9.50218 13.0711C12.2259 11.2325 13.632 10.3032 13.7202 10.2832C13.7825 10.269 13.8688 10.2512 13.9273 10.3032C13.9858 10.3552 13.98 10.4536 13.9738 10.48C13.9361 10.641 12.4401 12.0318 11.6659 12.7515C11.4246 12.9759 11.2534 13.135 11.2184 13.1714C11.14 13.2528 11.0601 13.3298 10.9833 13.4039C10.509 13.8611 10.1532 14.204 11.003 14.764C11.4113 15.0331 11.7381 15.2556 12.0641 15.4776C12.4201 15.7201 12.7752 15.9619 13.2347 16.2631C13.3517 16.3398 13.4635 16.4195 13.5724 16.4971C13.9867 16.7925 14.3589 17.0579 14.8188 17.0155C15.086 16.991 15.362 16.7397 15.5022 15.9903C15.8335 14.2193 16.4847 10.3821 16.6352 8.80082C16.6483 8.66229 16.6318 8.48499 16.6184 8.40716C16.6051 8.32932 16.5773 8.21843 16.4761 8.13634C16.3563 8.03912 16.1713 8.01862 16.0886 8.02008C15.7125 8.0267 15.1354 8.22736 12.3583 9.38245Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.0028 1H11.9972C5.93213 1 1 5.9335 1 12C1 14.4062 1.7755 16.6365 3.09413 18.4474L1.72325 22.5339L5.95138 21.1823C7.69075 22.3345 9.76562 23 12.0028 23C18.0679 23 23 18.0651 23 12C23 5.93488 18.0679 1 12.0028 1ZM18.4034 16.5334C18.138 17.2827 17.0848 17.9043 16.2446 18.0858C15.6699 18.2081 14.9191 18.3057 12.3919 17.258C9.15925 15.9188 7.0775 12.6339 6.91525 12.4207C6.75988 12.2076 5.609 10.6814 5.609 9.10288C5.609 7.52438 6.41063 6.75575 6.73375 6.42575C6.99913 6.15488 7.43775 6.03112 7.8585 6.03112C7.99463 6.03112 8.117 6.038 8.227 6.0435C8.55013 6.05725 8.71238 6.0765 8.9255 6.58663C9.19088 7.226 9.83712 8.8045 9.91412 8.96675C9.9925 9.129 10.0709 9.349 9.96088 9.56213C9.85775 9.78213 9.767 9.87975 9.60475 10.0667C9.4425 10.2537 9.2885 10.3968 9.12625 10.5975C8.97775 10.7721 8.81 10.9591 8.997 11.2823C9.184 11.5985 9.83025 12.6531 10.7817 13.5001C12.0096 14.5932 13.0051 14.9425 13.3612 15.091C13.6266 15.201 13.9429 15.1749 14.1367 14.9686C14.3829 14.7033 14.6867 14.2633 14.9961 13.8301C15.2161 13.5194 15.4939 13.4809 15.7854 13.5909C16.0824 13.694 17.654 14.4709 17.9771 14.6318C18.3003 14.794 18.5134 14.871 18.5918 15.0071C18.6688 15.1433 18.6688 15.7826 18.4034 16.5334Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.0469 9.84375C10.8837 9.84375 9.9375 10.79 9.9375 11.9531C9.9375 13.1163 10.8837 14.0625 12.0469 14.0625C13.21 14.0625 14.1562 13.1163 14.1562 11.9531C14.1562 10.79 13.21 9.84375 12.0469 9.84375Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.957 1C5.91519 1 1 5.91519 1 11.957C1 17.9989 5.91519 23 11.957 23C17.9989 23 23 17.9989 23 11.957C23 5.91519 17.9989 1 11.957 1ZM16.5547 15.1797C15.6836 15.1797 14.9153 14.7431 14.4485 14.0799C13.8575 14.7488 13.0035 15.1797 12.043 15.1797C10.2661 15.1797 8.82031 13.7339 8.82031 11.957C8.82031 10.1801 10.2661 8.73438 12.043 8.73438C12.7712 8.73438 13.4363 8.98639 13.9766 9.39536V9.37891C13.9766 9.02265 14.2648 8.73438 14.6211 8.73438C14.9773 8.73438 15.2656 9.02265 15.2656 9.37891C15.2656 10.8123 15.2656 11.1675 15.2656 12.6016C15.2656 13.3122 15.8441 13.8906 16.5547 13.8906C17.2653 13.8906 17.8438 13.3122 17.8438 12.6016C17.8438 8.28789 14.9893 6.15625 12.043 6.15625C8.84425 6.15625 6.24219 8.75831 6.24219 11.957C6.24219 15.1558 8.84425 17.7578 12.043 17.7578C13.332 17.7578 14.5512 17.3449 15.569 16.5632C16.2489 16.0442 17.0274 17.0687 16.3545 17.5853C15.1089 18.5414 13.6184 19.0469 12.043 19.0469C8.13363 19.0469 4.95312 15.8664 4.95312 11.957C4.95312 8.04769 8.13363 4.86719 12.043 4.86719C15.6049 4.86719 19.1328 7.49408 19.1328 12.6016C19.1328 14.0234 17.9766 15.1797 16.5547 15.1797Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__bottom">
+          <div class="container">
+            <a href="../ru/index.html" class="header__logo">
+              <img src="./photo/Logo.png" alt="Brand logo" />
+            </a>
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="./about.html" class="header__nav-link">О нас</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="./product.html" class="header__nav-link">Продукты</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="./faq.html" class="header__nav-link">FAQ</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="./contact.html" class="header__nav-link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="header__language-switcher">
+              <button class="header__language-button">
+                <div class="header__language-box">
+                  <img
+                    src="./photo/icon/RU.png"
+                    alt="Selected Language Flag"
+                    class="header__language-flag"
+                    id="selected-lang-flag"
+                  />
+                  <span id="selected-lang-text">Русский</span>
+                  <img
+                    src="./photo/icon/arrow-ios-down.png"
+                    alt="Arrow"
+                    class="header__arrow-icon"
+                  />
+                </div>
+              </button>
+              <div class="header__language-options">
+                <button class="header__language-option" data-lang="en">
+                  <div class="header__language-box">
+                    <img
+                      src="./photo/icon/GB.png"
+                      alt="English Flag"
+                      class="header__language-flag"
+                    />
+                    <span class="header__language-text">
+                      <a href="../en/index.html">Английский</a>
+                    </span>
+                  </div>
+                </button>
+                <button class="header__language-option" data-lang="ru">
+                  <div class="header__language-box">
+                    <img
+                      src="./photo/icon/RU.png"
+                      alt="Russian Flag"
+                      class="header__language-flag"
+                    />
+                    <span class="header__language-text"
+                      ><a href="./index.html">Русский</a></span
+                    >
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- mobile -->
+            <div class="header__mobile-icon">
+              <div class="hamburger" id="hamburger">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- main -->
+      <main>
+        <!-- faq intro -->
+        <section class="faq-intro">
+          <h2 class="faq-intro__title">F.A.Q</h2>
+        </section>
+
+        <section class="faq-accordion">
+            <div class="faq-accordion__container container">
+                <h2 class="faq-accordion__title">Часто задаваемые вопросы</h2>
+                <div class="accordion">
+                    <div class="top">
+                        <div class="text">Когда лучше всего покупать/контрактовать семена подсолнечника?</div>
+                        <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        <input type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <div class="text">Каковы условия поставки? (т.е. EXW или DAP?)
+                          Мы предлагаем различные варианты доставки, включая EXW (франко-завод), FCA (франко-перевозчик), DAP (доставка на место), CIF (стоимость, страховка и фрахт), CFR (стоимость и фрахт).
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="top">
+                        <div class="text">Могу ли я установить фиксированную цену за годовой контракт?</div>
+                        <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        <input type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <div class="text">                          Мы предлагаем различные варианты доставки, включая EXW (франко-завод), FCA (франко-перевозчик), DAP (доставка на место), CIF (стоимость, страховка и фрахт), CFR (стоимость и фрахт).
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="accordion">
+                    <div class="top">
+                        <div class="text">Можете ли вы отправить лабораторные анализы перед доставкой?</div>
+                        <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        <input type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <div class="text">
+                          Мы предлагаем различные варианты доставки, включая EXW (франко-завод), FCA (франко-перевозчик), DAP (доставка на место), CIF (стоимость, страховка и фрахт), CFR (стоимость и фрахт).
+
+                        </div>
+                    </div>
+            </div>
+            <div class="accordion">
+                <div class="top">
+                    <div class="text">Могу ли я использовать ваш продукт напрямую для потребления?</div>
+                    <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    <input type="checkbox">
+                </div>
+                <div class="bottom">
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ea!
+                    </div>
+                </div>
+        </div>
+            <div class="accordion">
+                <div class="top">
+                    <div class="text">Каковы условия поставки? (т.е. EXW или DAP?)</div>
+                    <svg class="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#DE9551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    <input type="checkbox">
+                </div>
+                <div class="bottom">
+                    <div class="text">We offer various delivery options, including EXW (Ex Works), FCA (Free Carrier), DAP (Delivered at Place) CIF(Cost, insurance, and freight), CFR (Cost and freight).
+                    </div>
+                </div>
+        </div>
+          </section>
+
+          <!-- send faq section -->
+           <section class="faq">
+            <div class="faq__container container">
+                <h2 class="faq__title">У вас тоже есть вопросы?</h2>
+                <p class="faq__description">Мы постараемся ответить вам как можно скорее.</p>
+                <button class="faq__button">Задать вопрос</button>
+            </div>
+           </section>
+
+           <div class="ask-modal ">
+            <div class="ask-modal__card">
+                <div class="ask-modal__nav">
+                    <h4 class="ask-modal__title">Задать вопрос</h4>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </div>
+                <div class="ask-modal__content">
+                    <textarea name="ask" id="ask" placeholder="Введите вопрос..."></textarea>
+                </div>
+                <div class="ask-modal__action">
+                    <button class="ask-modal__button disabled">Отправлять</button>
+                </div>
+            </div>
+           </div>
+          
+      </main>
+
+      <!-- footer -->
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer_top">
+            <div class="footer__top-item">
+              <div class="footer__logo">
+                <img src="./photo/Logo-white.png" alt="Brand logo" />
+              </div>
+              <div class="footer__description">
+                Существует множество вариантов отрывков lorem ipsum, но
+                большинство из них пострадали.
+              </div>
+              <div class="footer__top-item-social">
+                <ul class="footer__social-list">
+                  <li class="footer__social-item">
+                    <a href="#" class="footer__social-link">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12.3583 9.38245C11.3857 9.78701 9.44176 10.6243 6.52656 11.8945C6.05318 12.0827 5.8052 12.2669 5.78262 12.4469C5.74447 12.7513 6.12558 12.8711 6.64454 13.0343C6.71513 13.0565 6.78828 13.0795 6.86326 13.1039C7.37385 13.2698 8.06067 13.464 8.41772 13.4717C8.7416 13.4787 9.10309 13.3452 9.50218 13.0711C12.2259 11.2325 13.632 10.3032 13.7202 10.2832C13.7825 10.269 13.8688 10.2512 13.9273 10.3032C13.9858 10.3552 13.98 10.4536 13.9738 10.48C13.9361 10.641 12.4401 12.0318 11.6659 12.7515C11.4246 12.9759 11.2534 13.135 11.2184 13.1714C11.14 13.2528 11.0601 13.3298 10.9833 13.4039C10.509 13.8611 10.1532 14.204 11.003 14.764C11.4113 15.0331 11.7381 15.2556 12.0641 15.4776C12.4201 15.7201 12.7752 15.9619 13.2347 16.2631C13.3517 16.3398 13.4635 16.4195 13.5724 16.4971C13.9867 16.7925 14.3589 17.0579 14.8188 17.0155C15.086 16.991 15.362 16.7397 15.5022 15.9903C15.8335 14.2193 16.4847 10.3821 16.6352 8.80082C16.6483 8.66229 16.6318 8.48499 16.6184 8.40716C16.6051 8.32932 16.5773 8.21843 16.4761 8.13634C16.3563 8.03912 16.1713 8.01862 16.0886 8.02008C15.7125 8.0267 15.1354 8.22736 12.3583 9.38245Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="footer__social-item">
+                    <a href="#" class="footer__social-link">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0028 1H11.9972C5.93213 1 1 5.9335 1 12C1 14.4062 1.7755 16.6365 3.09413 18.4474L1.72325 22.5339L5.95138 21.1823C7.69075 22.3345 9.76562 23 12.0028 23C18.0679 23 23 18.0651 23 12C23 5.93488 18.0679 1 12.0028 1ZM18.4034 16.5334C18.138 17.2827 17.0848 17.9043 16.2446 18.0858C15.6699 18.2081 14.9191 18.3057 12.3919 17.258C9.15925 15.9188 7.0775 12.6339 6.91525 12.4207C6.75988 12.2076 5.609 10.6814 5.609 9.10288C5.609 7.52438 6.41063 6.75575 6.73375 6.42575C6.99913 6.15488 7.43775 6.03112 7.8585 6.03112C7.99463 6.03112 8.117 6.038 8.227 6.0435C8.55013 6.05725 8.71238 6.0765 8.9255 6.58663C9.19088 7.226 9.83712 8.8045 9.91412 8.96675C9.9925 9.129 10.0709 9.349 9.96088 9.56213C9.85775 9.78213 9.767 9.87975 9.60475 10.0667C9.4425 10.2537 9.2885 10.3968 9.12625 10.5975C8.97775 10.7721 8.81 10.9591 8.997 11.2823C9.184 11.5985 9.83025 12.6531 10.7817 13.5001C12.0096 14.5932 13.0051 14.9425 13.3612 15.091C13.6266 15.201 13.9429 15.1749 14.1367 14.9686C14.3829 14.7033 14.6867 14.2633 14.9961 13.8301C15.2161 13.5194 15.4939 13.4809 15.7854 13.5909C16.0824 13.694 17.654 14.4709 17.9771 14.6318C18.3003 14.794 18.5134 14.871 18.5918 15.0071C18.6688 15.1433 18.6688 15.7826 18.4034 16.5334Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="footer__social-item">
+                    <a href="#!" class="footer__social-link">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.0469 9.84375C10.8837 9.84375 9.9375 10.79 9.9375 11.9531C9.9375 13.1163 10.8837 14.0625 12.0469 14.0625C13.21 14.0625 14.1562 13.1163 14.1562 11.9531C14.1562 10.79 13.21 9.84375 12.0469 9.84375Z"
+                          fill="white"
+                        />
+                        <path
+                          d="M11.957 1C5.91519 1 1 5.91519 1 11.957C1 17.9989 5.91519 23 11.957 23C17.9989 23 23 17.9989 23 11.957C23 5.91519 17.9989 1 11.957 1ZM16.5547 15.1797C15.6836 15.1797 14.9153 14.7431 14.4485 14.0799C13.8575 14.7488 13.0035 15.1797 12.043 15.1797C10.2661 15.1797 8.82031 13.7339 8.82031 11.957C8.82031 10.1801 10.2661 8.73438 12.043 8.73438C12.7712 8.73438 13.4363 8.98639 13.9766 9.39536V9.37891C13.9766 9.02265 14.2648 8.73438 14.6211 8.73438C14.9773 8.73438 15.2656 9.02265 15.2656 9.37891C15.2656 10.8123 15.2656 11.1675 15.2656 12.6016C15.2656 13.3122 15.8441 13.8906 16.5547 13.8906C17.2653 13.8906 17.8438 13.3122 17.8438 12.6016C17.8438 8.28789 14.9893 6.15625 12.043 6.15625C8.84425 6.15625 6.24219 8.75831 6.24219 11.957C6.24219 15.1558 8.84425 17.7578 12.043 17.7578C13.332 17.7578 14.5512 17.3449 15.569 16.5632C16.2489 16.0442 17.0274 17.0687 16.3545 17.5853C15.1089 18.5414 13.6184 19.0469 12.043 19.0469C8.13363 19.0469 4.95312 15.8664 4.95312 11.957C4.95312 8.04769 8.13363 4.86719 12.043 4.86719C15.6049 4.86719 19.1328 7.49408 19.1328 12.6016C19.1328 14.0234 17.9766 15.1797 16.5547 15.1797Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-items">
+              <div class="footer__top-item footer__top-item--menu">
+                <h3 class="footer__menu-title footer__title">Меню</h3>
+                <ul class="footer__menu-list">
+                  <li class="footer__menu-item">
+                    <a href="./about.html" class="footer__menu-link">О нас</a>
+                  </li>
+                  <li class="footer__menu-item">
+                    <a href="./product.html" class="footer__menu-link"
+                      >Продукция</a
+                    >
+                  </li>
+                  <li class="footer__menu-item">
+                    <a href="./faq.html" class="footer__menu-link">FAQs</a>
+                  </li>
+                  <li class="footer__menu-item">
+                    <a href="./contact.html" class="footer__menu-link"
+                      >Контакты</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__top-item footer__top-item--contact">
+                <h3 class="footer__contact-title footer__title">Контакт</h3>
+                <ul class="footer__contact-list">
+                  <li class="footer__contact-item">
+                    <div href="#!" class="footer__contact-link">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.5562 14.5477L15.1007 15.0272C15.1007 15.0272 14.0181 16.167 11.0631 13.0559C8.10812 9.94484 9.1907 8.80507 9.1907 8.80507L9.47752 8.50311C10.1841 7.75924 10.2507 6.56497 9.63424 5.6931L8.37326 3.90961C7.61028 2.8305 6.13596 2.68795 5.26145 3.60864L3.69185 5.26114C3.25823 5.71766 2.96765 6.30945 3.00289 6.96594C3.09304 8.64546 3.81071 12.259 7.81536 16.4752C12.0621 20.9462 16.0468 21.1239 17.6763 20.9631C18.1917 20.9122 18.6399 20.6343 19.0011 20.254L20.4217 18.7584C21.3806 17.7489 21.1102 16.0182 19.8833 15.312L17.9728 14.2123C17.1672 13.7486 16.1858 13.8848 15.5562 14.5477Z"
+                          fill="#EA9901"
+                        />
+                        <path
+                          d="M13.2595 1.87983C13.3257 1.47094 13.7122 1.19357 14.1211 1.25976C14.1464 1.26461 14.2279 1.27983 14.2705 1.28933C14.3559 1.30834 14.4749 1.33759 14.6233 1.38082C14.9201 1.46726 15.3347 1.60967 15.8323 1.8378C16.8286 2.29456 18.1544 3.09356 19.5302 4.46936C20.906 5.84516 21.705 7.17097 22.1617 8.16725C22.3899 8.66487 22.5323 9.07947 22.6187 9.37625C22.6619 9.52466 22.6912 9.64369 22.7102 9.72901C22.7197 9.77168 22.7267 9.80594 22.7315 9.83125L22.7373 9.86245C22.8034 10.2713 22.5286 10.6739 22.1197 10.7401C21.712 10.8061 21.3279 10.53 21.2601 10.1231C21.258 10.1121 21.2522 10.0828 21.2461 10.0551C21.2337 9.9997 21.2124 9.91188 21.1786 9.79572C21.1109 9.56339 20.9934 9.21806 20.7982 8.79238C20.4084 7.94207 19.7074 6.76789 18.4695 5.53002C17.2317 4.29216 16.0575 3.59117 15.2072 3.20134C14.7815 3.00618 14.4362 2.88865 14.2038 2.82097C14.0877 2.78714 13.9417 2.75363 13.8863 2.7413C13.4793 2.67347 13.1935 2.28755 13.2595 1.87983Z"
+                          fill="#EA9901"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M13.4857 5.3293C13.5995 4.93102 14.0146 4.7004 14.4129 4.81419L14.2069 5.53534C14.4129 4.81419 14.4129 4.81419 14.4129 4.81419L14.4144 4.81461L14.4159 4.81505L14.4192 4.81602L14.427 4.81834L14.4468 4.8245C14.4618 4.82932 14.4807 4.8356 14.5031 4.84357C14.548 4.85951 14.6074 4.88217 14.6802 4.91337C14.8259 4.97581 15.0249 5.07223 15.2695 5.21694C15.7589 5.50662 16.4271 5.9878 17.2121 6.77277C17.9971 7.55775 18.4782 8.22593 18.7679 8.7154C18.9126 8.95991 19.009 9.15897 19.0715 9.30466C19.1027 9.37746 19.1254 9.43682 19.1413 9.48173C19.1493 9.50418 19.1555 9.52301 19.1604 9.53809L19.1665 9.55788L19.1688 9.56563L19.1698 9.56896L19.1702 9.5705C19.1702 9.5705 19.1707 9.57194 18.4495 9.77798L19.1707 9.57194C19.2845 9.97021 19.0538 10.3853 18.6556 10.4991C18.2607 10.6119 17.8492 10.3862 17.7313 9.99413L17.7276 9.98335C17.7223 9.96832 17.7113 9.93874 17.6928 9.89554C17.6558 9.8092 17.5887 9.66797 17.4771 9.47938C17.2541 9.10264 16.8514 8.53339 16.1514 7.83343C15.4515 7.13348 14.8822 6.73078 14.5055 6.50781C14.3169 6.39619 14.1757 6.32909 14.0893 6.29209C14.0461 6.27358 14.0165 6.26254 14.0015 6.25721L13.9907 6.25352C13.5987 6.13564 13.3729 5.72419 13.4857 5.3293Z"
+                          fill="#EA9901"
+                        />
+                      </svg>
+                      <a
+                        href="tel:+998711234567"
+                        class="footer__contact-link-phone"
+                        >+998 71 123 45 67</a
+                      >
+                    </div>
+                  </li>
+                  <li class="footer__contact-item">
+                    <div href="#!" class="footer__contact-link">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M3.17157 5.17157C2 6.34315 2 8.22876 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20H14C17.7712 20 19.6569 20 20.8284 18.8284C22 17.6569 22 15.7712 22 12C22 8.22876 22 6.34315 20.8284 5.17157C19.6569 4 17.7712 4 14 4H10C6.22876 4 4.34315 4 3.17157 5.17157ZM18.5762 7.51986C18.8413 7.83807 18.7983 8.31099 18.4801 8.57617L16.2837 10.4066C15.3973 11.1452 14.6789 11.7439 14.0448 12.1517C13.3843 12.5765 12.7411 12.8449 12 12.8449C11.2589 12.8449 10.6157 12.5765 9.95518 12.1517C9.32112 11.7439 8.60271 11.1452 7.71636 10.4066L5.51986 8.57617C5.20165 8.31099 5.15866 7.83807 5.42383 7.51986C5.68901 7.20165 6.16193 7.15866 6.48014 7.42383L8.63903 9.22291C9.57199 10.0004 10.2197 10.5384 10.7666 10.8901C11.2959 11.2306 11.6549 11.3449 12 11.3449C12.3451 11.3449 12.7041 11.2306 13.2334 10.8901C13.7803 10.5384 14.428 10.0004 15.361 9.22291L17.5199 7.42383C17.8381 7.15866 18.311 7.20165 18.5762 7.51986Z"
+                          fill="#EA9901"
+                        />
+                      </svg>
+                      <a
+                        href="mailto:info@sultanseeds.uz"
+                        class="footer__contact-link-email"
+                        >info@sultanseeds.uz</a
+                      >
+                    </div>
+                  </li>
+                  <li class="footer__contact-item">
+                    <div href="#!" class="footer__contact-link">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 2C7.58172 2 4 6.00258 4 10.5C4 14.9622 6.55332 19.8124 10.5371 21.6744C11.4657 22.1085 12.5343 22.1085 13.4629 21.6744C17.4467 19.8124 20 14.9622 20 10.5C20 6.00258 16.4183 2 12 2ZM12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z"
+                          fill="#EA9901"
+                        />
+                      </svg>
+                      <a href="#" class="footer__contact-link-loaction"
+                        >Ташкент, ул. Амира Темура 14</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p>Авторские права © 2024 Sultanseeds. Все права защищены.</p>
+            <p>Разработано <a href="#!">TheDevs.uz</a></p>
+          </div>
+        </div>
+      </footer>
+
+      <div class="status-liner"></div>
+
+      <!-- swiper js  -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+        defer
+      ></script>
+      <script src="../js/swiper.js" defer></script>
+      <!-- main.js file -->
+      <!-- <script type="module" src="./js/main.js" defer></script> -->
+      <script type="module" src="../js/main.min.js" defer></script>
+
+    </div>
+  </body>
+</html>

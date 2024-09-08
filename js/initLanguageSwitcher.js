@@ -21,7 +21,24 @@ export function initLanguageSwitcher({
     selectedLangFlag = document.querySelector(flagSelector),
     selectedLangText = document.querySelector(textSelector);
 
-  let selectedLang = "en";
+  // Hozirgi URL'ning yo'l qismiga kirish
+  const path = window.location.pathname; // "/ru/index.html"
+
+  // Yo'lni '/' bo'yicha ajratamiz
+  const segments = path.split("/"); // ["", "ru", "index.html"]
+
+  // Ikkinchi segmentni olish
+  const language = segments[1]; // "ru"
+
+  let selectedLang = language;
+
+  if (language === "ru") {
+    texts.ru = "Русский";
+    texts.en = "Английский";
+    selectedLang = "ru";
+  } else {
+    selectedLang = "en";
+  }
 
   langButton.addEventListener("click", () => {
     langSwitcher.classList.toggle("active");
