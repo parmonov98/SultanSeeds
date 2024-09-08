@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // LocalStorage`da yangi tilni saqlash
     localStorage.setItem("language", newLanguage);
 
-    // URL parametrlarini yangilash
+  // URL parametrlarini yangilash
     params.set("lang", newLanguage);
     window.history.replaceState(
       {},

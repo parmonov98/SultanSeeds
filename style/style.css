@@ -1619,10 +1619,10 @@ body.no-scroll {
     z-index: 1;
   }
 
-  .nav-language-switcher.en a:last-child {
+  .nav-language-switcher.en a[data-lang="en"] {
     color: #ff5733;
   }
-  .nav-language-switcher.ru a:first-child {
+  .nav-language-switcher.ru a[data-lang="ru"] {
     color: #ff5733;
   }
 
