@@ -1,8 +1,0 @@
-[build]
-  publish = "sultanseeds"  # Bu sizning build papkangiz; build jarayonida yaratilgan fayllar joylashgan papka
-  command = ""  # Sizning build buyrug‘ingiz
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Encoding = "gzip"
