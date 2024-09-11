@@ -1,0 +1,8 @@
+[build]
+  publish = "public"  # Bu sizning build papkangiz; build jarayonida yaratilgan fayllar joylashgan papka
+  command = "npm run build"  # Sizning build buyrug‘ingiz
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Encoding = "gzip"
