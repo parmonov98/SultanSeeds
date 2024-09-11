@@ -1,13 +1,1 @@
-export function setupHamburgerMenu(menuSelector, headerSelector, hamburgerSelector, noScrollClass) {
-    const menuIcon = document.querySelector(menuSelector);
-
-    if (menuIcon) {
-        menuIcon.addEventListener("click", () => {
-            document.querySelector(headerSelector).classList.toggle("active");
-            document.querySelector(hamburgerSelector).classList.toggle("active");
-            document.body.classList.toggle(noScrollClass);
-        });
-    } else {
-        console.error(`Element "${menuSelector}" topilmadi.`);
-    }
-}
+export function setupHamburgerMenu(e,t,l,r){let c=document.querySelector(e);c?c.addEventListener("click",()=>{document.querySelector(t).classList.toggle("active"),document.querySelector(l).classList.toggle("active"),document.body.classList.toggle(r)}):console.error(`Element "${e}" topilmadi.`)}
