@@ -54,7 +54,7 @@ body.no-scroll {
   display: none;
 }
 
-.main-page-loader svg {
+.main-page-loader picture img {
   width: 128px;
   height: 128px;
   animation: loader 3s ease infinite;
