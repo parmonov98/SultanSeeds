@@ -510,7 +510,7 @@ body.no-scroll {
 
 /* about */
 .about {
-  background: url(../photo/sunflower\ texture.png);
+  background: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower%20texture.webp?updatedAt=1726073443742");
   position: relative;
 }
 .about__container {
@@ -1177,7 +1177,7 @@ body.no-scroll {
 .footer {
   min-height: 30.9375rem;
   background: #272a2f;
-  background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower%20texture.webp?updatedAt=1726073443742");
+  background-image: url(../photo/texture.png);
   padding-top: 5rem;
 }
 
