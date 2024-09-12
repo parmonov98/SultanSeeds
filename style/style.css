@@ -1,4 +1,521 @@
+.header__language-box a {
+  display: flex;
+  align-items: center;
+  gap: 0.31rem;
+  cursor: pointer;
+}
 
+/* custom style */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+.status-liner {
+  background: var(--Dark-Green, #2f4135);
+  position: fixed;
+  width: 100%;
+  height: 0.5rem;
+  top: 0; /* Yuqoridan masofa */
+  left: 0; /* Chapdan masofa */
+  z-index: 1000; /* Boshqa elementlardan yuqorida bo'lishi uchun */
+  scale: 0 1;
+  display: none;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+
+/* loader */
+
+.main-page-loader {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  display: none;
+}
+
+.main-page-loader picture img {
+  width: 128px;
+  height: 128px;
+  animation: loader 3s ease infinite;
+}
+
+.main-page-loader.show {
+  display: flex;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* loader */
+
+.wrapper {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 80.625rem;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  background: #9a430e;
+  /* text */
+  color: #fff;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #bd5c21;
+}
+
+/* root */
+:root {
+  --Dark-Green: #2f4135;
+  --Light-Green: #4caf50;
+  --Light-Grey: #f2f2f2;
+  --Dark-Grey: #333333;
+  --black-white: #fff;
+  --Black: #272a2f;
+  --gray: #e0e3e6;
+  --gray-2: #1c232c;
+}
+/* root */
+
+/* header */
+
+/* header__contact-info */
+
+.header__contact-info {
+  height: 3.75rem;
+  background: var(--Dark-Green, #2f4135);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__contact-info .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__contact-social,
+.header__contact-details,
+.header__contact-social ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.header__phone,
+.header__email,
+.header__contact-social p {
+  color: var(--black-white, #fff);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.header__separator {
+  width: 3.5625rem;
+  height: 0.125rem;
+  background: var(--black-white, #fff);
+}
+
+.header__email a,
+.header__phone a {
+  color: var(--black-white, #fff);
+  font-weight: 600;
+}
+/* header__contact-info */
+
+/* header__bottom */
+
+.header__bottom .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.header__bottom.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #ffffffcf;
+  z-index: 100;
+  backdrop-filter: blur(1rem);
+}
+
+.header__nav .header__nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header__nav-link {
+  color: var(--Black, #272a2f);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.header__nav-link:hover {
+  color: #9a430e;
+}
+
+/* language switcher nav*/
+.nav-language-switcher {
+  display: none;
+}
+
+/* language switcher */
+.header__language-switcher {
+  border-radius: 3.125rem;
+  border: 1px solid #e0e3e6;
+  background: var(--black-whit, #fff);
+  display: flex;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6875rem;
+  cursor: pointer;
+  position: relative;
+  width: 8.5rem;
+}
+
+.header__language-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--gray-2 #1c232c);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header__language-box {
+  display: flex;
+  align-items: center;
+  gap: 0.31rem;
+  cursor: pointer;
+}
+
+.header__language-box a {
+  color: #1c232c;
+}
+
+.header__language-flag {
+  margin-right: 0.2rem;
+}
+
+.header__language-options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 15px);
+  border-radius: 3.125rem;
+  border: 1px solid #e0e3e6;
+  background: var(--black-whit, #fff);
+  padding: 0.5rem 1rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.header__language-option::after {
+  position: absolute;
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--black-whit, #fff);
+  border-top: 1px solid #e0e3e6;
+  border-left: 1px solid #e0e3e6;
+  top: -0.15rem;
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+}
+
+.header__language-option {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: var(--gray-2 #1c232c);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header__language-switcher.active .header__arrow-icon {
+  transform: rotate(180deg);
+}
+
+.header__arrow-icon {
+  width: 1rem;
+  height: auto;
+  margin-left: 0.5rem;
+}
+
+.header__language-switcher.active .header__language-options {
+  display: block;
+}
+
+.header__language-option.selected {
+  background-color: #f0f0f0;
+}
+
+/* header menu icon */
+.header__mobile-icon {
+  display: none;
+}
+
+/* intro section */
+.intro {
+  width: 100%;
+  height: 52.1875rem;
+  background: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/Video%20header.webp?updatedAt=1725041170148");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top bottom center;
+  padding: 10rem 0;
+}
+/* swiper intro */
+
+.swiper-container {
+  padding-bottom: 30px;
+  box-sizing: content-box;
+  width: 100%;
+  max-width: 80rem;
+  height: 28.8rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper {
+  height: 22rem;
+}
+
+.swiper-fraction {
+  color: white;
+  position: absolute;
+  left: 0.62rem;
+  bottom: 4.5rem;
+  z-index: 10;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 7rem;
+  height: 28.8rem;
+}
+
+.swiper-pagination {
+  position: absolute;
+  top: 6.5rem !important;
+  left: 0.4rem !important;
+  transform: translateX(-50%);
+  gap: 0.75rem;
+  padding: 0.62rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 1;
+  transition: background-color 0.3s, width 0.3s, height 0.3s, border 0.3s;
+}
+
+.swiper-pagination-bullet {
+  margin-top: 1.56rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s, width 0.3s, height 0.3s, border 0.3s;
+  position: relative;
+}
+
+.swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  border: 1px solid #fff;
+}
+
+.swiper-fraction {
+  height: 11.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.swiper-fraction .current,
+.swiper-fraction .total {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 25px;
+}
+
+/* Scrollbar Container */
+.swiper-timer {
+  position: absolute;
+  background-color: Gray;
+  border-radius: 10px;
+  height: 2px;
+  width: 0.125rem !important;
+  height: 7.78rem !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-progress-bar {
+  position: absolute;
+  width: 100%;
+  display: block;
+  z-index: 1;
+  height: 2px;
+  width: 7.78rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.swiper-progress-bar .slide_progress-bar {
+  position: absolute;
+  height: 2px;
+  background: gray;
+  width: auto;
+  clear: both;
+  opacity: 0;
+  left: 0;
+  right: 0;
+}
+
+.swiper-progress-bar .slide_progress-bar:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ea9901;
+  height: 100%;
+  width: 0;
+  content: "";
+  transition: 0.1s width linear;
+}
+
+.swiper-progress-bar.active .slide_progress-bar {
+  opacity: 1;
+}
+
+.swiper-progress-bar.animate .slide_progress-bar:after {
+  transition: width linear;
+  transition-delay: unset;
+  width: 100%;
+  transition-duration: 5s;
+}
+
+/* swiper timer */
+
+.swiper-title {
+  width: 100%;
+  max-width: 50rem;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.swiper-description {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2.1875rem; /* 175% */
+}
+
+.swiper-button {
+  display: flex;
+  min-width: 8.75rem;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+  background: #9a430e;
+  /* text */
+  color: #fff;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.swiper-button:hover {
+  background-color: #bd5c21;
+}
+/* swiper */
 /* about */
 .about {
   background: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower%20texture.webp?updatedAt=1726073443742");
