@@ -356,7 +356,7 @@ body.no-scroll {
   align-items: start;
   flex-direction: column;
   gap: 2rem;
-  padding-left: 7rem;
+  padding-left: 0;
   height: 28.8rem;
 }
 
@@ -1349,7 +1349,7 @@ body.no-scroll {
   }
 
   .swiper-slide {
-    padding: 2.69rem 0 2.69rem 7rem;
+    padding: 2.69rem 0 2.69rem 0;
   }
   .swiper-title {
     font-size: 3rem;
