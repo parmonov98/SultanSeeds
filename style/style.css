@@ -147,7 +147,7 @@ body.no-scroll {
 .header__email,
 .header__contact-social p {
   color: var(--black-white, #fff);
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
@@ -240,6 +240,10 @@ body.no-scroll {
   align-items: center;
   gap: 0.31rem;
   cursor: pointer;
+}
+
+.header__language-box a {
+  color: #1c232c;
 }
 
 .header__language-flag {
