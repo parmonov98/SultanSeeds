@@ -10,6 +10,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+    <link rel="stylesheet" href="./style/style.css" />
     <style>
       .header__language-box a {
         display: flex;
@@ -884,19 +885,5 @@
     <!-- main.js file -->
     <!-- <script type="module" src="./js/main.js" defer></script> -->
     <script type="module" src="./js/main.min.js" defer></script>
-
-    <script>
-      function loadCSS(href) {
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = href;
-        document.head.appendChild(link);
-      }
-
-      // CSS faylini asinkron tarzda yuklash
-      window.addEventListener("load", function () {
-        loadCSS("./style/style.css");
-      });
-    </script>
   </body>
 </html>
