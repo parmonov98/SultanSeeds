@@ -11,12 +11,13 @@
     />
     <!-- Style -->
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
-    <link
-      rel="stylesheet"
+    <!-- <link
+      rel="preload"
       href="./style/style.css"
-      media="print"
-      onload="this.media='all'"
-    />
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    /> -->
+    <!-- <noscript><link rel="stylesheet" href="styles.css" /></noscript> -->
 
     <style>
       .header__language-box a {
@@ -892,5 +893,19 @@
     <!-- main.js file -->
     <!-- <script type="module" src="./js/main.js" defer></script> -->
     <script type="module" src="./js/main.min.js" defer></script>
+
+    <script>
+      function loadCSS(href) {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
+      }
+
+      // CSS faylini asinkron tarzda yuklash
+      window.addEventListener("load", function () {
+        loadCSS("./style/style.css");
+      });
+    </script>
   </body>
 </html>
