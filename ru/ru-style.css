@@ -2,12 +2,16 @@
   min-height: 16.7rem;
 }
 
+.header__language-switcher {
+  width: unset;
+}
+
 .features__sub-photo-leaf {
   top: -2rem;
 }
 
 .header__language-options {
-  width: unset;
+  width: unset !important;
 }
 
 .header__language-box a {

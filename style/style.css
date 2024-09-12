@@ -4,7 +4,9 @@
   gap: 0.31rem;
   cursor: pointer;
 }
-
+.header__language-options {
+  width: unset !important;
+}
 /* custom style */
 * {
   box-sizing: border-box;

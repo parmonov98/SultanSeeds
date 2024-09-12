@@ -1,3 +1,7 @@
+.header__language-switcher {
+  width: unset;
+}
+
 .faq-accordion__title,
 .faq-intro__title,
 .faq__title {
