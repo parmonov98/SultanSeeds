@@ -772,52 +772,69 @@ button {
   margin-bottom: 5rem;
 }
 
-.order__form-element {
-  width: 100%;
-  max-width: 55rem;
-  margin: 0 auto;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2.2rem;
-}
-
-.order__form-control {
+.order-form {
   width: 100%;
 }
 
-.order__input,
-.order__label,
-.order__select {
+.order .form-control:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.order .form-control input,
+.order-form textarea {
   width: 100%;
-}
-
-.order__label {
-  color: #272a2f;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.order__button {
-  padding: 1rem 1.5rem;
-}
-
-.order__input,
-.order__select-display,
-.order__select {
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #f1f2f4;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-bottom: 1px solid #e0e3e6;
   background: #fff;
   outline: none;
-  /* text */
-  color: #6b7278;
+}
+
+.order-form textarea {
+  max-height: 8.4rem;
+  resize: none;
+}
+
+.order-form input,
+.order-form textarea,
+.order-form textarea::placeholder,
+.order-form input::placeholder {
+  color: #99a0a8;
   font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.5rem;
+}
+
+.terms-checkbox .checkbox-control {
+  display: inline-flex;
+  align-items: start;
+  justify-content: start;
+  gap: 0.5rem;
+}
+
+.terms-checkbox .checkbox-control:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.terms-checkbox input {
+  width: unset !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+}
+
+.form-actions button {
+  border-radius: 0.75rem;
+  background: #9a430e;
+  padding: 1rem 1.5rem;
+  /* text */
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  min-width: 8.75rem;
 }
 
 /* Basic styling for the form */
@@ -830,14 +847,14 @@ button {
   display: flex;
   height: 55px;
   background: #fff;
-  padding: 20px;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-bottom: 1px solid #e0e3e6;
   font-size: 18px;
   font-weight: 400;
-  border-radius: 8px;
   align-items: center;
   cursor: pointer;
   justify-content: space-between;
-  border: 1px solid #f1f2f4;
   color: #6b7278;
   font-size: 1rem;
   font-weight: 400;
@@ -859,7 +876,6 @@ button {
   max-height: 295px;
   padding: 10px;
   margin-top: 10px;
-  border-radius: 8px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   animation-name: fadeInDown;
@@ -875,9 +891,9 @@ button {
   height: 55px;
   cursor: pointer;
   padding: 0 16px;
-  border-radius: 8px;
   align-items: center;
   background: #fff;
+  border-bottom: 1px solid #e0e3e6;
 }
 
 .select-menu__option:hover {
