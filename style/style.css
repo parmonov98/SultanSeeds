@@ -38,20 +38,157 @@ body.no-scroll {
 
 /* loader */
 
-.main-page-loader {
+.page-loader {
+  position: fixed;
   width: 100%;
   height: 100vh;
-  position: absolute;
-  left: 0;
   top: 0;
-  background-color: #fff;
+  left: 0;
+  background-color: #2f4135;
+  z-index: 101;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  flex-direction: column;
+  animation: hide 1s linear;
+  animation-delay: 5s;
+}
+
+.page-loader.hide {
   display: none;
 }
 
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  overflow: hidden;
+  width: 71rem;
+  position: relative;
+  height: 20px;
+}
+
+.loader-content div {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  position: absolute;
+}
+
+.loader-text1 {
+  left: 0;
+  opacity: 0;
+  animation: textLeft 2s ease-in-out forwards;
+  animation-delay: 0;
+}
+
+.loader-text2 {
+  top: -4rem;
+  opacity: 0;
+  animation: textTop 2s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.loader-text3 {
+  /* right: 0; */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: textRight 3s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+@keyframes textLeft {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes textTop {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes textRight {
+  0% {
+    opacity: 0;
+    transform: translateX(
+      100%
+    ); /* Matnni ekranning o'ng tomoniga olib chiqamiz */
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%); /* Matnni markazga joylashtiramiz */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+.page-loader picture {
+  margin-bottom: 1.5rem;
+}
+
+.loader-bar {
+  width: 100%;
+  max-width: 11.625rem;
+  height: 0.375rem;
+  border-radius: 1.4375rem;
+  background: rgba(255, 255, 255, 0.15);
+  margin-top: 1.5rem;
+}
+
+.loader-progress {
+  width: 0%;
+  height: 100%;
+  border-radius: 1.4375rem;
+  background-color: #ea9901;
+  animation: widthIncrease 5s linear forwards;
+}
+
+@keyframes widthIncrease {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* loader */
 .header__language-box a {
   display: flex;
   align-items: center;
@@ -60,25 +197,6 @@ body.no-scroll {
 }
 .header__language-options {
   width: unset !important;
-}
-
-.main-page-loader picture img {
-  width: 128px;
-  height: 128px;
-  animation: loader 3s ease infinite;
-}
-
-.main-page-loader.show {
-  display: flex;
-}
-
-@keyframes loader {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* loader */
