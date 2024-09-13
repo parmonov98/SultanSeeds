@@ -1,6 +1,6 @@
 import { initLanguageSwitcher as e } from "./initLanguageSwitcher.js";
 import { setupHamburgerMenu as t } from "./hamburgerMenuToggle.js";
-import { initializeSelectMenu as l } from "./selectMenu.js";
+import { initializeSelectMenus as l } from "./selectMenu.js";
 document.addEventListener("DOMContentLoaded", () => {
   let a = document.querySelector(".faq__button");
   a
@@ -68,6 +68,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // modal
+  const modal = document.querySelector(".modal-wrapper");
+  if (modal) {
+    const openModal = document.querySelector(".intro-content__button"),
+      openModal2 = document.querySelector(".features__item-link"),
+      closeModal = document.querySelector(".modal-wrapper button");
+
+    const setClass = (clickableItem, classToAdd) => {
+      clickableItem.addEventListener("click", () => {
+        modal.classList.add(classToAdd);
+        document.body.classList.add("no-scroll");
+      });
+    };
+
+    const closeModalFunc = (clickableItem, classToRemove) => {
+      clickableItem.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.classList.remove(classToRemove);
+        document.body.classList.remove("no-scroll");
+      });
+    };
+
+    setClass(openModal, "show");
+    setClass(openModal2, "show");
+
+    closeModalFunc(closeModal, "show");
+  }
+
   e({
     switcherSelector: ".header__language-switcher",
     buttonSelector: ".header__language-button",
@@ -84,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener("scroll", d),
     d(),
-    l(),
+    l(".select-menu"),
     t(".hamburger", "header", "#hamburger", "no-scroll");
   let u = document.querySelectorAll(".facts__country-list li"),
     g = document.getElementById("country-map");

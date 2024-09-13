@@ -189,6 +189,42 @@ body.no-scroll {
 }
 
 /* loader */
+
+/* modal */
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(40, 92, 7, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 110;
+  display: none;
+}
+
+.modal-wrapper.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 79.8125rem;
+  padding: 2rem 3.75rem;
+  border-radius: 1.25rem;
+  background: #fafafc;
+}
+
+.modal-title {
+  font-size: 2.25rem !important;
+}
+
+.modal-description {
+  margin-bottom: 2rem !important;
+}
+/* modal */
 .header__language-box a {
   display: flex;
   align-items: center;
@@ -873,7 +909,8 @@ button {
   display: none;
 }
 
-.order__title {
+.order__title,
+.modal-title {
   color: #272a2f;
   text-align: center;
   font-size: 3rem;
@@ -881,7 +918,8 @@ button {
   margin-bottom: 1.25rem;
 }
 
-.order__description {
+.order__description,
+.modal-description {
   color: #2f3641;
   text-align: center;
   font-size: 1.25rem;
@@ -894,11 +932,13 @@ button {
   width: 100%;
 }
 
-.order .form-control:not(:last-child) {
+.order .form-control:not(:last-child),
+.modal-content .form-control:not(:last-child) {
   margin-bottom: 2rem;
 }
 
 .order .form-control input,
+.modal-content .form-control input,
 .order-form textarea {
   width: 100%;
   padding: 1rem 1.25rem;
@@ -1317,6 +1357,16 @@ button {
 
   .about__export-info-item:not(:last-child) {
     margin-bottom: 1rem;
+  }
+
+  /* modal */
+  .modal-wrapper {
+    overflow: scroll;
+  }
+  .modal-content {
+    max-width: 90%;
+    height: 90%;
+    overflow: scroll;
   }
 }
 /* 1200 */
@@ -1864,6 +1914,15 @@ button {
   .order__sub-photo-leaf-1144 {
     display: none;
   }
+
+  /* footer */
+  .footer__top-items {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    padding: 1rem 1.25rem;
+  }
 }
 
 /* 540 */
@@ -1952,6 +2011,14 @@ button {
 
   .footer__title {
     margin-bottom: 1.5rem;
+  }
+  /* modal */
+  .modal-title {
+    font-size: 1.5rem !important;
+  }
+
+  .modal-description {
+    font-size: 1rem;
   }
 }
 
