@@ -114,6 +114,7 @@ body.no-scroll {
 button {
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 /* header */
@@ -1682,7 +1683,6 @@ button {
 
   .intro-content__description {
     font-size: 0.87rem;
-    
   }
   /* features */
   .features__sub-photo-1144-leaf {
