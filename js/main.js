@@ -51,19 +51,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // loader
   const loader = document.querySelector(".page-loader");
   const loaderStatus = localStorage.getItem("hide");
-  document.body.classList.add("no-scroll");
+  if (loader) {
+    document.body.classList.add("no-scroll");
 
-  if (loaderStatus === "hide") {
-    loader.classList.add("hide");
-    document.body.classList.remove("no-scroll");
-  } else {
-    setTimeout(() => {
+    if (loaderStatus === "hide") {
       loader.classList.add("hide");
-      localStorage.setItem("hide", "hide");
-      if (!loaderStatus) {
-        document.body.classList.remove("no-scroll");
-      }
-    }, 5500);
+      document.body.classList.remove("no-scroll");
+    } else {
+      setTimeout(() => {
+        loader.classList.add("hide");
+        localStorage.setItem("hide", "hide");
+        if (!loaderStatus) {
+          document.body.classList.remove("no-scroll");
+        }
+      }, 5500);
+    }
   }
 
   e({
