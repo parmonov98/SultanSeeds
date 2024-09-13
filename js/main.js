@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loader) {
     document.body.classList.add("no-scroll");
 
-    if (loaderStatus === "hide") {
+    if (!loaderStatus === "hide") {
       loader.classList.add("hide");
       document.body.classList.remove("no-scroll");
     } else {
