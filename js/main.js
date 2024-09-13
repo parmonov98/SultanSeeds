@@ -90,11 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("no-scroll");
+      }
+    });
+
     setClass(openModal, "show");
     setClass(openModal2, "show");
 
     closeModalFunc(closeModal, "show");
-    closeModalFunc(modal, "show");
   }
 
   e({
