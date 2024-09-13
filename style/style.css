@@ -72,89 +72,24 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  overflow: hidden;
   width: 71rem;
-  position: relative;
-  height: 20px;
 }
 
-.loader-content div {
+.loader-text {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
-  white-space: nowrap;
-  position: absolute;
+  animation: slideText 1.5s ease-in-out forwards;
 }
 
-.loader-text1 {
-  left: 0;
-  opacity: 0;
-  animation: textLeft 2s ease-in-out forwards;
-  animation-delay: 0;
-}
-
-.loader-text2 {
-  top: -4rem;
-  opacity: 0;
-  animation: textTop 2s ease-in-out forwards;
-  animation-delay: 1s;
-}
-
-.loader-text3 {
-  /* right: 0; */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  animation: textRight 3s ease-in-out forwards;
-  animation-delay: 3s;
-}
-
-@keyframes textLeft {
+@keyframes slideText {
   0% {
+    transform: translateY(-50px);
     opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    left: 50%;
-    transform: translateX(-50%);
   }
   100% {
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-  }
-}
-
-@keyframes textTop {
-  0% {
-    opacity: 0;
-  }
-  50% {
+    transform: translateY(0);
     opacity: 1;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  100% {
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 1;
-  }
-}
-
-@keyframes textRight {
-  0% {
-    opacity: 0;
-    transform: translateX(
-      100%
-    ); /* Matnni ekranning o'ng tomoniga olib chiqamiz */
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(-50%); /* Matnni markazga joylashtiramiz */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-50%);
   }
 }
 
@@ -1366,7 +1301,7 @@ button {
   .modal-content {
     max-width: 90%;
     height: 90vh;
-    
+
     overflow: scroll;
     margin-bottom: 20px;
   }
@@ -1607,6 +1542,11 @@ button {
   /* status liner */
   .status-liner {
     display: inline-block;
+  }
+  /* loader */
+  .loader-text {
+    font-size: 1rem;
+    text-align: center;
   }
   /* header */
   .header__contact-info {
@@ -1934,6 +1874,10 @@ button {
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   }
 
+  /* loader */
+  .loader-text {
+    width: 20rem;
+  }
   /* order */
   .order {
     padding-top: 3.75rem;
