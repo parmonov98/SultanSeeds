@@ -1,23 +1,3 @@
-// export function initializeSelectMenu() {
-//   let e = document.querySelector(".select-menu");
-//   if (!e) return;
-//   let t = e.querySelector(".select-menu__button"),
-//     n = e.querySelectorAll(".select-menu__option"),
-//     c = e.querySelector(".select-menu__button-text");
-//   t &&
-//     c &&
-//     (t.addEventListener("click", () => {
-//       e.classList.toggle("select-menu--active");
-//     }),
-//     n.forEach((t) => {
-//       t.addEventListener("click", () => {
-//         (c.innerText = t.querySelector(".select-menu__option-text").innerText),
-//           e.classList.remove("select-menu--active");
-//       });
-//     }));
-// }
-
-
 export function initializeSelectMenus(selectMenuSelector) {
     // Sahifadagi barcha select menu elementlarini olish
     const menuElements = document.querySelectorAll(selectMenuSelector);
