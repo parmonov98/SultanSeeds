@@ -1,12 +1,3 @@
-.header__language-box a {
-  display: flex;
-  align-items: center;
-  gap: 0.31rem;
-  cursor: pointer;
-}
-.header__language-options {
-  width: unset !important;
-}
 /* custom style */
 * {
   box-sizing: border-box;
@@ -61,6 +52,16 @@ body.no-scroll {
   display: none;
 }
 
+.header__language-box a {
+  display: flex;
+  align-items: center;
+  gap: 0.31rem;
+  cursor: pointer;
+}
+.header__language-options {
+  width: unset !important;
+}
+
 .main-page-loader picture img {
   width: 128px;
   height: 128px;
@@ -110,18 +111,10 @@ body.no-scroll {
   background-color: #bd5c21;
 }
 
-/* root */
-:root {
-  --Dark-Green: #2f4135;
-  --Light-Green: #4caf50;
-  --Light-Grey: #f2f2f2;
-  --Dark-Grey: #333333;
-  --black-white: #fff;
-  --Black: #272a2f;
-  --gray: #e0e3e6;
-  --gray-2: #1c232c;
+button {
+  border: none;
+  outline: none;
 }
-/* root */
 
 /* header */
 
@@ -317,207 +310,61 @@ body.no-scroll {
 
 /* intro section */
 .intro {
-  width: 100%;
-  height: 52.1875rem;
-  background: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/Video%20header.webp?updatedAt=1725041170148");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top bottom center;
-  padding: 10rem 0;
-}
-/* swiper intro */
-
-.swiper-container {
-  padding-bottom: 30px;
-  box-sizing: content-box;
-  width: 100%;
-  max-width: 80rem;
-  height: 28.8rem;
+  position: relative;
   overflow: hidden;
-  position: relative;
+  height: 48.1875rem;
 }
 
-.swiper {
-  height: 22rem;
-}
-
-.swiper-fraction {
-  color: white;
-  position: absolute;
-  left: 0.62rem;
-  bottom: 4.5rem;
-  z-index: 10;
-  border-radius: 10px;
-  font-size: 0.875rem;
-  font-weight: bold;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  gap: 2rem;
-  padding-left: 0;
-  height: 28.8rem;
-}
-
-.swiper-pagination {
-  position: absolute;
-  top: 6.5rem !important;
-  left: 0.4rem !important;
-  transform: translateX(-50%);
-  gap: 0.75rem;
-  padding: 0.62rem;
-}
-
-.swiper-pagination-bullet {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 1px solid #fff;
-  background-color: transparent;
-  opacity: 1;
-  transition: background-color 0.3s, width 0.3s, height 0.3s, border 0.3s;
-}
-
-.swiper-pagination-bullet {
-  margin-top: 1.56rem !important;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  border-radius: 50%;
-  transition: background-color 0.3s, width 0.3s, height 0.3s, border 0.3s;
-  position: relative;
-}
-
-.swiper-pagination-bullet-active::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: transform 0.3s;
-  border: 1px solid #fff;
-}
-
-.swiper-fraction {
-  height: 11.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.swiper-fraction .current,
-.swiper-fraction .total {
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 500;
-  width: 25px;
-}
-
-/* Scrollbar Container */
-.swiper-timer {
-  position: absolute;
-  background-color: Gray;
-  border-radius: 10px;
-  height: 2px;
-  width: 0.125rem !important;
-  height: 7.78rem !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%);
-}
-
-.swiper-progress-bar {
-  position: absolute;
-  width: 100%;
-  display: block;
-  z-index: 1;
-  height: 2px;
-  width: 7.78rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.swiper-progress-bar .slide_progress-bar {
-  position: absolute;
-  height: 2px;
-  background: gray;
-  width: auto;
-  clear: both;
-  opacity: 0;
-  left: 0;
-  right: 0;
-}
-
-.swiper-progress-bar .slide_progress-bar:after {
+.intro .container {
   position: absolute;
   top: 0;
-  left: 0;
-  background: #ea9901;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
-  width: 0;
-  content: "";
-  transition: 0.1s width linear;
 }
 
-.swiper-progress-bar.active .slide_progress-bar {
-  opacity: 1;
-}
-
-.swiper-progress-bar.animate .slide_progress-bar:after {
-  transition: width linear;
-  transition-delay: unset;
+.intro-content {
   width: 100%;
-  transition-duration: 5s;
+  margin-top: 9.37rem;
 }
 
-/* swiper timer */
-
-.swiper-title {
-  width: 100%;
-  max-width: 50rem;
+.intro-content__title {
   color: #fff;
   font-size: 4rem;
   font-weight: 700;
+  max-width: 51rem;
 }
 
-.swiper-description {
+.intro-content__description {
+  margin: 2rem 0;
   color: #fff;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 2.1875rem; /* 175% */
+  line-height: 2.1875rem;
 }
 
-.swiper-button {
-  display: flex;
-  min-width: 8.75rem;
-  padding: 1rem 1.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  border: none;
-  outline: none;
+.intro-content__button {
   border-radius: 0.75rem;
   background: #9a430e;
-  /* text */
+  padding: 1rem 1.5rem;
   color: #fff;
-  text-align: center;
   font-size: 0.9375rem;
   font-weight: 500;
+  min-width: 8.75rem;
 }
 
-.swiper-button:hover {
-  background-color: #bd5c21;
+.intro-picture {
+  position: absolute;
 }
-/* swiper */
+
+.intro-picture__top {
+  top: 0;
+}
+
+.intro-picture__bottom {
+  bottom: 0;
+}
+
 /* about */
 .about {
   background: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower%20texture.webp?updatedAt=1726073443742");
@@ -1346,8 +1193,18 @@ body.no-scroll {
   }
   /* intro */
   .intro {
-    height: 37.75rem;
-    padding-top: 5.99rem;
+    height: 34.85656rem;
+  }
+
+  .intro .container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .intro-content {
+    margin-top: 0;
   }
 
   .swiper-container {
@@ -1378,10 +1235,6 @@ body.no-scroll {
   }
 
   /* intro */
-
-  .intro {
-    background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/intro-1144.png?updatedAt=1725085293558");
-  }
 
   /* features media */
   .features {
@@ -1698,6 +1551,10 @@ body.no-scroll {
     left: 3.3rem !important;
   }
 
+  /* intro */
+  .intro-content__title {
+    font-size: 3rem;
+  }
   /* footer */
   .footer {
     min-height: unset;
@@ -1741,9 +1598,7 @@ body.no-scroll {
 /* 972 */
 @media screen and (max-width: 972px) {
   /* intro */
-  .swiper-title {
-    font-size: 2rem;
-  }
+
   /* about */
   .about__container {
     flex-direction: column-reverse;
@@ -1806,47 +1661,29 @@ body.no-scroll {
     font-size: 1.5rem;
   }
   /* header */
-  .intro {
-    height: 32.4rem;
-    background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/380-intro.webp?updatedAt=1726112116676");
-    padding-top: 4.93rem;
-    padding-bottom: 0;
-  }
+
   .header__logo img {
     width: 9.49075rem;
     height: 2.08138rem;
   }
 
   /* intro */
-  .swiper-fraction {
-    display: none;
+  .intro {
+    height: 31.46206rem;
   }
 
-  .swiper-slide {
-    padding: 0;
-  }
-
-  .swiper-slide {
+  .intro-content {
     text-align: center;
-    align-items: center;
   }
 
-  .swiper-description {
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: normal;
-  }
-  .swiper-pagination {
-    bottom: 10rem !important;
-    top: 67.5% !important;
-    left: 50% !important;
-    padding: 0;
+  .intro-content__title {
+    font-size: 2rem;
   }
 
-  .swiper-pagination-bullet:not(:last-child) {
-    margin-right: 1.56rem !important;
+  .intro-content__description {
+    font-size: 0.87rem;
+    
   }
-
   /* features */
   .features__sub-photo-1144-leaf {
     top: -65rem;
@@ -1987,7 +1824,4 @@ body.no-scroll {
 /* 380 */
 @media screen and (max-width: 380px) {
   /* intro */
-  .swiper-title {
-    font-size: 1.5rem;
-  }
 }
