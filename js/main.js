@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setClass(openModal2, "show");
 
     closeModalFunc(closeModal, "show");
+    closeModalFunc(modal, "show");
   }
 
   e({
