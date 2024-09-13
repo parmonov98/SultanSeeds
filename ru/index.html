@@ -522,46 +522,19 @@
             <p class="order__description">
               Если вы ищете надежного оптового поставщика
             </p>
-            <div class="order__form">
-              <form class="order__form-element">
-                <div class="order__form-control">
-                  <label for="name" class="order__label"> Имя </label>
-                  <input
-                    type="text"
-                    placeholder="Султан Султанов"
-                    required
-                    class="order__input"
-                  />
-                </div>
-                <div class="order__form-control">
-                  <label for="company__email" class="order__label">
-                    Рабочий e-mail
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="example@gmail.com"
-                    required
-                    class="order__input"
-                  />
-                </div>
-                <div class="order__form-control">
-                  <label for="phone__number" class="order__label"
-                    >Номер телефона</label
-                  >
-                  <input
-                    type="text"
-                    placeholder="+7"
-                    required
-                    class="order__input"
-                  />
-                </div>
+            <form class="order-form">
+              <div class="form-control">
+                <input
+                  class="form-emil"
+                  type="email"
+                  placeholder="Type your company e-mail"
+                />
+              </div>
+              <div class="form-control">
                 <div class="select-menu">
-                  <label for="select" class="order__label"
-                    >Выберите нужную услугу
-                  </label>
                   <div class="select-menu__button" id="select__menu">
                     <span class="select-menu__button-text"
-                      >Выберите свой вариант</span
+                      >I am interested in receiving offer (MOQ is 20tons)</span
                     >
                     <img
                       src="./photo/icon/arrow-ios-down.png"
@@ -572,27 +545,54 @@
 
                   <ul class="select-menu__options">
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text">Вариант 1</span>
+                      <span class="select-menu__option-text">1-2 tons</span>
                     </li>
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text">Вариант 2</span>
+                      <span class="select-menu__option-text">5 tons</span>
                     </li>
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text">Вариант 3</span>
+                      <span class="select-menu__option-text">7-8 tons</span>
                     </li>
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text">Вариант 4</span>
+                      <span class="select-menu__option-text">10-12 tons</span>
                     </li>
                   </ul>
                 </div>
-
-                <div class="order__form-control">
-                  <button class="order__button button">
-                    Хочу получить предложение
-                  </button>
+              </div>
+              <div class="form-control form-phone">
+                <input type="tel" placeholder="Type your phone number" />
+              </div>
+              <div class="form-control from-message">
+                <textarea
+                  rows="6"
+                  name="message"
+                  id="message"
+                  placeholder="Type your topic e.g. I am interested in Organic Buckwheat! Full truckload and delivered. Try to give as much details as possible so we can send you the quote soonest!"
+                ></textarea>
+              </div>
+              <div class="form-control terms-checkbox">
+                <div class="checkbox-control">
+                  <input id="checkbox1" type="checkbox" />
+                  <label for="checkbox1"
+                    >I have read and agree with the provisions of the Privacy
+                    Policy, and I leave my contact details consciously and
+                    voluntarily. I am aware that I can request correction of my
+                    personal data, restriction of their processing or
+                    removal.</label
+                  >
                 </div>
-              </form>
-            </div>
+                <div class="checkbox-control">
+                  <input id="checkbox2" type="checkbox" />
+                  <label for="checkbox2"
+                    >I consent to the processing of my personal data provided in
+                    the form by Sultan Seeds LLC</label
+                  >
+                </div>
+              </div>
+              <div class="form-control form-actions">
+                <button>Send offer</button>
+              </div>
+            </form>
           </div>
         </section>
         <!-- newsletter -->
