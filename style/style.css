@@ -97,7 +97,7 @@ body.no-scroll {
   top: -4rem;
   opacity: 0;
   animation: textTop 2s ease-in-out forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .loader-text3 {
@@ -137,7 +137,7 @@ body.no-scroll {
   100% {
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -1366,6 +1366,7 @@ button {
   .modal-content {
     max-width: 90%;
     height: 90vh;
+    
     overflow: scroll;
     margin-bottom: 20px;
   }
