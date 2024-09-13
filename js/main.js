@@ -50,18 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // loader
   const loader = document.querySelector(".page-loader");
-  const loaderStatus = localStorage.getItem("hide");
   if (loader) {
     document.body.classList.add("no-scroll");
 
-    if (!loaderStatus === "hide") {
-      loader.classList.add("hide");
+    if (loader.classList.contains("hide")) {
+      loader.classList.remove("hide");
       document.body.classList.remove("no-scroll");
+      console.log("salom");
     } else {
       setTimeout(() => {
         loader.classList.add("hide");
-        localStorage.setItem("hide", "hide");
-        if (!loaderStatus) {
+        if (loader.classList.contains("hide")) {
           document.body.classList.remove("no-scroll");
         }
       }, 5500);
