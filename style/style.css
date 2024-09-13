@@ -1365,7 +1365,7 @@ button {
   }
   .modal-content {
     max-width: 90%;
-    height: 90%;
+    height: 90vh;
     overflow: scroll;
   }
 }
