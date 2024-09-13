@@ -1367,6 +1367,7 @@ button {
     max-width: 90%;
     height: 90vh;
     overflow: scroll;
+    margin-bottom: 20px;
   }
 }
 /* 1200 */
