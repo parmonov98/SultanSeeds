@@ -68,15 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // social menu
-  const socialMenu = document.querySelector(".social-menu"),
-    socialMenuToggle = document.querySelector(".button-menu"),
-    closeButton = socialMenuToggle.querySelector(".close-menu"),
-    openButton = socialMenuToggle.querySelector(".open-menu");
+  const socialMenu = document.querySelector(".social-menu");
+  if (socialMenu) {
+    const socialMenuToggle = document.querySelector(".button-menu");
 
-  socialMenuToggle.addEventListener("click", () => {
-    socialMenu.classList.toggle("active");
-    socialMenuToggle.classList.toggle("disabled");
-  });
+    socialMenuToggle.addEventListener("click", () => {
+      socialMenu.classList.toggle("active");
+      socialMenuToggle.classList.toggle("disabled");
+    });
+  }
 
   // modal
   const modal = document.querySelector(".modal-wrapper");
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let u = document.querySelectorAll(".facts__country-list li"),
     g = document.getElementById("country-map");
   if (!g) {
-    console.error("SVG element topilmadi.");
+    // console.error("SVG element topilmadi.");
     return;
   }
   let m = () => {

@@ -1030,7 +1030,7 @@ button {
 
 .select-menu__option {
   display: flex;
-  height: 55px;
+  min-height: 55px;
   cursor: pointer;
   padding: 0 16px;
   align-items: center;
@@ -1994,6 +1994,14 @@ button {
 
   .modal-content {
     padding: 1rem 1.25rem;
+  }
+
+  .select-menu__button {
+    height: auto;
+  }
+
+  .from-message textarea {
+    height: auto;
   }
 }
 
