@@ -1291,6 +1291,78 @@ button {
   gap: 22.5rem;
 }
 
+/* social fixid icon */
+.social-list {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+}
+
+.social-menu {
+  /* display: none; */
+  background-color: #00000073;
+  backdrop-filter: blur(3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-radius: 3rem;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  transform: translateX(5rem);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.social-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.button-menu {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9a430e;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.open-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s linear;
+  opacity: 1;
+}
+
+.close-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5rem;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.button-menu.disabled .close-menu {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.button-menu.disabled .open-menu {
+  left: 100%;
+  transform: translateX(0%);
+  opacity: 0;
+}
+
 /* media */
 /* 1400px  */
 @media screen and (max-width: 1400px) {

@@ -67,6 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // social menu
+  const socialMenu = document.querySelector(".social-menu"),
+    socialMenuToggle = document.querySelector(".button-menu"),
+    closeButton = socialMenuToggle.querySelector(".close-menu"),
+    openButton = socialMenuToggle.querySelector(".open-menu");
+
+  socialMenuToggle.addEventListener("click", () => {
+    socialMenu.classList.toggle("active");
+    socialMenuToggle.classList.toggle("disabled");
+  });
+
   // modal
   const modal = document.querySelector(".modal-wrapper");
   if (modal) {
