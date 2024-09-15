@@ -1235,7 +1235,8 @@ button {
 }
 
 .footer__menu-link,
-.footer__contact-link a {
+.footer__contact-link a,
+.footer__contact-link-loaction {
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
