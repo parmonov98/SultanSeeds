@@ -2094,7 +2094,7 @@ button {
   }
 
   .features__items {
-    gap: 0;
+    gap: 0 !important;
   }
   .features__item {
     min-width: 17.5rem;
