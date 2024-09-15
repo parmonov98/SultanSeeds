@@ -1987,6 +1987,9 @@ button {
   }
 
   /* working */
+  .working {
+    margin: 3.75rem 0 2.91rem 0;
+  }
   .working__image--top-right-1144 {
     display: none;
   }
@@ -1998,6 +2001,14 @@ button {
 
   .working__item-title {
     font-size: 1.25rem;
+  }
+
+  .working__items {
+    gap: 2rem;
+  }
+
+  .working__description {
+    margin-bottom: 2rem;
   }
 
   .working__item-description {
@@ -2161,4 +2172,3 @@ button {
     left: 5.17rem;
   }
 }
-
