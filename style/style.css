@@ -1969,6 +1969,11 @@ button {
     min-width: unset;
   }
 
+  .sunflower__item img {
+    width: 15rem;
+  }
+  
+
   /* quality */
   .quality {
     height: 15.3rem;
