@@ -30,8 +30,8 @@ export function initLanguageSwitcher({
       (d.textContent = o[S]);
   }
   "ru" === L
-    ? ((o.ru = "Русский"), (o.en = "Английский"), (S = "en"))
-    : (S = "ru"),
+    ? ((o.ru = "Русский"), (o.en = "Английский"), (S = "ru"))
+    : (S = "en"),
     r.addEventListener("click", () => {
       i.classList.toggle("active"),
         (u.style.display = i.classList.contains("active") ? "block" : "none");
