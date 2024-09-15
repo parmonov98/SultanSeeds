@@ -165,11 +165,11 @@ textarea {
   background: #fff;
   width: 100%;
 }
-.disabled {
+/* .disabled {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.5;
-}
+} */
 .ask-modal.show {
   display: flex;
 }
@@ -186,6 +186,8 @@ textarea {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  border-bottom: 1px solid #f2f4f7;
+  padding-bottom: 1rem;
 }
 .ask-modal__nav svg {
   cursor: pointer;
@@ -194,6 +196,11 @@ textarea {
   font-size: 1.25rem;
   font-weight: 600;
 }
+form {
+  width: 100%;
+}
+.ask-modal__content input,
+.ask-modal__content input::placeholder,
 textarea,
 textarea::placeholder {
   color: #667085;
@@ -204,7 +211,23 @@ textarea::placeholder {
 }
 .ask-modal__content {
   width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
+
+.ask-modal__content input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #f1f2f4;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  outline: none;
+  border-radius: 0.5rem;
+}
+
 textarea {
   padding: 0.625rem 0.875rem;
   border: 1px solid #f1f2f4;

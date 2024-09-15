@@ -2,32 +2,32 @@ import { initLanguageSwitcher as e } from "./initLanguageSwitcher.js";
 import { setupHamburgerMenu as t } from "./hamburgerMenuToggle.js";
 import { initializeSelectMenus as l } from "./selectMenu.js";
 document.addEventListener("DOMContentLoaded", () => {
-  let a = document.querySelector(".faq__button");
-  a
-    ? (a.addEventListener("click", () => {
-        let e = document.querySelector(".ask-modal");
-        e.classList.add("show"), document.body.classList.add("no-scroll");
-        let t = e.querySelectorAll("svg, .ask-modal__button"),
-          l = document.querySelector("#ask");
-        l.addEventListener("input", () => {
-          document
-            .querySelector(".ask-modal__button")
-            .classList.toggle("disabled", 0 === l.value.length);
-        }),
-          t.forEach((t) => {
-            t.addEventListener("click", () => {
-              e.classList.remove("show"),
-                document.body.classList.remove("no-scroll");
-            });
-          }),
-          e.addEventListener("click", (t) => {
-            t.target === e &&
-              (e.classList.remove("show"),
-              document.body.classList.remove("no-scroll"));
-          });
-      }),
-      console.log(a))
-    : console.log("Element topilmadi!");
+  // let a = document.querySelector(".faq__button");
+  // a
+  //   ? (a.addEventListener("click", () => {
+  //       let e = document.querySelector(".ask-modal");
+  //       e.classList.add("show"), document.body.classList.add("no-scroll");
+  //       let t = e.querySelectorAll("svg, .ask-modal__button"),
+  //         l = document.querySelector("#ask");
+  //       l.addEventListener("input", () => {
+  //         document
+  //           .querySelector(".ask-modal__button")
+  //           .classList.toggle("disabled", 0 === l.value.length);
+  //       }),
+  //         t.forEach((t) => {
+  //           t.addEventListener("click", () => {
+  //             e.classList.remove("show"),
+  //               document.body.classList.remove("no-scroll");
+  //           });
+  //         }),
+  //         e.addEventListener("click", (t) => {
+  //           t.target === e &&
+  //             (e.classList.remove("show"),
+  //             document.body.classList.remove("no-scroll"));
+  //         });
+  //     }),
+  //     console.log(a))
+  //   : console.log("Element topilmadi!");
   let s = document.querySelector(".nav-language-switcher"),
     r = new URLSearchParams(window.location.search),
     o = r.get("lang") || "ru",
