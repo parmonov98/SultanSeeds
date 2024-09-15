@@ -284,23 +284,43 @@
             </div>
            </section>
 
-           <div class="ask-modal ">
+           <div class="ask-modal">
             <div class="ask-modal__card">
-                <div class="ask-modal__nav">
-                    <h4 class="ask-modal__title">Задать вопрос</h4>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
-                </div>
+              <div class="ask-modal__nav">
+                <h4 class="ask-modal__title">Задать вопрос</h4>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 7L7 17M7 7L17 17"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <form>
                 <div class="ask-modal__content">
-                    <textarea name="ask" id="ask" placeholder="Введите вопрос..."></textarea>
+                  <input type="text" placeholder="Ф.И.О" required />
+                  <input type="text" placeholder="Наименование компании" required />
+                  <input type="email" placeholder="Адрес эл. почты" required />
+                  <textarea
+                    id="ask"
+                    placeholder="Введите вопрос..."
+                    required
+                  ></textarea>
                 </div>
                 <div class="ask-modal__action">
-                    <button class="ask-modal__button disabled">Отправлять</button>
+                  <button class="ask-modal__button disabled">Отправлять</button>
                 </div>
+              </form>
             </div>
-           </div>
-          
+          </div>
       </main>
 
       <!-- footer -->
@@ -488,6 +508,28 @@
       <div class="status-liner"></div>
 
       <script type="module" src="../js/main.min.js" defer></script>
+      <script>
+        const modal = document.querySelector(".ask-modal");
+        const openModal = document.querySelector(".faq__button");
+        openModal.addEventListener("click", (e) => {
+          modal.classList.add("show");
+        });
+        const closeModal = document.querySelector(".ask-modal__button");
+        closeModal.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.classList.remove("show");
+        });
+        document.addEventListener("click", (e) => {
+          if (e.target.classList.contains("ask-modal")) {
+            modal.classList.remove("show");
+          }
+        });
+        document
+          .querySelector(".ask-modal__nav svg")
+          .addEventListener("click", () => {
+            modal.classList.remove("show");
+          });
+      </script>
 
     </div>
   </body>
