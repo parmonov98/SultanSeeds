@@ -2157,5 +2157,8 @@ button {
 
 /* 380 */
 @media screen and (max-width: 380px) {
-  /* intro */
+  .about__photo-image:nth-child(2) {
+    left: 5.17rem;
+  }
 }
+
