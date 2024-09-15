@@ -1545,7 +1545,7 @@ button {
   }
 
   .sunflower__descr {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.75rem;
   }
@@ -1573,12 +1573,16 @@ button {
 
   .sunflower__item-descr {
     text-align: start;
+    font-size: 0.875rem;
   }
 
   /* quality media */
   .quality {
     min-height: 20.41106rem;
     padding-top: 6rem;
+  }
+  .quality__descr {
+    font-size: 0.875rem;
   }
   /* working media */
   .working {
@@ -1595,7 +1599,7 @@ button {
   }
 
   .working__description {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.75rem;
   }
@@ -1967,8 +1971,11 @@ button {
 
   /* quality */
   .quality {
-    height: 16.3rem;
-    padding-top: 1.97rem;
+    height: 15.3rem;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* working */
@@ -1981,6 +1988,13 @@ button {
     right: 12px;
   }
 
+  .working__item-title {
+    font-size: 1.25rem;
+  }
+
+  .working__item-description {
+    font-size: 0.875rem;
+  }
   /* order */
   .order__sub-photo-leaf-1144 {
     display: none;
@@ -2022,10 +2036,20 @@ button {
 
   .order__description {
     margin-bottom: 2rem;
+    font-size: 0.875rem;
   }
 
   .order__form-element {
     gap: 2rem;
+  }
+
+  .order-form input,
+  .order-form input::placeholder,
+  .order-form textarea,
+  .order-form textarea::placeholder,
+  .checkbox-control label,
+  .select-menu__button-text {
+    font-size: 0.875rem;
   }
 
   /* newsletter */
@@ -2037,6 +2061,17 @@ button {
 
   .newsletter__form-control:first-child {
     flex-direction: column;
+  }
+
+  .newsletter__description,
+  .newsletter__form-control input,
+  .newsletter__form-control input::placeholder {
+    font-size: 0.875rem;
+  }
+
+  .features__item-text,
+  .features__item-link {
+    font-size: 1rem;
   }
 
   /* footer */
