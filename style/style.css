@@ -1947,6 +1947,10 @@ button {
   .features__sub-photo-1144-leaf {
     top: -65rem;
   }
+
+  .features__item:nth-child(3) {
+    padding: 2rem;
+  }
   /* sunflower */
   .sunflower__container {
     padding-top: 3.75rem;
@@ -1972,7 +1976,6 @@ button {
   .sunflower__item img {
     width: 15rem;
   }
-  
 
   /* quality */
   .quality {
@@ -2077,6 +2080,13 @@ button {
   .features__item-text,
   .features__item-link {
     font-size: 1rem;
+  }
+
+  .features__items {
+    gap: 0;
+  }
+  .features__item {
+    min-width: 17.5rem;
   }
 
   /* footer */
