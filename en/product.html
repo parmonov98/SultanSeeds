@@ -529,7 +529,7 @@
                           fill="#EA9901"
                         />
                       </svg>
-                      <p class="footer__contact-link-loaction"></p>
+                      <p class="footer__contact-link-loaction">
                         Ardakhshan No. 5, Furkat district, Ferghana region,
                         Republic of Uzbekistan
                       </p>
@@ -548,7 +548,95 @@
 
       <div class="status-liner"></div>
 
+      <!-- modal -->
+      <div class="modal-wrapper">
+        <div class="modal-content">
+          <h2 class="modal-title">
+            Ready For A Reliable Supplier For Your Bulk Orders?
+          </h2>
+          <p class="modal-description">Contact us for wholesale inquiries.</p>
+          <form class="order-form">
+            <div class="form-control">
+              <input
+                class="form-emil"
+                type="email"
+                placeholder="Type your company e-mail"
+              />
+            </div>
+            <div class="form-control">
+              <div class="select-menu">
+                <div class="select-menu__button" id="select__menu">
+                  <span class="select-menu__button-text"
+                    >I am interested in receiving offer (MOQ is 20tons)</span
+                  >
+                  <img
+                    src="./photo/icon/arrow-ios-down.png"
+                    alt="Arrow"
+                    class="select-menu__arrow"
+                  />
+                </div>
+
+                <ul class="select-menu__options">
+                  <li class="select-menu__option">
+                    <span class="select-menu__option-text"
+                      >I am interested in importing 20tons;</span
+                    >
+                  </li>
+                  <li class="select-menu__option">
+                    <span class="select-menu__option-text"
+                      >I am interested in importing in big volumes;</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-control form-phone">
+              <input type="tel" placeholder="Type your phone number" />
+            </div>
+            <div class="form-control from-message">
+              <textarea
+                rows="6"
+                name="message"
+                id="message"
+                placeholder="Type your topic e.g. I am interested in White sunflower seeds 7mm+! Full truckload and delivered to Bulgaria. Try to give as much details as possible so we can send you the quote soonest!"
+              ></textarea>
+            </div>
+            <div class="form-control terms-checkbox">
+              <div class="checkbox-control">
+                <input type="checkbox" />
+                <label
+                  >I have read and agree with the provisions of the Privacy
+                  Policy, and I leave my contact details consciously and
+                  voluntarily. I am aware that I can request correction of my
+                  personal data, restriction of their processing or
+                  removal.</label
+                >
+              </div>
+              <div class="checkbox-control">
+                <input type="checkbox" />
+                <label
+                  >I consent to the processing of my personal data provided in
+                  the form by
+                  <a href="https://sultanseeds.uz">Sultanseeds.uz</a></label
+                >
+              </div>
+            </div>
+            <div class="form-control form-actions">
+              <button>Send offer</button>
+            </div>
+          </form>
+        </div>
+      </div>
       <script type="module" src="../js/main.min.js" defer></script>
+      <script>
+        const openModal = document.querySelector(".products-order__button");
+        if (openModal) {
+          openModal.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(".modal-wrapper").classList.add("show");
+          });
+        }
+      </script>
     </div>
   </body>
 </html>

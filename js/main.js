@@ -86,10 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal = document.querySelector(".modal-wrapper button");
 
     const setClass = (clickableItem, classToAdd) => {
-      clickableItem.addEventListener("click", () => {
-        modal.classList.add(classToAdd);
-        document.body.classList.add("no-scroll");
-      });
+      if (clickableItem && classToAdd) {
+        clickableItem.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.classList.add(classToAdd);
+          document.body.classList.add("no-scroll");
+        });
+      } else {
+        if (clickableItem === null) {
+          console.log("Bosiladigan item topilmadi");
+        } else if (classToAdd === null) {
+          console.log("Qo'shiladigan class yo'q");
+        }
+      }
     };
 
     const closeModalFunc = (clickableItem, classToRemove) => {

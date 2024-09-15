@@ -554,7 +554,96 @@
 
       <div class="status-liner"></div>
 
+      <!-- modal -->
+      <div class="modal-wrapper">
+        <div class="modal-content">
+          <h2 class="modal-title">Оставьте свои контакты</h2>
+          <p class="modal-description">
+            Если вы ищете надежного оптового поставщика
+          </p>
+          <form class="order-form">
+            <div class="form-control">
+              <input
+                class="form-emil"
+                type="email"
+                placeholder="Введите ваш корпоративный e-mail"
+              />
+            </div>
+            <div class="form-control">
+              <div class="select-menu">
+                <div class="select-menu__button" id="select__menu">
+                  <span class="select-menu__button-text"
+                    >Я заинтересован в получении предложения (Минимальный заказ
+                    — 20 тонн)</span
+                  >
+                  <img
+                    src="./photo/icon/arrow-ios-down.png"
+                    alt="Arrow"
+                    class="select-menu__arrow"
+                  />
+                </div>
+
+                <ul class="select-menu__options">
+                  <li class="select-menu__option">
+                    <span class="select-menu__option-text"
+                      >Я заинтересован в импорте 20 тонн;</span
+                    >
+                  </li>
+                  <li class="select-menu__option">
+                    <span class="select-menu__option-text"
+                      >Я заинтересован в импорте больших объемов.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-control form-phone">
+              <input type="tel" placeholder="Введите ваш номер телефона" />
+            </div>
+            <div class="form-control from-message">
+              <textarea
+                rows="6"
+                name="message"
+                id="message"
+                placeholder="Укажите вашу тему, например, Я заинтересован в белых семечках подсолнечника 7мм+! Полная загрузка и доставка в Болгарию. Постарайтесь указать как можно больше деталей, чтобы мы могли отправить вам предложение как можно скорее!"
+              ></textarea>
+            </div>
+            <div class="form-control terms-checkbox">
+              <div class="checkbox-control">
+                <input id="checkbox1" type="checkbox" />
+                <label for="checkbox1"
+                  >Я прочитал(а) и согласен(согласна) с положениями Политики
+                  конфиденциальности, и сознательно и добровольно оставляю свои
+                  контактные данные. Я осведомлен(а), что могу запросить
+                  исправление своих персональных данных, ограничение их
+                  обработки или удаление.</label
+                >
+              </div>
+              <div class="checkbox-control">
+                <input id="checkbox2" type="checkbox" />
+                <label for="checkbox2"
+                  >Я даю согласие на обработку моих персональных данных,
+                  предоставленных в форме компанией Sultan Seeds LLC.</label
+                >
+              </div>
+            </div>
+            <div class="form-control form-actions">
+              <button>Отправить предложение</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <script type="module" src="./js/main.min.js" defer></script>
+      <script>
+        const openModal = document.querySelector(".products-order__button");
+        if (openModal) {
+          openModal.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(".modal-wrapper").classList.add("show");
+          });
+        }
+      </script>
     </div>
   </body>
 </html>
