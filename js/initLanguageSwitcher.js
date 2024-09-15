@@ -34,7 +34,7 @@ export function initLanguageSwitcher({
     : (S = "en"),
     r.addEventListener("click", () => {
       i.classList.toggle("active"),
-        (u.style.display = i.classList.contains("active") ? "block" : "none");
+        (u.style.display = !i.classList.contains("active") ? "block" : "none");
     }),
     g.forEach((e) => {
       e.addEventListener("click", () => {
