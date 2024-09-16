@@ -522,6 +522,16 @@ button {
   top: -19px;
 }
 
+.about__photo-video {
+  max-width: 32rem;
+  max-height: 32rem;
+  overflow: hidden;
+}
+
+.about__photo-video video {
+  transform: scale(2);
+}
+
 .about__content {
   max-width: 39.62rem;
 }
@@ -1383,7 +1393,7 @@ button {
     font-size: 2rem;
   }
 
-  .about__photo-image:nth-child(1) {
+  .about__photo-video {
     width: 22.48988rem;
     height: 22.48988rem;
     flex-shrink: 0;
@@ -1870,7 +1880,7 @@ button {
     font-size: 1.5rem;
   }
 
-  .about__photo-image:nth-child(1) {
+  .about__photo-video {
     width: 16.86744rem;
     height: 16.86744rem;
   }
@@ -2093,6 +2103,10 @@ button {
     font-size: 1rem;
   }
 
+  .features__sub-photo-1144-leaf {
+    top: -59rem;
+  }
+
   .features__items {
     gap: 0 !important;
   }
@@ -2170,5 +2184,15 @@ button {
 @media screen and (max-width: 380px) {
   .about__photo-image:nth-child(2) {
     left: 5.17rem;
+  }
+
+  .features__sub-photo-1144-leaf {
+    top: -59rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .features__sub-photo-1144-leaf {
+    top: -61rem;
   }
 }

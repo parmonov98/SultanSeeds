@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const setClass = (clickableItem, classToAdd) => {
       if (clickableItem && classToAdd) {
         clickableItem.addEventListener("click", (e) => {
-          e.preventDefault();
+          // e.preventDefault();
           modal.classList.add(classToAdd);
           document.body.classList.add("no-scroll");
         });
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const closeModalFunc = (clickableItem, classToRemove) => {
       clickableItem.addEventListener("click", (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         modal.classList.remove(classToRemove);
         document.body.classList.remove("no-scroll");
       });
