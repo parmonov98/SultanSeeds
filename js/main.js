@@ -2,39 +2,13 @@ import { initLanguageSwitcher as e } from "./initLanguageSwitcher.js";
 import { setupHamburgerMenu as t } from "./hamburgerMenuToggle.js";
 import { initializeSelectMenus as l } from "./selectMenu.js";
 document.addEventListener("DOMContentLoaded", () => {
-  // let a = document.querySelector(".faq__button");
-  // a
-  //   ? (a.addEventListener("click", () => {
-  //       let e = document.querySelector(".ask-modal");
-  //       e.classList.add("show"), document.body.classList.add("no-scroll");
-  //       let t = e.querySelectorAll("svg, .ask-modal__button"),
-  //         l = document.querySelector("#ask");
-  //       l.addEventListener("input", () => {
-  //         document
-  //           .querySelector(".ask-modal__button")
-  //           .classList.toggle("disabled", 0 === l.value.length);
-  //       }),
-  //         t.forEach((t) => {
-  //           t.addEventListener("click", () => {
-  //             e.classList.remove("show"),
-  //               document.body.classList.remove("no-scroll");
-  //           });
-  //         }),
-  //         e.addEventListener("click", (t) => {
-  //           t.target === e &&
-  //             (e.classList.remove("show"),
-  //             document.body.classList.remove("no-scroll"));
-  //         });
-  //     }),
-  //     console.log(a))
-  //   : console.log("Element topilmadi!");
   let s = document.querySelector(".nav-language-switcher"),
-    r = new URLSearchParams(window.location.search),
-    o = r.get("lang") || "ru",
-    c = localStorage.getItem("language") || o;
-  o !== c &&
-    (r.set("lang", c),
-    window.history.replaceState({}, "", `${window.location.pathname}?${r}`)),
+    a = new URLSearchParams(window.location.search),
+    r = a.get("lang") || "ru",
+    c = localStorage.getItem("language") || r;
+  r !== c &&
+    (a.set("lang", c),
+    window.history.replaceState({}, "", `${window.location.pathname}?${a}`)),
     "ru" === c
       ? (s.classList.add("ru"), s.classList.remove("en"))
       : (s.classList.add("en"), s.classList.remove("ru")),
@@ -42,86 +16,58 @@ document.addEventListener("DOMContentLoaded", () => {
       let e = s.classList.contains("ru") ? "ru" : "en",
         t = "ru" === e ? "en" : "ru";
       localStorage.setItem("language", t),
-        r.set("lang", t),
-        window.history.replaceState({}, "", `${window.location.pathname}?${r}`),
+        a.set("lang", t),
+        window.history.replaceState({}, "", `${window.location.pathname}?${a}`),
         s.classList.remove(e),
         s.classList.add(t);
     });
-
-  // loader
-  const loader = document.querySelector(".page-loader");
-  if (loader) {
-    document.body.classList.add("no-scroll");
-
-    if (loader.classList.contains("hide")) {
-      loader.classList.remove("hide");
-      document.body.classList.remove("no-scroll");
-      console.log("salom");
-    } else {
-      setTimeout(() => {
-        loader.classList.add("hide");
-        if (loader.classList.contains("hide")) {
-          document.body.classList.remove("no-scroll");
-        }
-      }, 5500);
-    }
-  }
-
-  // social menu
-  const socialMenu = document.querySelector(".social-menu");
-  if (socialMenu) {
-    const socialMenuToggle = document.querySelector(".button-menu");
-
-    socialMenuToggle.addEventListener("click", () => {
-      socialMenu.classList.toggle("active");
-      socialMenuToggle.classList.toggle("disabled");
+  let o = document.querySelector(".page-loader");
+  o &&
+    (document.body.classList.add("no-scroll"),
+    o.classList.contains("hide")
+      ? (o.classList.remove("hide"),
+        document.body.classList.remove("no-scroll"),
+        console.log("salom"))
+      : setTimeout(() => {
+          o.classList.add("hide"),
+            o.classList.contains("hide") &&
+              document.body.classList.remove("no-scroll");
+        }, 5500));
+  let i = document.querySelector(".social-menu");
+  if (i) {
+    let n = document.querySelector(".button-menu");
+    n.addEventListener("click", () => {
+      i.classList.toggle("active"), n.classList.toggle("disabled");
     });
   }
-
-  // modal
-  const modal = document.querySelector(".modal-wrapper");
-  if (modal) {
-    const openModal = document.querySelector(".intro-content__button"),
-      openModal2 = document.querySelector(".features__item-link"),
-      closeModal = document.querySelector(".modal-wrapper button");
-
-    const setClass = (clickableItem, classToAdd) => {
-      if (clickableItem && classToAdd) {
-        clickableItem.addEventListener("click", (e) => {
-          // e.preventDefault();
-          modal.classList.add(classToAdd);
-          document.body.classList.add("no-scroll");
+  let d = document.querySelector(".modal-wrapper");
+  if (d) {
+    let u = document.querySelector(".intro-content__button"),
+      g = document.querySelector(".features__item-link"),
+      L = document.querySelector(".modal-wrapper button"),
+      m = (e, t) => {
+        e && t
+          ? e.addEventListener("click", (e) => {
+              d.classList.add(t), document.body.classList.add("no-scroll");
+            })
+          : null === e
+          ? console.log("Bosiladigan item topilmadi")
+          : null === t && console.log("Qo'shiladigan class yo'q");
+      },
+      y = (e, t) => {
+        e.addEventListener("click", () => {
+          d.classList.remove(t), document.body.classList.remove("no-scroll");
         });
-      } else {
-        if (clickableItem === null) {
-          console.log("Bosiladigan item topilmadi");
-        } else if (classToAdd === null) {
-          console.log("Qo'shiladigan class yo'q");
-        }
-      }
-    };
-
-    const closeModalFunc = (clickableItem, classToRemove) => {
-      clickableItem.addEventListener("click", (e) => {
-        // e.preventDefault();
-        modal.classList.remove(classToRemove);
-        document.body.classList.remove("no-scroll");
-      });
-    };
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("show");
-        document.body.classList.remove("no-scroll");
-      }
-    });
-
-    setClass(openModal, "show");
-    setClass(openModal2, "show");
-
-    closeModalFunc(closeModal, "show");
+      };
+    d.addEventListener("click", (e) => {
+      e.target === d &&
+        (d.classList.remove("show"),
+        document.body.classList.remove("no-scroll"));
+    }),
+      m(u, "show"),
+      m(g, "show"),
+      y(L, "show");
   }
-
   e({
     switcherSelector: ".header__language-switcher",
     buttonSelector: ".header__language-button",
@@ -130,40 +76,37 @@ document.addEventListener("DOMContentLoaded", () => {
     flagSelector: "#selected-lang-flag",
     textSelector: "#selected-lang-text",
   });
-  let n = document.querySelector(".header__bottom");
-  function d() {
+  let h = document.querySelector(".header__bottom");
+  function v() {
     window.scrollY > 0
-      ? n.classList.add("sticky")
-      : n.classList.remove("sticky");
+      ? h.classList.add("sticky")
+      : h.classList.remove("sticky");
   }
-  window.addEventListener("scroll", d),
-    d(),
+  window.addEventListener("scroll", v),
+    v(),
     l(".select-menu"),
     t(".hamburger", "header", "#hamburger", "no-scroll");
-  let u = document.querySelectorAll(".facts__country-list li"),
-    g = document.getElementById("country-map");
-  if (!g) {
-    // console.error("SVG element topilmadi.");
-    return;
-  }
-  let m = () => {
-      u.forEach((e) => e.classList.remove("active")),
-        g.querySelectorAll("path").forEach((e) => e.classList.remove("active"));
+  let S = document.querySelectorAll(".facts__country-list li"),
+    p = document.getElementById("country-map");
+  if (!p) return;
+  let E = () => {
+      S.forEach((e) => e.classList.remove("active")),
+        p.querySelectorAll("path").forEach((e) => e.classList.remove("active"));
     },
-    y = document.getElementById("kz"),
-    L = g.querySelector("#kz");
-  y && L && (m(), y.classList.add("active"), L.classList.add("active")),
-    u.forEach((e) => {
+    f = document.getElementById("kz"),
+    b = p.querySelector("#kz");
+  f && b && (E(), f.classList.add("active"), b.classList.add("active")),
+    S.forEach((e) => {
       e.addEventListener("click", () => {
-        m(), e.classList.add("active");
+        E(), e.classList.add("active");
         let t = e.id,
-          l = g.querySelector(`#${t}`);
+          l = p.querySelector(`#${t}`);
         l && l.classList.add("active");
       });
     }),
-    g.querySelectorAll("path").forEach((e) => {
+    p.querySelectorAll("path").forEach((e) => {
       e.addEventListener("click", (e) => {
-        if ((m(), e.target.id)) {
+        if ((E(), e.target.id)) {
           let t = e.target.id,
             l = document.getElementById(t);
           l && l.classList.add("active"), e.target.classList.add("active");
@@ -175,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.target.closest(".facts__country-list li");
     }),
     window.addEventListener("resize", () => {
-      let e = g.querySelector(".active");
+      let e = p.querySelector(".active");
       if (e) {
         let t = e.getBBox();
         showInfo(document.getElementById(e.id), t);
@@ -192,4 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
             (t.style.display = "block"));
       });
     });
+
+  // inputlarnga qiymat berilgan yoki yo'qligini tekshiruvchi script
+  function checkInputs() {
+    // input elementlarni olish
+    const emailInputEl = document.querySelector(".form-emil"),
+      selectEl = document.querySelector(".select-menu__button-text"),
+      phoneInputEl = document.querySelector(".form-phone input"),
+      messageEl = document.querySelector(".from-message textarea"),
+      termsCheckboxEl = document.querySelector("#order-terms"),
+      checkboxEl = document.querySelector("#order-checkbox");
+
+      console.log();
+      
+  }
 });

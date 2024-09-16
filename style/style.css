@@ -721,6 +721,7 @@ button {
   position: absolute;
   top: -5rem;
   left: 0;
+  z-index: 3;
 }
 
 /* Sunflower section */
@@ -1432,6 +1433,7 @@ button {
     margin-bottom: 1rem;
   }
 
+
   /* modal */
   .modal-wrapper {
     overflow: scroll;
@@ -1446,6 +1448,21 @@ button {
   .intro-edge img,
   .intro-edge-bottom img {
     width: unset;
+  }
+
+  .features__sub-photo-leaf {
+    display: none;
+  }
+
+  .features__sub-photo-1144-leaf {
+    display: inline-block;
+    top: -2rem;
+    z-index: 3;
+  }
+  .working__image--top-right-1144 {
+    display: none;
+    top: 3rem;
+    right: 12px;
   }
 }
 /* 1200 */
@@ -1538,7 +1555,7 @@ button {
 
   .features__sub-photo-1144-leaf {
     display: inline-block;
-    top: 3rem;
+    top: -2rem;
   }
 
   .back__cover {
@@ -1599,7 +1616,7 @@ button {
     margin-top: 5.75em;
   }
   .working__image--top-right-1144 {
-    display: inline-block;
+    display: none;
     top: 3rem;
     right: 12px;
   }
@@ -1955,7 +1972,7 @@ button {
   }
   /* features */
   .features__sub-photo-1144-leaf {
-    top: -65rem;
+    top: -63rem;
   }
 
   .features__item:nth-child(3) {
@@ -2005,7 +2022,7 @@ button {
   }
   .working__image--top-right-380 {
     display: inline-block;
-    top: -13rem;
+    top: -11rem;
     right: 12px;
   }
 
@@ -2187,7 +2204,7 @@ button {
   }
 
   .features__sub-photo-1144-leaf {
-    top: -59rem;
+    top: -61rem;
   }
 }
 
