@@ -40,14 +40,13 @@ const getMessage = (formData) => {
     privacyPolicyAgreed,
     dataConsentGiven,
   } = formData;
-  return `${email} ${selectedOption} ${phone} ${message} ${privacyPolicy} ${dataConsentGiven} ${privacyPolicyAgreed}`;
+  return `Email: ${email}\nSelected Option: ${selectedOption}\nPhone: ${phone}\nMessage: ${message}\nPrivacy Policy Agreed: ${privacyPolicyAgreed}\nData Consent Given: ${dataConsentGiven}`;
 };
 
 // Yuboriladigan xabar
-const message = getMessage();
 
 // Xabarni yuborish uchun fetch API dan foydalanish
-function sendMessageToTelegram() {
+function sendMessageToTelegram(message) {
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: "POST",
     headers: {
@@ -76,6 +75,6 @@ button1.addEventListener("click", function () {
   const formData = collectFormData();
   console.log("Form data from Button 1:", formData);
   // Bu yerda form ma'lumotlarini serverga yuborish yoki boshqa amallarni bajarasiz
-  getMessage(formData);
-  sendMessageToTelegram();
+  const message = getMessage(formData);
+  sendMessageToTelegram(message);
 });
