@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.querySelector(".modal-wrapper");
     const introButton = document.querySelector(".intro-content__button");
     const featuresButton = document.querySelector(".features__item-link");
+
     const toggleForm = (clickableItem, addToClass) => {
       clickableItem.addEventListener("click", () => {
         modal.classList.add(addToClass);
@@ -43,18 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         s.classList.remove(e),
         s.classList.add(t);
     });
-  let o = document.querySelector(".page-loader");
-  o &&
-    (document.body.classList.add("no-scroll"),
-    o.classList.contains("hide")
-      ? (o.classList.remove("hide"),
-        document.body.classList.remove("no-scroll"),
-        console.log("salom"))
-      : setTimeout(() => {
-          o.classList.add("hide"),
-            o.classList.contains("hide") &&
-              document.body.classList.remove("no-scroll");
-        }, 5500));
   let i = document.querySelector(".social-menu");
   if (i) {
     let n = document.querySelector(".button-menu");
@@ -129,4 +118,19 @@ document.addEventListener("DOMContentLoaded", () => {
             (t.style.display = "block"));
       });
     });
+});
+
+window.addEventListener("load", () => {
+  let o = document.querySelector(".page-loader");
+  o &&
+    (document.body.classList.add("no-scroll"),
+    o.classList.contains("hide")
+      ? (o.classList.remove("hide"),
+        document.body.classList.remove("no-scroll"),
+        console.log("salom"))
+      : setTimeout(() => {
+          o.classList.add("hide"),
+            o.classList.contains("hide") &&
+              document.body.classList.remove("no-scroll");
+        }, 5500));
 });
