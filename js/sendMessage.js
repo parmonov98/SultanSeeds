@@ -5,23 +5,46 @@ const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
 const chatId = "-1002477600463";
 
 // malumotlarni yig'ish
-const userEmail = document.querySelectorAll(".order-form .form-emil");
-const userInterested = document.querySelectorAll(
-  ".order-form .select-menu__button-text"
-);
-const userPhoneNumber = document.querySelectorAll(
-  ".order-form .form-phone input"
-);
-const userMessage = document.querySelectorAll(".order-form #message");
+// Form elementlarini olish
+const form = document.querySelector(".order-form");
+const emailInput = form.querySelector('input[name="email"]');
+const selectButton = form.querySelector("#select__menu");
+const phoneInput = form.querySelector('input[name="phone"]');
+const messageInput = form.querySelector('textarea[name="message"]');
+const privacyCheckbox = form.querySelector('input[name="privacy-policy"]');
+const dataConsentCheckbox = form.querySelector('input[name="data-consent"]');
 
-const email = userEmail.forEach((email) => {
-  if (email) {
-    return email;
-  }
-});
+// 3 ta tugma - bu yerda siz har bir tugmani olayotganingizni faraz qilaman
+const button1 = document.querySelector(".order-form button"); // Tugma 1
+
+// Form ma'lumotlarini ob'ektga yig'ish funksiyasi
+function collectFormData() {
+  const formData = {
+    email: emailInput.value,
+    selectedOption: selectButton.querySelector(".select-menu__button-text")
+      .innerText,
+    phone: phoneInput.value,
+    message: messageInput.value,
+    privacyPolicyAgreed: privacyCheckbox.checked,
+    dataConsentGiven: dataConsentCheckbox.checked,
+  };
+  return formData;
+}
+
+const getMessage = (formData) => {
+  const {
+    email,
+    selectedOption,
+    phone,
+    message,
+    privacyPolicyAgreed,
+    dataConsentGiven,
+  } = formData;
+  return `${email} ${selectedOption} ${phone} ${message} ${privacyPolicy} ${dataConsentGiven} ${privacyPolicyAgreed}`;
+};
 
 // Yuboriladigan xabar
-const message = `Yangi xabar! Company email: ${email}, /n Company phone: ${userPhoneNumber}, /n Company message: ${userMessage}`;
+const message = getMessage();
 
 // Xabarni yuborish uchun fetch API dan foydalanish
 function sendMessageToTelegram() {
@@ -48,10 +71,11 @@ function sendMessageToTelegram() {
     });
 }
 
-const sendMessage = document.querySelector(".order-form button");
-
-sendMessage.addEventListener("click", () => {
+// Tugma 1 bosilganda
+button1.addEventListener("click", function () {
+  const formData = collectFormData();
+  console.log("Form data from Button 1:", formData);
+  // Bu yerda form ma'lumotlarini serverga yuborish yoki boshqa amallarni bajarasiz
+  getMessage(formData);
   sendMessageToTelegram();
 });
-// Xabar yuborishni chaqirish
-// sendMessageToTelegram();
