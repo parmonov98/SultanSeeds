@@ -136,12 +136,14 @@ body.no-scroll {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 110;
-  display: none;
+  z-index: -3;
+  /* display: none; */
+  opacity: 0;
 }
 
 .modal-wrapper.show {
-  display: flex;
+  opacity: 1;
+  z-index: 110;
 }
 
 .modal-content {
@@ -1432,7 +1434,6 @@ button {
   .about__export-info-item:not(:last-child) {
     margin-bottom: 1rem;
   }
-
 
   /* modal */
   .modal-wrapper {

@@ -2,6 +2,28 @@ import { initLanguageSwitcher as e } from "./initLanguageSwitcher.js";
 import { setupHamburgerMenu as t } from "./hamburgerMenuToggle.js";
 import { initializeSelectMenus as l } from "./selectMenu.js";
 document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector(".order-form")) {
+    const modal = document.querySelector(".modal-wrapper");
+    const introButton = document.querySelector(".intro-content__button");
+    const featuresButton = document.querySelector(".features__item-link");
+    const toggleForm = (clickableItem, addToClass) => {
+      clickableItem.addEventListener("click", () => {
+        modal.classList.add(addToClass);
+        document.body.classList.add("no-scroll");
+      });
+    };
+
+    toggleForm(introButton, "show");
+    toggleForm(featuresButton, "show");
+
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal-wrapper")) {
+        modal.classList.remove("show");
+        document.body.classList.remove("no-scroll");
+      }
+    });
+  }
+
   let s = document.querySelector(".nav-language-switcher"),
     a = new URLSearchParams(window.location.search),
     r = a.get("lang") || "ru",
@@ -39,34 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     n.addEventListener("click", () => {
       i.classList.toggle("active"), n.classList.toggle("disabled");
     });
-  }
-  let d = document.querySelector(".modal-wrapper");
-  if (d) {
-    let u = document.querySelector(".intro-content__button"),
-      g = document.querySelector(".features__item-link"),
-      L = document.querySelector(".modal-wrapper button"),
-      m = (e, t) => {
-        e && t
-          ? e.addEventListener("click", (e) => {
-              d.classList.add(t), document.body.classList.add("no-scroll");
-            })
-          : null === e
-          ? console.log("Bosiladigan item topilmadi")
-          : null === t && console.log("Qo'shiladigan class yo'q");
-      },
-      y = (e, t) => {
-        e.addEventListener("click", () => {
-          d.classList.remove(t), document.body.classList.remove("no-scroll");
-        });
-      };
-    d.addEventListener("click", (e) => {
-      e.target === d &&
-        (d.classList.remove("show"),
-        document.body.classList.remove("no-scroll"));
-    }),
-      m(u, "show"),
-      m(g, "show"),
-      y(L, "show");
   }
   e({
     switcherSelector: ".header__language-switcher",
@@ -135,18 +129,4 @@ document.addEventListener("DOMContentLoaded", () => {
             (t.style.display = "block"));
       });
     });
-
-  // inputlarnga qiymat berilgan yoki yo'qligini tekshiruvchi script
-  function checkInputs() {
-    // input elementlarni olish
-    const emailInputEl = document.querySelector(".form-emil"),
-      selectEl = document.querySelector(".select-menu__button-text"),
-      phoneInputEl = document.querySelector(".form-phone input"),
-      messageEl = document.querySelector(".from-message textarea"),
-      termsCheckboxEl = document.querySelector("#order-terms"),
-      checkboxEl = document.querySelector("#order-checkbox");
-
-      console.log();
-      
-  }
 });
