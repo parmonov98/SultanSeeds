@@ -14,8 +14,14 @@ const userPhoneNumber = document.querySelectorAll(
 );
 const userMessage = document.querySelectorAll(".order-form #message");
 
+const email = userEmail.forEach((email) => {
+  if (email) {
+    return email;
+  }
+});
+
 // Yuboriladigan xabar
-const message = `Yangi xabar! Company email: ${userEmail}, /n Company phone: ${userPhoneNumber}, /n Company message: ${userMessage}`;
+const message = `Yangi xabar! Company email: ${email}, /n Company phone: ${userPhoneNumber}, /n Company message: ${userMessage}`;
 
 // Xabarni yuborish uchun fetch API dan foydalanish
 function sendMessageToTelegram() {
