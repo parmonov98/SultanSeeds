@@ -4,6 +4,7 @@ const productSendMessage = document.querySelector(".products-order__button");
 const orderSendMessage = document.querySelector(".order .order-form button");
 const contactSendMessage = document.querySelector(".contact-us__button");
 const faqSendQuestion = document.querySelector(".faq__button");
+const sendNewsLetter = document.querySelector(".newsletter__button");
 
 const botToken = "7223048769:AAGMEnq7qqd04_wj_9gCKbnPfLIN8cr-rss";
 
@@ -613,5 +614,72 @@ if (faqSendQuestion) {
         console.log("Input invalid, please fill the required fields");
       }
     });
+  });
+}
+
+if (sendNewsLetter) {
+  sendNewsLetter.addEventListener("click", () => {
+    const htmlElement = document.documentElement;
+
+    const langAttribute = htmlElement.getAttribute("lang");
+    const newsLetterInput = document.querySelector(
+      "#newsletter__form-email-input"
+    );
+    const subscription = document.querySelector("#newsletter__terms");
+
+    function inputValidate() {
+      let isValid = true;
+
+      newsLetterInput.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          newsLetterInput.style.borderBottom = `1px solid red`;
+        } else {
+          isValid = true;
+          newsLetterInput.style.borderBottom = `1px solid green`;
+        }
+      });
+
+      if (!newsLetterInput.value.trim()) {
+        isValid = false;
+        newsLetterInput.style.borderBottom = `1px solid red`;
+      }
+
+      subscription.addEventListener("change", () => {
+        if (!subscription.checked) {
+          isValid = false;
+          langAttribute === "en"
+            ? alert(
+                "Confirm that you want to receive emails from Sultanseeds.uz!"
+              )
+            : alert(
+                "Подтвердите, что хотите получать электронные письма от Sultanseeds.uz!"
+              );
+        } else {
+          isValid = true;
+        }
+      });
+
+      if (!subscription.checked) {
+        isValid = false;
+        langAttribute === "en"
+          ? alert(
+              "Confirm that you want to receive emails from Sultanseeds.uz!"
+            )
+          : alert(
+              "Подтвердите, что хотите получать электронные письма от Sultanseeds.uz!"
+            );
+      }
+
+      return isValid;
+    }
+
+    if (inputValidate()) {
+      message = `Yangi obunachi #obunachi Til: ${
+        langAttribute === "en" ? "English" : "Russian"
+      } \n\n\n Email: ${newsLetterInput.value.trim()}`;
+
+      sendMessageToTelegram();
+    }
   });
 }
