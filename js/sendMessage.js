@@ -4,7 +4,7 @@ const productSendMessage = document.querySelector(".products-order__button");
 const orderSendMessage = document.querySelector(".order .order-form button");
 const contactSendMessage = document.querySelector(".contact-us__button");
 
-const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
+const botToken = "7223048769:AAGMEnq7qqd04_wj_9gCKbnPfLIN8cr-rss";
 
 const chatId = "-1002280125655";
 
@@ -36,10 +36,10 @@ function sendMessageToTelegram() {
 
 const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
   // Bot tokeningizni bu yerga joylashtiring
-  const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
+  const botToken = "7223048769:AAGMEnq7qqd04_wj_9gCKbnPfLIN8cr-rss";
 
   // Guruh chat ID sini bu yerga qo'ying (masalan, -1001234567890)
-  const chatId = "-1002477600463";
+  const chatId = "-1002280125655";
 
   // Yuboriladigan xabar
   let message = "";
