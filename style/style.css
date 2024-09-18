@@ -199,7 +199,7 @@ body.no-scroll {
 }
 
 .button:hover {
-  background-color: #bd5c21;
+  background-color: #bd5c21 !important;
 }
 
 button {
@@ -919,6 +919,10 @@ button {
   margin-bottom: 1.25rem;
 }
 
+.modal-content a {
+  color: #9a430e;
+}
+
 .order__description,
 .modal-description {
   color: #2f3641;
@@ -931,6 +935,10 @@ button {
 
 .order-form {
   width: 100%;
+}
+
+.order-form a {
+  color: #9a430e;
 }
 
 .order .form-control:not(:last-child),

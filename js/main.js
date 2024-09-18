@@ -128,7 +128,7 @@ window.addEventListener("load", () => {
           o.classList.add("hide"),
             o.classList.contains("hide") &&
               document.body.classList.remove("no-scroll");
-        }, 5500));
+        }, 5000));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
