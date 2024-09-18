@@ -465,13 +465,24 @@
             </div>
             <form>
               <div class="ask-modal__content">
-                <input type="text" placeholder="Ф.И.О" required />
+                <input
+                  type="text"
+                  placeholder="Ф.И.О"
+                  required
+                  id="user-name"
+                />
                 <input
                   type="text"
                   placeholder="Наименование компании"
                   required
+                  id="company-name"
                 />
-                <input type="email" placeholder="Адрес эл. почты" required />
+                <input
+                  type="email"
+                  placeholder="Адрес эл. почты"
+                  required
+                  id="company-email"
+                />
                 <textarea
                   id="ask"
                   placeholder="Введите вопрос..."
@@ -679,30 +690,8 @@
       </footer>
 
       <div class="status-liner"></div>
-
     </div>
     <script type="module" src="../js/main.js" defer></script>
-      <script>
-        const modal = document.querySelector(".ask-modal");
-        const openModal = document.querySelector(".faq__button");
-        openModal.addEventListener("click", (e) => {
-          modal.classList.add("show");
-        });
-        const closeModal = document.querySelector(".ask-modal__button");
-        closeModal.addEventListener("click", (e) => {
-          e.preventDefault();
-          modal.classList.remove("show");
-        });
-        document.addEventListener("click", (e) => {
-          if (e.target.classList.contains("ask-modal")) {
-            modal.classList.remove("show");
-          }
-        });
-        document
-          .querySelector(".ask-modal__nav svg")
-          .addEventListener("click", () => {
-            modal.classList.remove("show");
-          });
-      </script>
+    <script src="../js/sendMessage.js"></script>
   </body>
 </html>
