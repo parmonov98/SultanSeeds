@@ -585,6 +585,10 @@ if (faqSendQuestion) {
       e.preventDefault();
 
       if (inputValidate()) {
+        const htmlElement = document.documentElement;
+
+        const langAttribute = htmlElement.getAttribute("lang");
+
         const now = new Date(); // Hozirgi vaqtni oladi
 
         const year = now.getFullYear(); // Yil
@@ -593,7 +597,9 @@ if (faqSendQuestion) {
         const hours = now.getHours(); // Soat
         const minutes = now.getMinutes(); // Daqiqa
         const seconds = now.getSeconds(); // Sekund
-        message = `Sultanseeds.uz dan yangi #savol:\n\n\nFIO: ${fullName.value.trim()}\nEmail: ${emailInput.value.trim()}\nKampaniya: ${companyName.value.trim()}\nMatn: ${messageInput.value.trim()} \n\n\n ${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
+        message = `Sultanseeds.uz dan yangi #savol Til: ${
+          langAttribute === "en" ? "English" : "Russian"
+        }:\n\n\nFIO: ${fullName.value.trim()}\nEmail: ${emailInput.value.trim()}\nKampaniya: ${companyName.value.trim()}\nMatn: ${messageInput.value.trim()} \n\n\n ${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
         console.log("Input valid, form can be submitted");
         sendMessageToTelegram();
 
