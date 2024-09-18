@@ -1,13 +1,13 @@
+const introSendMessage = document.querySelector(".intro-content__button");
+const featuresSendMessage = document.querySelector(".features__item-link");
+const productSendMessage = document.querySelector(".products-order__button");
+const orderSendMessage = document.querySelector(".order .order-form button");
+
 // Bot tokeningizni bu yerga joylashtiring
 const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
 
 // Guruh chat ID sini bu yerga qo'ying (masalan, -1001234567890)
 const chatId = "-1002477600463";
-
-const introSendMessage = document.querySelector(".intro-content__button");
-const featuresSendMessage = document.querySelector(".features__item-link");
-const productSendMessage = document.querySelector(".products-order__button");
-const orderSendMessage = document.querySelector(".order .order-form button");
 
 // Yuboriladigan xabar
 let message = "";
@@ -37,414 +37,201 @@ function sendMessageToTelegram() {
     });
 }
 
-// formValidation
+const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
+  // Bot tokeningizni bu yerga joylashtiring
+  const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
 
-// sendMessageToTelegram();
-if (introSendMessage) {
-  introSendMessage.addEventListener("click", () => {
-    message = "";
+  // Guruh chat ID sini bu yerga qo'ying (masalan, -1001234567890)
+  const chatId = "-1002477600463";
 
-    const modal = document.querySelector(".modal-wrapper");
-    modal.classList.add("show", "introSendMessage");
+  // Yuboriladigan xabar
+  let message = "";
 
-    document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("show")) {
-        modal.classList.remove("show", "introSendMessage");
-      }
-    });
+  // Xabarni yuborish uchun fetch API dan foydalanish
+  function sendMessageToTelegram() {
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.ok) {
+          console.log("Xabar muvaffaqiyatli yuborildi:", data);
+        } else {
+          console.error("Xatolik yuz berdi:", data);
+        }
+      })
+      .catch((error) => {
+        console.error("Fetch API xatosi:", error);
+      });
+  }
 
-    const sendMessageBTn = modal.querySelector(".introSendMessage button");
+  if (sendMessageEl) {
+    sendMessageEl.addEventListener("click", () => {
+      message = "";
 
-    const introModal = document.querySelector(".introSendMessage");
+      const modal = document.querySelector(`.${modalWrapper}`);
+      modal.classList.add("show", `${modalName}`);
 
-    const emailInput = introModal.querySelector("input[type=email]");
-    const selectInput = introModal.querySelector(".select-menu__button-text");
-    const phoneInput = introModal.querySelector("input[type='tel']");
-    const messageInput = introModal.querySelector("textarea");
-    const privacyPolicy = introModal.querySelector("#privacy-policy");
-    const dataConsent = introModal.querySelector("#data-consent");
+      document.body.classList.add("no-scroll");
+      document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("show")) {
+          modal.classList.remove("show", `${modalName}`);
+          document.body.classList.remove("no-scroll");
+        }
+      });
 
-    function inputValidate() {
-      let isValid = true;
+      const sendMessageBTn = modal.querySelector(`.${modalName} button`);
 
-      // Email inputda real vaqtda tekshirish
-      emailInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
+      const modalEl = document.querySelector(`.${modalName}`);
+
+      const emailInput = modalEl.querySelector("input[type=email]");
+      const selectInput = modalEl.querySelector(".select-menu__button-text");
+      const phoneInput = modalEl.querySelector("input[type='tel']");
+      const messageInput = modalEl.querySelector("textarea");
+      const privacyPolicy = modalEl.querySelector("#privacy-policy");
+      const dataConsent = modalEl.querySelector("#data-consent");
+
+      function inputValidate() {
+        let isValid = true;
+
+        // Email inputda real vaqtda tekshirish
+        emailInput.addEventListener("input", (e) => {
+          if (!e.target.value) {
+            isValid = false;
+            emailInput.style.borderBottom = "1px solid red";
+          } else {
+            isValid = true;
+            emailInput.style.borderBottom = "1px solid green";
+          }
+        });
+
+        // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+        if (!emailInput.value) {
           isValid = false;
           emailInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          emailInput.style.borderBottom = "1px solid green";
         }
-      });
 
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!emailInput.value) {
-        isValid = false;
-        emailInput.style.borderBottom = "1px solid red";
-      }
+        // tel input validation
+        phoneInput.addEventListener("input", (e) => {
+          if (!e.target.value) {
+            isValid = false;
+            phoneInput.style.borderBottom = "1px solid red";
+          } else {
+            isValid = true;
+            phoneInput.style.borderBottom = "1px solid green";
+          }
+        });
 
-      // tel input validation
-      phoneInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
+        // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+        if (!phoneInput.value) {
           isValid = false;
           phoneInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          phoneInput.style.borderBottom = "1px solid green";
         }
-      });
 
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!phoneInput.value) {
-        isValid = false;
-        phoneInput.style.borderBottom = "1px solid red";
-      }
+        // texariea input validation
+        messageInput.addEventListener("input", (e) => {
+          if (!e.target.value) {
+            isValid = false;
+            messageInput.style.borderBottom = "1px solid red";
+          } else {
+            isValid = true;
+            messageInput.style.borderBottom = "1px solid green";
+          }
+        });
 
-      // texariea input validation
-      messageInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
+        // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+        if (!messageInput.value) {
           isValid = false;
           messageInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          messageInput.style.borderBottom = "1px solid green";
         }
-      });
 
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!messageInput.value) {
-        isValid = false;
-        messageInput.style.borderBottom = "1px solid red";
-      }
+        // checkbox input validation
+        privacyPolicy.addEventListener("change", (e) => {
+          if (privacyPolicy.checked) {
+            isValid = false;
+          } else {
+            isValid = true;
+          }
+        });
 
-      // checkbox input validation
-      privacyPolicy.addEventListener("change", (e) => {
-        if (privacyPolicy.checked) {
+        // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+        if (!privacyPolicy.checked) {
           isValid = false;
-        } else {
-          isValid = true;
         }
-      });
+        dataConsent.addEventListener("change", (e) => {
+          if (dataConsent.checked) {
+            isValid = false;
+          } else {
+            isValid = true;
+          }
+        });
 
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!privacyPolicy.checked) {
-        isValid = false;
-      }
-      dataConsent.addEventListener("change", (e) => {
-        if (dataConsent.checked) {
+        // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+        if (!dataConsent.checked) {
           isValid = false;
-        } else {
-          isValid = true;
         }
-      });
 
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!dataConsent.checked) {
-        isValid = false;
+        return isValid;
       }
 
-      return isValid;
-    }
+      // Tugma bosilganda tekshirish
+      sendMessageBTn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    // Tugma bosilganda tekshirish
-    sendMessageBTn.addEventListener("click", (e) => {
-      e.preventDefault();
+        const selected = selectInput.textContent;
+        if (inputValidate()) {
+          const now = new Date(); // Hozirgi vaqtni oladi
 
-      const selected = selectInput.textContent;
-      if (inputValidate()) {
-        message = `Intro sectiondan xabar: \n\n\n Foydalanuvchi email manzili: ${emailInput.value.trim()}, Tanladi: ${selected} \n Foydalanuvchi telifon raqami: ${phoneInput.value.trim()} \n Foydalanuvchi xabari: ${messageInput.value.trim()}, Shaxsiy ma'lumotlarni himoya qilish siyosati roziligi holati: ${true}`;
-        console.log("Input valid, form can be submitted");
-        sendMessageToTelegram();
+          const year = now.getFullYear(); // Yil
+          const month = now.getMonth() + 1; // Oyning raqami (0 dan boshlanadi, shuning uchun 1 qo'shiladi)
+          const date = now.getDate(); // Kun
+          const hours = now.getHours(); // Soat
+          const minutes = now.getMinutes(); // Daqiqa
+          const seconds = now.getSeconds(); // Sekund
+          message = `New message: \n\n\n Email: ${emailInput.value.trim()}, \n Selected: ${selected} \n Phone: ${phoneInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+          console.log("Input valid, form can be submitted");
+          sendMessageToTelegram();
 
-        introModal.classList.remove("show", "introSendMessage");
-        document.body.classList.remove("no-scroll");
+          modalEl.classList.remove("show", "introSendMessage");
+          document.body.classList.remove("no-scroll");
 
-        emailInput.value = "";
-        phoneInput.value = "";
-        selectInput.textContent =
-          "I am interested in receiving offer (MOQ is 20tons)";
-        messageInput.value = "";
-        privacyPolicy.checked = false;
-        dataConsent.checked = false;
-      } else {
-        console.log("Input invalid, please fill the required fields");
-        emailInput.style.borderBottom = "1px solid red";
-      }
-    });
-  });
-}
+          emailInput.value = "";
+          phoneInput.value = "";
 
-if (featuresSendMessage) {
-  featuresSendMessage.addEventListener("click", () => {
-    const modal = document.querySelector(".modal-wrapper");
-    modal.classList.add("show", "featuresSendMessage");
+          const htmlElement = document.documentElement;
 
-    document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("show")) {
-        modal.classList.remove("show", "featuresSendMessage");
-      }
-    });
+          const langAttribute = htmlElement.getAttribute("lang");
 
-    const sendMessageBTn = modal.querySelector(".featuresSendMessage button");
+          if (langAttribute === "en") {
+            selectInput.textContent =
+              "I am interested in receiving offer (MOQ is 20tons)";
+          } else {
+            selectInput.textContent =
+              "Я заинтересован в получении предложения (Минимальный заказ — 20 тонн)";
+          }
 
-    const featureModal = document.querySelector(".featuresSendMessage");
-
-    const emailInput = featureModal.querySelector("input[type=email]");
-    const selectInput = featureModal.querySelector(".select-menu__button-text");
-    const phoneInput = featureModal.querySelector("input[type='tel']");
-    const messageInput = featureModal.querySelector("textarea");
-    const privacyPolicy = featureModal.querySelector("#privacy-policy");
-    const dataConsent = featureModal.querySelector("#data-consent");
-
-    function inputValidate() {
-      let isValid = true;
-
-      // Email inputda real vaqtda tekshirish
-      emailInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
-          isValid = false;
+          messageInput.value = "";
+          privacyPolicy.checked = false;
+          dataConsent.checked = false;
+        } else {
+          console.log("Input invalid, please fill the required fields");
           emailInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          emailInput.style.borderBottom = "1px solid green";
         }
       });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!emailInput.value) {
-        isValid = false;
-        emailInput.style.borderBottom = "1px solid red";
-      }
-
-      // tel input validation
-      phoneInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
-          isValid = false;
-          phoneInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          phoneInput.style.borderBottom = "1px solid green";
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!phoneInput.value) {
-        isValid = false;
-        phoneInput.style.borderBottom = "1px solid red";
-      }
-
-      // texariea input validation
-      messageInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
-          isValid = false;
-          messageInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          messageInput.style.borderBottom = "1px solid green";
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!messageInput.value) {
-        isValid = false;
-        messageInput.style.borderBottom = "1px solid red";
-      }
-
-      // checkbox input validation
-      privacyPolicy.addEventListener("change", (e) => {
-        if (privacyPolicy.checked) {
-          isValid = false;
-        } else {
-          isValid = true;
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!privacyPolicy.checked) {
-        isValid = false;
-      }
-      dataConsent.addEventListener("change", (e) => {
-        if (dataConsent.checked) {
-          isValid = false;
-        } else {
-          isValid = true;
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!dataConsent.checked) {
-        isValid = false;
-      }
-
-      return isValid;
-    }
-
-    // Tugma bosilganda tekshirish
-    sendMessageBTn.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const selected = selectInput.textContent;
-      if (inputValidate()) {
-        message = `Features sectiondan xabar: \n\n\n Foydalanuvchi email manzili: ${emailInput.value.trim()}, Tanladi: ${selected} \n Foydalanuvchi telifon raqami: ${phoneInput.value.trim()} \n Foydalanuvchi xabari: ${messageInput.value.trim()}, Shaxsiy ma'lumotlarni himoya qilish siyosati roziligi holati: ${true}`;
-        console.log("Input valid, form can be submitted");
-        sendMessageToTelegram();
-
-        featureModal.classList.remove("show", "introSendMessage");
-        document.body.classList.remove("no-scroll");
-
-        emailInput.value = "";
-        phoneInput.value = "";
-        selectInput.textContent =
-          "I am interested in receiving offer (MOQ is 20tons)";
-        messageInput.value = "";
-        privacyPolicy.checked = false;
-        dataConsent.checked = false;
-      } else {
-        console.log("Input invalid, please fill the required fields");
-        emailInput.style.borderBottom = "1px solid red";
-      }
     });
-  });
-}
+  }
+};
 
-if (productSendMessage) {
-  productSendMessage.addEventListener("click", () => {
-    const modal = document.querySelector(".modal-wrapper");
-    modal.classList.add("show", "productSendMessage");
-
-    document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("show")) {
-        modal.classList.remove("show", "productSendMessage");
-      }
-    });
-
-    const sendMessageBTn = modal.querySelector(".productSendMessage button");
-
-    const productModal = document.querySelector(".productSendMessage");
-
-    const emailInput = productModal.querySelector("input[type=email]");
-    const selectInput = productModal.querySelector(".select-menu__button-text");
-    const phoneInput = productModal.querySelector("input[type='tel']");
-    const messageInput = productModal.querySelector("textarea");
-    const privacyPolicy = productModal.querySelector("#privacy-policy");
-    const dataConsent = productModal.querySelector("#data-consent");
-
-    console.log(selectInput);
-
-    function inputValidate() {
-      let isValid = true;
-
-      // Email inputda real vaqtda tekshirish
-      emailInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
-          isValid = false;
-          emailInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          emailInput.style.borderBottom = "1px solid green";
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!emailInput.value) {
-        isValid = false;
-        emailInput.style.borderBottom = "1px solid red";
-      }
-
-      // tel input validation
-      phoneInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
-          isValid = false;
-          phoneInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          phoneInput.style.borderBottom = "1px solid green";
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!phoneInput.value) {
-        isValid = false;
-        phoneInput.style.borderBottom = "1px solid red";
-      }
-
-      // texariea input validation
-      messageInput.addEventListener("input", (e) => {
-        if (!e.target.value) {
-          isValid = false;
-          messageInput.style.borderBottom = "1px solid red";
-        } else {
-          isValid = true;
-          messageInput.style.borderBottom = "1px solid green";
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!messageInput.value) {
-        isValid = false;
-        messageInput.style.borderBottom = "1px solid red";
-      }
-
-      // checkbox input validation
-      privacyPolicy.addEventListener("change", (e) => {
-        if (privacyPolicy.checked) {
-          isValid = false;
-        } else {
-          isValid = true;
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!privacyPolicy.checked) {
-        isValid = false;
-      }
-      dataConsent.addEventListener("change", (e) => {
-        if (dataConsent.checked) {
-          isValid = false;
-        } else {
-          isValid = true;
-        }
-      });
-
-      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
-      if (!dataConsent.checked) {
-        isValid = false;
-      }
-
-      return isValid;
-    }
-
-    // Tugma bosilganda tekshirish
-    sendMessageBTn.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const selected = selectInput.textContent;
-      if (inputValidate()) {
-        message = `Product sectiondan xabar: \n\n\n Foydalanuvchi email manzili: ${emailInput.value.trim()}, Tanladi: ${selected} \n Foydalanuvchi telifon raqami: ${phoneInput.value.trim()} \n Foydalanuvchi xabari: ${messageInput.value.trim()}, Shaxsiy ma'lumotlarni himoya qilish siyosati roziligi holati: ${true}`;
-        console.log("Input valid, form can be submitted");
-        sendMessageToTelegram();
-
-        productModal.classList.remove("show", "introSendMessage");
-        document.body.classList.remove("no-scroll");
-
-        emailInput.value = "";
-        emailInput.style.borderBottom = "";
-        phoneInput.value = "";
-        phoneInput.style.borderBottom = "";
-        selectInput.textContent =
-          "I am interested in receiving offer (MOQ is 20tons)";
-        messageInput.value = "";
-        messageInput.style.borderBottom = "";
-        privacyPolicy.checked = false;
-        dataConsent.checked = false;
-      } else {
-        console.log("Input invalid, please fill the required fields");
-        emailInput.style.borderBottom = "1px solid red";
-      }
-    });
-  });
-}
+sendMessage(introSendMessage, "modal-wrapper", "introSendMessage");
+sendMessage(featuresSendMessage, "modal-wrapper", "featuresSendMessage");
+sendMessage(productSendMessage, "modal-wrapper", "productSendMessage");
 
 if (orderSendMessage) {
   orderSendMessage.addEventListener("click", (e) => {
@@ -455,8 +242,8 @@ if (orderSendMessage) {
     const selectInput = orderModal.querySelector(".select-menu__button-text");
     const phoneInput = orderModal.querySelector("input[type='tel']");
     const messageInput = orderModal.querySelector("textarea");
-    const privacyPolicy = orderModal.querySelector("#privacy-policy");
-    const dataConsent = orderModal.querySelector("#data-consent");
+    const privacyPolicy = orderModal.querySelector("#privacy-policy-el");
+    const dataConsent = orderModal.querySelector("#data-consent-el");
 
     function inputValidate() {
       let isValid = true;
@@ -542,12 +329,19 @@ if (orderSendMessage) {
     }
 
     // Tugma bosilganda tekshirish
-    // orderSendMessage.addEventListener("click", (e) => {
-    // e.preventDefault();
 
     const selected = selectInput.textContent;
     if (inputValidate()) {
-      message = `Main order sectiondan xabar: \n\n\n Foydalanuvchi email manzili: ${emailInput.value.trim()}, Tanladi: ${selected} \n Foydalanuvchi telifon raqami: ${phoneInput.value.trim()} \n Foydalanuvchi xabari: ${messageInput.value.trim()}, Shaxsiy ma'lumotlarni himoya qilish siyosati roziligi holati: ${true}`;
+      const now = new Date(); // Hozirgi vaqtni oladi
+
+      const year = now.getFullYear(); // Yil
+      const month = now.getMonth() + 1; // Oyning raqami (0 dan boshlanadi, shuning uchun 1 qo'shiladi)
+      const date = now.getDate(); // Kun
+      const hours = now.getHours(); // Soat
+      const minutes = now.getMinutes(); // Daqiqa
+      const seconds = now.getSeconds(); // Sekund
+
+      message = `New message: \n\n\n Foydalanuvchi email manzili: ${emailInput.value.trim()}, \n\n Tanladi: ${selected} \n\n Foydalanuvchi telifon raqami: ${phoneInput.value.trim()} \n\n Foydalanuvchi xabari: ${messageInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
       console.log("Input valid, form can be submitted");
       sendMessageToTelegram();
 
@@ -555,8 +349,17 @@ if (orderSendMessage) {
       emailInput.style.borderBottom = "";
       phoneInput.value = "";
       phoneInput.style.borderBottom = "";
-      selectInput.textContent =
-        "I am interested in receiving offer (MOQ is 20tons)";
+      const htmlElement = document.documentElement;
+
+      const langAttribute = htmlElement.getAttribute("lang");
+
+      if (langAttribute === "en") {
+        selectInput.textContent =
+          "I am interested in receiving offer (MOQ is 20tons)";
+      } else {
+        selectInput.textContent =
+          "Я заинтересован в получении предложения (Минимальный заказ — 20 тонн)";
+      }
       messageInput.value = "";
       messageInput.style.borderBottom = "";
       privacyPolicy.checked = false;
@@ -565,6 +368,5 @@ if (orderSendMessage) {
       console.log("Input invalid, please fill the required fields");
       emailInput.style.borderBottom = "1px solid red";
     }
-    // });
   });
 }

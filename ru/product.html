@@ -567,6 +567,7 @@
                 class="form-emil"
                 type="email"
                 placeholder="Введите ваш корпоративный e-mail"
+                name="email"
               />
             </div>
             <div class="form-control">
@@ -598,7 +599,11 @@
               </div>
             </div>
             <div class="form-control form-phone">
-              <input type="tel" placeholder="Введите ваш номер телефона" />
+              <input
+                type="tel"
+                placeholder="Введите ваш номер телефона"
+                name="phone"
+              />
             </div>
             <div class="form-control from-message">
               <textarea
@@ -610,8 +615,8 @@
             </div>
             <div class="form-control terms-checkbox">
               <div class="checkbox-control">
-                <input id="checkbox1" type="checkbox" />
-                <label for="checkbox1"
+                <input id="privacy-policy" type="checkbox" />
+                <label for="privacy-policy"
                   >Я прочитал(а) и согласен(согласна) с положениями Политики
                   конфиденциальности, и сознательно и добровольно оставляю свои
                   контактные данные. Я осведомлен(а), что могу запросить
@@ -620,8 +625,8 @@
                 >
               </div>
               <div class="checkbox-control">
-                <input id="checkbox2" type="checkbox" />
-                <label for="checkbox2"
+                <input id="data-consent" type="checkbox" />
+                <label for="data-consent"
                   >Я даю согласие на обработку моих персональных данных,
                   предоставленных в форме компанией Sultan Seeds LLC.</label
                 >
@@ -636,7 +641,6 @@
     </div>
     <script type="module" src="../js/main.js" defer></script>
     <script src="../js/sendMessage.js"></script>
-
     <script>
       const openModal = document.querySelector(".products-order__button");
       if (openModal) {
