@@ -2,6 +2,7 @@ const introSendMessage = document.querySelector(".intro-content__button");
 const featuresSendMessage = document.querySelector(".features__item-link");
 const productSendMessage = document.querySelector(".products-order__button");
 const orderSendMessage = document.querySelector(".order .order-form button");
+const contactSendMessage = document.querySelector(".contact-us__button");
 
 // Bot tokeningizni bu yerga joylashtiring
 const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
@@ -195,7 +196,7 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
           const hours = now.getHours(); // Soat
           const minutes = now.getMinutes(); // Daqiqa
           const seconds = now.getSeconds(); // Sekund
-          message = `New message: \n\n\n Email: ${emailInput.value.trim()}, \n Selected: ${selected} \n Phone: ${phoneInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+          message = `New message: \n\n\n Email: ${emailInput.value.trim()}, \n Selected: ${selected} \n Phone: ${phoneInput.value.trim()} \n Message: ${messageInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
           console.log("Input valid, form can be submitted");
           sendMessageToTelegram();
 
@@ -341,7 +342,7 @@ if (orderSendMessage) {
       const minutes = now.getMinutes(); // Daqiqa
       const seconds = now.getSeconds(); // Sekund
 
-      message = `New message: \n\n\n Foydalanuvchi email manzili: ${emailInput.value.trim()}, \n\n Tanladi: ${selected} \n\n Foydalanuvchi telifon raqami: ${phoneInput.value.trim()} \n\n Foydalanuvchi xabari: ${messageInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+      message = `New message: \n\n\n Email: ${emailInput.value.trim()}, \n Selected: ${selected} \n Phone: ${phoneInput.value.trim()} \n Message: ${messageInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
       console.log("Input valid, form can be submitted");
       sendMessageToTelegram();
 
@@ -367,6 +368,109 @@ if (orderSendMessage) {
     } else {
       console.log("Input invalid, please fill the required fields");
       emailInput.style.borderBottom = "1px solid red";
+    }
+  });
+}
+
+if (contactSendMessage) {
+  contactSendMessage.addEventListener("click", (e) => {
+    e.preventDefault();
+    const contactForm = document.querySelector(".contact-us__form");
+    const contactName = contactForm.querySelector("#contact-name");
+    const contactEmail = contactForm.querySelector("#contact-email");
+    const contactPhone = contactForm.querySelector("#contact-phone");
+    const contactSelect = contactForm.querySelector(
+      ".select-menu__button-text"
+    );
+
+    function inputValidate() {
+      let isValid = true;
+
+      // Email inputda real vaqtda tekshirish
+      contactEmail.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          contactEmail.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          contactEmail.style.borderBottom = "1px solid green";
+        }
+      });
+
+      if (!contactEmail.value) {
+        isValid = false;
+        contactEmail.style.borderBottom = "1px solid red";
+      }
+
+      // tel input validation
+      contactPhone.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          contactPhone.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          contactPhone.style.borderBottom = "1px solid green";
+        }
+      });
+
+      if (!contactPhone.value) {
+        isValid = false;
+        contactPhone.style.borderBottom = "1px solid red";
+      }
+
+      // name input validation
+      contactName.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          contactName.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          contactName.style.borderBottom = "1px solid green";
+        }
+      });
+
+      if (!contactName.value) {
+        isValid = false;
+        contactName.style.borderBottom = "1px solid red";
+      }
+
+      return isValid;
+    }
+
+    // Tugma bosilganda tekshirish
+
+    const selected = contactSelect.textContent.trim();
+    if (inputValidate()) {
+      const now = new Date(); // Hozirgi vaqtni oladi
+
+      const year = now.getFullYear(); // Yil
+      const month = now.getMonth() + 1; // Oyning raqami (0 dan boshlanadi, shuning uchun 1 qo'shiladi)
+      const date = now.getDate(); // Kun
+      const hours = now.getHours(); // Soat
+      const minutes = now.getMinutes(); // Daqiqa
+      const seconds = now.getSeconds(); // Sekund
+
+      message = `New contact message: \n\n\n Name: ${contactName.value.trim()}, \n Selected: ${selected} \n Phone: ${contactPhone.value.trim()} \n Email: ${contactEmail.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+      console.log("Input valid, form can be submitted");
+      sendMessageToTelegram();
+
+      contactEmail.value = "";
+      contactEmail.style.borderBottom = "";
+      contactPhone.value = "";
+      contactPhone.style.borderBottom = "";
+      const htmlElement = document.documentElement;
+
+      const langAttribute = htmlElement.getAttribute("lang");
+
+      if (langAttribute === "en") {
+        contactSelect.textContent = "Select your option";
+      } else {
+        contactSelect.textContent = "Выберите свой вариант";
+      }
+      contactName.value = "";
+      contactName.style.borderBottom = "";
+    } else {
+      console.log("Input invalid, please fill the required fields");
     }
   });
 }

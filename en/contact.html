@@ -308,16 +308,20 @@
               </h3>
               <form class="contact-us__form">
                 <div class="contact-us__form-control">
-                  <label for="name">Your name</label>
-                  <input type="text" placeholder="Enter" />
+                  <label for="contact-name">Your name</label>
+                  <input type="text" placeholder="Enter" id="contact-name" />
                 </div>
                 <div class="contact-us__form-control">
-                  <label for="name">Your company email</label>
-                  <input type="text" placeholder="example@gmail.com" />
+                  <label for="contact-email">Your company email</label>
+                  <input
+                    type="text"
+                    placeholder="example@gmail.com"
+                    id="contact-email"
+                  />
                 </div>
                 <div class="contact-us__form-control">
-                  <label for="name">Your phone number</label>
-                  <input type="text" placeholder="+998" />
+                  <label for="contact-phone">Your phone number</label>
+                  <input type="text" placeholder="+998" id="contact-phone" />
                 </div>
                 <div class="select-menu">
                   <label for="select" class="order__label"
@@ -567,5 +571,6 @@
       <div class="status-liner"></div>
     </div>
     <script type="module" src="../js/main.js" defer></script>
+    <script src="../js/sendMessage.js"></script>
   </body>
 </html>

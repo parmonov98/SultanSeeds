@@ -310,15 +310,19 @@
               <form class="contact-us__form">
                 <div class="contact-us__form-control">
                   <label for="name">Имя</label>
-                  <input type="text" placeholder="Enter" />
+                  <input type="text" placeholder="Enter" id="contact-name" />
                 </div>
                 <div class="contact-us__form-control">
                   <label for="name">Рабочий e-mail</label>
-                  <input type="text" placeholder="example@gmail.com" />
+                  <input
+                    type="text"
+                    placeholder="example@gmail.com"
+                    id="contact-email"
+                  />
                 </div>
                 <div class="contact-us__form-control">
                   <label for="name">Номер телефона</label>
-                  <input type="text" placeholder="+7" />
+                  <input type="text" placeholder="+7" id="contact-phone" />
                 </div>
                 <div class="select-menu">
                   <label for="select" class="order__label"
@@ -337,16 +341,24 @@
 
                   <ul class="select-menu__options">
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text"> Поставки белых семечек</span>
+                      <span class="select-menu__option-text">
+                        Поставки белых семечек</span
+                      >
                     </li>
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text">Поставки полосатых семечек</span>
+                      <span class="select-menu__option-text"
+                        >Поставки полосатых семечек</span
+                      >
                     </li>
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text">Поставки ядер подсолнечника</span>
+                      <span class="select-menu__option-text"
+                        >Поставки ядер подсолнечника</span
+                      >
                     </li>
                     <li class="select-menu__option">
-                      <span class="select-menu__option-text"> Поставки всех видов семечек</span>
+                      <span class="select-menu__option-text">
+                        Поставки всех видов семечек</span
+                      >
                     </li>
                   </ul>
                 </div>
@@ -378,7 +390,10 @@
               <div class="footer__top-item-social">
                 <ul class="footer__social-list">
                   <li class="footer__social-item">
-                    <a href="https://t.me/sultanseeds" class="footer__social-link">
+                    <a
+                      href="https://t.me/sultanseeds"
+                      class="footer__social-link"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -396,7 +411,10 @@
                     </a>
                   </li>
                   <li class="footer__social-item">
-                    <a href="https://wa.me/998993270009" class="footer__social-link">
+                    <a
+                      href="https://wa.me/998993270009"
+                      class="footer__social-link"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -412,7 +430,10 @@
                     </a>
                   </li>
                   <li class="footer__social-item">
-                    <a href="mailto:info@sultanseeds.uz" class="footer__social-link">
+                    <a
+                      href="mailto:info@sultanseeds.uz"
+                      class="footer__social-link"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -547,8 +568,8 @@
       </footer>
 
       <div class="status-liner"></div>
-
     </div>
     <script type="module" src="../js/main.js" defer></script>
+    <script src="../js/sendMessage.js"></script>
   </body>
 </html>
