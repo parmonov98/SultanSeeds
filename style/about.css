@@ -1,1 +1,319 @@
-.about-page__intro{background-image:url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/about-page__intro.png?updatedAt=1725101210202");height:16.25rem;display:flex;align-items:center;justify-content:center;background-size:cover}.about-page__title,.history__title{color:#fff;text-align:center;font-size:2.25rem;font-weight:700}.about-page__description{padding:4rem 0;color:#272a2f;font-size:1.25rem;font-weight:400;line-height:2.25rem}.about-page__photo img{width:100%;border-radius:.93rem}.about-page__photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(38rem,1fr));margin-top:2rem;gap:2rem;margin-bottom:3.38rem}.about-page__photo-item-title{color:#272a2f;font-size:1.5rem;font-weight:600;line-height:2.25rem;margin:2rem 0 1rem}.about-page__photo-item-description{color:#272a2f;font-size:1.25rem;font-weight:400;line-height:2.25rem}.advantages__items{display:grid;grid-template-columns:repeat(auto-fill,minmax(39rem,1fr));gap:2rem;padding-bottom:3.87rem}.advantages__item{display:flex;align-items:start;justify-content:center;gap:1rem;flex-direction:column}.facts__country-list,.history{align-items:center;display:flex}.advantages__title{color:#272a2f;font-size:2.25rem;font-weight:700;margin-bottom:3.81rem}.facts{background:#fafafc;padding:6.25rem 0}.facts__title{color:#272a2f;text-align:center;font-size:3rem;font-weight:700}.facts__country-list{justify-content:center;flex-wrap:wrap;gap:1.5rem;margin:2rem 0}.facts__svg-map,.facts__svg-map .active{position:relative}#country-info{padding:.5rem .75rem;position:absolute;border-radius:.5rem;background:#0c111d;color:#fff;box-shadow:0 12px 16px -4px rgba(16,24,40,.08),0 4px 6px -2px rgba(16,24,40,.03);pointer-events:none;display:none}#country-info::after{content:"";position:absolute;bottom:-.5rem;width:1rem;height:1rem;background-color:#0c111d;left:50%;transform:translateX(-50%) rotate(45deg);border-radius:.1rem;display:none}.facts__country-list-item{padding:.75rem 1.5rem;border-radius:3.125rem;border:1px solid #f1f2f4;background:#fff;cursor:pointer}.facts__svg-map,.facts__svg-map svg{width:100%}.facts__svg-map svg path{transition:fill .3s;cursor:pointer}.facts__svg-map .active{fill:#2f4135}.facts__svg-map .inactive{fill:initial}.facts__country-list li.active{background-color:#2f4135;color:#fff}.history{background-image:url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/about-page__intro.png?updatedAt=1725101210202");height:21.125rem;justify-content:center;background-size:cover;text-align:center}.history__description{color:#fff;font-size:1rem;font-weight:500;line-height:1.75rem}.more-info{padding:4rem 0}.more-info__container{display:flex;align-items:center;justify-content:start;gap:2rem}.more-info__item{min-width:39rem;width:100%}.more-info__info{color:#272a2f;font-size:1rem;font-weight:500;margin-bottom:1.5rem}.more-info__status{color:#272a2f;font-size:1.5rem;font-weight:700}@media screen and (max-width:1350px){.about-page__photos,.advantages__items{grid-template-columns:repeat(auto-fill,minmax(33rem,1fr))}.about-page__photos{gap:1rem}.about-page__photo-item img{width:100%}.about-page__photo img{height:100%}.advantages__items{gap:1.5rem}.facts__country-list-item{font-size:.93rem}.more-info__container{gap:1.5rem}.more-info__item{min-width:33rem}}@media screen and (max-width:1140px){.about-page__photo img{height:30rem;object-fit:cover}.advantages__items{grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1.5rem}.more-info__item{min-width:unset}}@media screen and (max-width:1024px){.more-info__container{flex-direction:column}}@media screen and (max-width:767px){.about-page__photo img{height:25rem}.about-page__photos{grid-template-columns:repeat(auto-fill,minmax(100%,1fr));gap:1rem}.advantages__items{grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1.5rem}}@media screen and (max-width:680px){.about-page__intro{height:5.9rem}.about-page__description{padding:1.5rem 0 2rem}.about-page__photos{gap:2rem;margin-bottom:2rem}.about-page__title,.facts__title,.history__title{font-size:1.5rem}.about-page__photo-item-title{font-size:1.25rem}.about-page__description,.about-page__photo-item-description{font-size:.87rem;font-weight:400;line-height:1.5rem}.advantages__title{font-size:1.5rem;margin-bottom:2rem}.advantages__items{gap:2rem}.advantages__item-title{font-size:1.25rem;font-weight:700}.advantages__item-description,.history__description{font-size:.875rem;line-height:1.5rem}.advantages__item-description{font-weight:400}.history{height:18rem}.history__title{margin-bottom:1.5rem}}@media screen and (max-width:480px){.about-page__photo img{height:15rem}.facts{padding:3.75rem 0}.facts__country-list-item{font-size:.75rem;padding:.125rem 1rem}.facts__country-list{gap:1rem}.facts__svg-map,.facts__svg-map svg{height:10.8rem}.more-info{padding:2rem 0}.more-info__container{gap:1.5rem}.more-info__info{font-size:.87rem;margin-bottom:1rem}.more-info__status{font-size:1.25rem}}
+.about-page__intro {
+  background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/about-page__intro.png?updatedAt=1725101210202");
+  height: 16.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.about-page__title,
+.history__title {
+  color: #fff;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.about-page__description {
+  padding: 4rem 0;
+  color: #272a2f;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+}
+.about-page__description a {
+  color: #9a430e;
+}
+.about-page__photo img {
+  width: 100%;
+  border-radius: 0.93rem;
+}
+.about-page__photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38rem, 1fr));
+  margin-top: 2rem;
+  gap: 2rem;
+  margin-bottom: 3.38rem;
+}
+.about-page__photo-item-title {
+  color: #272a2f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+  margin: 2rem 0 1rem;
+}
+.about-page__photo-item-description {
+  color: #272a2f;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+}
+.advantages__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(39rem, 1fr));
+  gap: 2rem;
+  padding-bottom: 3.87rem;
+}
+.advantages__item {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+.facts__country-list,
+.history {
+  align-items: center;
+  display: flex;
+}
+.advantages__title {
+  color: #272a2f;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3.81rem;
+}
+.facts {
+  background: #fafafc;
+  padding: 6.25rem 0;
+}
+.facts__title {
+  color: #272a2f;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.facts__country-list {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.facts__svg-map,
+.facts__svg-map .active {
+  position: relative;
+}
+#country-info {
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  border-radius: 0.5rem;
+  background: #0c111d;
+  color: #fff;
+  box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  pointer-events: none;
+  display: none;
+}
+#country-info::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #0c111d;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 0.1rem;
+  display: none;
+}
+.facts__country-list-item {
+  padding: 0.75rem 1.5rem;
+  border-radius: 3.125rem;
+  border: 1px solid #f1f2f4;
+  background: #fff;
+  cursor: pointer;
+}
+.facts__svg-map,
+.facts__svg-map svg {
+  width: 100%;
+}
+.facts__svg-map svg path {
+  transition: fill 0.3s;
+  cursor: pointer;
+}
+.facts__svg-map .active {
+  fill: #2f4135;
+}
+.facts__svg-map .inactive {
+  fill: initial;
+}
+.facts__country-list li.active {
+  background-color: #2f4135;
+  color: #fff;
+}
+.history {
+  background-image: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/about-page__intro.png?updatedAt=1725101210202");
+  height: 21.125rem;
+  justify-content: center;
+  background-size: cover;
+  text-align: center;
+}
+.history__description {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+.more-info {
+  padding: 4rem 0;
+}
+.more-info__container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+.more-info__item {
+  min-width: 39rem;
+  width: 100%;
+}
+.more-info__info {
+  color: #272a2f;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.more-info__status {
+  color: #272a2f;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 1350px) {
+  .about-page__photos,
+  .advantages__items {
+    grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
+  }
+  .about-page__photos {
+    gap: 1rem;
+  }
+  .about-page__photo-item img {
+    width: 100%;
+  }
+  .about-page__photo img {
+    height: 100%;
+  }
+  .advantages__items {
+    gap: 1.5rem;
+  }
+  .facts__country-list-item {
+    font-size: 0.93rem;
+  }
+  .more-info__container {
+    gap: 1.5rem;
+  }
+  .more-info__item {
+    min-width: 33rem;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .about-page__photo img {
+    height: 30rem;
+    object-fit: cover;
+  }
+  .advantages__items {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+  .more-info__item {
+    min-width: unset;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .more-info__container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-page__photo img {
+    height: 25rem;
+  }
+  .about-page__photos {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 1rem;
+  }
+  .advantages__items {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 680px) {
+  .about-page__intro {
+    height: 5.9rem;
+  }
+  .about-page__description {
+    padding: 1.5rem 0 2rem;
+  }
+  .about-page__photos {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .about-page__title,
+  .facts__title,
+  .history__title {
+    font-size: 1.5rem;
+  }
+  .about-page__photo-item-title {
+    font-size: 1.25rem;
+  }
+  .about-page__description,
+  .about-page__photo-item-description {
+    font-size: 0.87rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  .advantages__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .advantages__items {
+    gap: 2rem;
+  }
+  .advantages__item-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .advantages__item-description,
+  .history__description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+  .advantages__item-description {
+    font-weight: 400;
+  }
+  .history {
+    height: 18rem;
+  }
+  .history__title {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-page__photo img {
+    height: 15rem;
+  }
+  .facts {
+    padding: 3.75rem 0;
+  }
+  .facts__country-list-item {
+    font-size: 0.75rem;
+    padding: 0.125rem 1rem;
+  }
+  .facts__country-list {
+    gap: 1rem;
+  }
+  .facts__svg-map,
+  .facts__svg-map svg {
+    height: 10.8rem;
+  }
+  .more-info {
+    padding: 2rem 0;
+  }
+  .more-info__container {
+    gap: 1.5rem;
+  }
+  .more-info__info {
+    font-size: 0.87rem;
+    margin-bottom: 1rem;
+  }
+  .more-info__status {
+    font-size: 1.25rem;
+  }
+}
