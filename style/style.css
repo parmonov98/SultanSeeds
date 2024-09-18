@@ -1787,10 +1787,7 @@ button {
     z-index: 1;
   }
 
-  .nav-language-switcher.en a[data-lang="en"] {
-    color: #ff5733;
-  }
-  .nav-language-switcher.ru a[data-lang="ru"] {
+  .nav-language-switcher a.selected {
     color: #ff5733;
   }
 

@@ -95,6 +95,25 @@ document.addEventListener("DOMContentLoaded", () => {
             (t.style.display = "block"));
       });
     });
+
+  const htmlElement = document.documentElement;
+
+  const langAttribute = htmlElement.getAttribute("lang");
+
+  const lang = document.querySelectorAll(".nav-language-switcher a");
+
+  console.log(lang);
+
+  lang.forEach((lan) => {
+    lan.getAttribute("data-lang");
+    console.log(lan);
+
+    if (lan.getAttribute("data-lang") === langAttribute) {
+      lan.classList.add("selected");
+    } else {
+      lan.classList.remove("selected");
+    }
+  });
 });
 
 window.addEventListener("load", () => {
@@ -110,4 +129,21 @@ window.addEventListener("load", () => {
             o.classList.contains("hide") &&
               document.body.classList.remove("no-scroll");
         }, 5500));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const htmlElement = document.documentElement;
+
+  const langAttribute = htmlElement.getAttribute("lang");
+
+  const lang = document.querySelectorAll(".nav-language-switcher a");
+
+  lang.forEach((lan) => {
+    lan.getAttribute("data-lang");
+    if (lan.getAttribute("data-lang") === langAttribute) {
+      lan.classList.add("selected");
+    } else {
+      lan.classList.remove("selected");
+    }
+  });
 });
