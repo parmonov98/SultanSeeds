@@ -462,9 +462,24 @@
             </div>
             <form>
               <div class="ask-modal__content">
-                <input type="text" placeholder="Your full name" required />
-                <input type="text" placeholder="Your company name" required />
-                <input type="email" placeholder="Email address" required />
+                <input
+                  type="text"
+                  placeholder="Your full name"
+                  required
+                  id="user-name"
+                />
+                <input
+                  type="text"
+                  placeholder="Your company name"
+                  required
+                  id="company-name"
+                />
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  required
+                  id="company-email"
+                />
                 <textarea
                   id="ask"
                   placeholder="Enter a question..."
@@ -674,30 +689,8 @@
       </footer>
 
       <div class="status-liner"></div>
-
     </div>
-      <script type="module" src="../js/main.js" defer></script>
-      <script>
-        const modal = document.querySelector(".ask-modal");
-        const openModal = document.querySelector(".faq__button");
-        openModal.addEventListener("click", (e) => {
-          modal.classList.add("show");
-        });
-        const closeModal = document.querySelector(".ask-modal__button");
-        closeModal.addEventListener("click", (e) => {
-          e.preventDefault();
-          modal.classList.remove("show");
-        });
-        document.addEventListener("click", (e) => {
-          if (e.target.classList.contains("ask-modal")) {
-            modal.classList.remove("show");
-          }
-        });
-        document
-          .querySelector(".ask-modal__nav svg")
-          .addEventListener("click", () => {
-            modal.classList.remove("show");
-          });
-      </script>
+    <script type="module" src="../js/main.js" defer></script>
+    <script src="../js/sendMessage.js"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@ const featuresSendMessage = document.querySelector(".features__item-link");
 const productSendMessage = document.querySelector(".products-order__button");
 const orderSendMessage = document.querySelector(".order .order-form button");
 const contactSendMessage = document.querySelector(".contact-us__button");
+const faqSendQuestion = document.querySelector(".faq__button");
 
 const botToken = "7223048769:AAGMEnq7qqd04_wj_9gCKbnPfLIN8cr-rss";
 
@@ -192,7 +193,7 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
           const hours = now.getHours(); // Soat
           const minutes = now.getMinutes(); // Daqiqa
           const seconds = now.getSeconds(); // Sekund
-          message = `New message: \n\n\n Email: ${emailInput.value.trim()}, \n Selected: ${selected} \n Phone: ${phoneInput.value.trim()} \n Message: ${messageInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+          message = `Sultanseeds.uz dan yangi #xabar:\n\n\nEmail: ${emailInput.value.trim()}\nMaqsad: ${selected}\nTelefon: ${phoneInput.value.trim()}\nMatn: ${messageInput.value.trim()}\n\n\n${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
           console.log("Input valid, form can be submitted");
           sendMessageToTelegram();
 
@@ -468,5 +469,136 @@ if (contactSendMessage) {
     } else {
       console.log("Input invalid, please fill the required fields");
     }
+  });
+}
+
+if (faqSendQuestion) {
+  faqSendQuestion.addEventListener("click", () => {
+    message = "";
+
+    const modal = document.querySelector(`.ask-modal`);
+
+    modal.classList.add("show");
+    document.body.classList.add("no-scroll");
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("show")) {
+        modal.classList.remove("show");
+        document.body.classList.remove("no-scroll");
+      }
+    });
+
+    const sendMessageBTn = modal.querySelector(`.ask-modal button`);
+
+    const modalEl = document.querySelector(`.ask-modal form`);
+
+    const emailInput = modalEl.querySelector("#company-email");
+    const fullName = modalEl.querySelector("#user-name");
+    const messageInput = modalEl.querySelector("textarea");
+    const companyName = modalEl.querySelector("#company-name");
+    console.log("Email", emailInput);
+    console.log("FullName", fullName);
+    console.log("message", messageInput);
+    console.log("Company name", companyName);
+
+    function inputValidate() {
+      let isValid = true;
+
+      // Email inputda real vaqtda tekshirish
+      emailInput.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          emailInput.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          emailInput.style.borderBottom = "1px solid green";
+        }
+      });
+
+      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+      if (!emailInput.value) {
+        isValid = false;
+        emailInput.style.borderBottom = "1px solid red";
+      }
+
+      // tel input validation
+      fullName.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          fullName.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          fullName.style.borderBottom = "1px solid green";
+        }
+      });
+
+      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+      if (!fullName.value) {
+        isValid = false;
+        fullName.style.borderBottom = "1px solid red";
+      }
+
+      // texariea input validation
+      messageInput.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          messageInput.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          messageInput.style.borderBottom = "1px solid green";
+        }
+      });
+
+      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+      if (!messageInput.value) {
+        isValid = false;
+        messageInput.style.borderBottom = "1px solid red";
+      }
+
+      companyName.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          isValid = false;
+          companyName.style.borderBottom = "1px solid red";
+        } else {
+          isValid = true;
+          companyName.style.borderBottom = "1px solid green";
+        }
+      });
+
+      // Har safar funksiya chaqirilganda inputni to'ldirilganligini tekshirish
+      if (!companyName.value) {
+        isValid = false;
+        companyName.style.borderBottom = "1px solid red";
+      }
+
+      return isValid;
+    }
+
+    // Tugma bosilganda tekshirish
+    sendMessageBTn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (inputValidate()) {
+        const now = new Date(); // Hozirgi vaqtni oladi
+
+        const year = now.getFullYear(); // Yil
+        const month = now.getMonth() + 1; // Oyning raqami (0 dan boshlanadi, shuning uchun 1 qo'shiladi)
+        const date = now.getDate(); // Kun
+        const hours = now.getHours(); // Soat
+        const minutes = now.getMinutes(); // Daqiqa
+        const seconds = now.getSeconds(); // Sekund
+        message = `Sultanseeds.uz dan yangi #savol:\n\n\nFIO: ${fullName.value.trim()}\nEmail: ${emailInput.value.trim()}\nKampaniya: ${companyName.value.trim()}\nMatn: ${messageInput.value.trim()} \n\n\n ${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
+        console.log("Input valid, form can be submitted");
+        sendMessageToTelegram();
+
+        modal.classList.remove("show", "introSendMessage");
+        document.body.classList.remove("no-scroll");
+
+        emailInput.value = "";
+        companyName.value = "";
+        messageInput.value = "";
+      } else {
+        console.log("Input invalid, please fill the required fields");
+      }
+    });
   });
 }
