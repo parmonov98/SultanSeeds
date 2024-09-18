@@ -648,38 +648,38 @@ if (sendNewsLetter) {
       subscription.addEventListener("change", () => {
         if (!subscription.checked) {
           isValid = false;
-          langAttribute === "en"
-            ? alert(
-                "Confirm that you want to receive emails from Sultanseeds.uz!"
-              )
-            : alert(
-                "Подтвердите, что хотите получать электронные письма от Sultanseeds.uz!"
-              );
+          subscription.style.boxShadow = `0px 0px 3px red`;
         } else {
           isValid = true;
+          subscription.style.boxShadow = `0px 0px 3px green`;
         }
       });
 
       if (!subscription.checked) {
         isValid = false;
-        langAttribute === "en"
-          ? alert(
-              "Confirm that you want to receive emails from Sultanseeds.uz!"
-            )
-          : alert(
-              "Подтвердите, что хотите получать электронные письма от Sultanseeds.uz!"
-            );
+        subscription.style.boxShadow = `0px 0px 3px red`;
       }
 
       return isValid;
     }
 
     if (inputValidate()) {
+      const now = new Date(); // Hozirgi vaqtni oladi
+
+      const year = now.getFullYear(); // Yil
+      const month = now.getMonth() + 1; // Oyning raqami (0 dan boshlanadi, shuning uchun 1 qo'shiladi)
+      const date = now.getDate(); // Kun
+      const hours = now.getHours(); // Soat
+      const minutes = now.getMinutes(); // Daqiqa
+      const seconds = now.getSeconds(); // Sekund
       message = `Yangi obunachi #obunachi Til: ${
         langAttribute === "en" ? "English" : "Russian"
-      } \n\n\n Email: ${newsLetterInput.value.trim()}`;
+      } \n\n\n Email: ${newsLetterInput.value.trim()}\n\n\n${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
 
       sendMessageToTelegram();
-    }
+
+      newsLetterInput.style.borderBottom = "";
+      subscription.style.boxShadow = "";
+    } 
   });
 }
