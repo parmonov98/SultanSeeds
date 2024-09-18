@@ -183,6 +183,10 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
       sendMessageBTn.addEventListener("click", (e) => {
         e.preventDefault();
 
+        const htmlElement = document.documentElement;
+
+        const langAttribute = htmlElement.getAttribute("lang");
+
         const selected = selectInput.textContent;
         if (inputValidate()) {
           const now = new Date(); // Hozirgi vaqtni oladi
@@ -193,7 +197,9 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
           const hours = now.getHours(); // Soat
           const minutes = now.getMinutes(); // Daqiqa
           const seconds = now.getSeconds(); // Sekund
-          message = `Sultanseeds.uz dan yangi #xabar:\n\n\nEmail: ${emailInput.value.trim()}\nMaqsad: ${selected}\nTelefon: ${phoneInput.value.trim()}\nMatn: ${messageInput.value.trim()}\n\n\n${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
+          message = `Sultanseeds.uz dan yangi #xabar Til: ${
+            langAttribute === "en" ? "English" : "Russian"
+          }:\n\n\nEmail: ${emailInput.value.trim()}\nMaqsad: ${selected}\nTelefon: ${phoneInput.value.trim()}\nMatn: ${messageInput.value.trim()}\n\n\n${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
           console.log("Input valid, form can be submitted");
           sendMessageToTelegram();
 
@@ -202,10 +208,6 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
 
           emailInput.value = "";
           phoneInput.value = "";
-
-          const htmlElement = document.documentElement;
-
-          const langAttribute = htmlElement.getAttribute("lang");
 
           if (langAttribute === "en") {
             selectInput.textContent =
@@ -220,7 +222,6 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
           dataConsent.checked = false;
         } else {
           console.log("Input invalid, please fill the required fields");
-          emailInput.style.borderBottom = "1px solid red";
         }
       });
     });
@@ -330,6 +331,10 @@ if (orderSendMessage) {
 
     const selected = selectInput.textContent;
     if (inputValidate()) {
+      const htmlElement = document.documentElement;
+
+      const langAttribute = htmlElement.getAttribute("lang");
+
       const now = new Date(); // Hozirgi vaqtni oladi
 
       const year = now.getFullYear(); // Yil
@@ -339,7 +344,9 @@ if (orderSendMessage) {
       const minutes = now.getMinutes(); // Daqiqa
       const seconds = now.getSeconds(); // Sekund
 
-      message = `New message: \n\n\n Email: ${emailInput.value.trim()}, \n Selected: ${selected} \n Phone: ${phoneInput.value.trim()} \n Message: ${messageInput.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+      message = `Sultanseeds.uz dan yangi #xabar Til: ${
+        langAttribute === "en" ? "English" : "Russian"
+      }:\n\n\nEmail: ${emailInput.value.trim()}\nMaqsad: ${selected}\nTelefon: ${phoneInput.value.trim()}\nMatn: ${messageInput.value.trim()}\n\n\n${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
       console.log("Input valid, form can be submitted");
       sendMessageToTelegram();
 
@@ -347,9 +354,6 @@ if (orderSendMessage) {
       emailInput.style.borderBottom = "";
       phoneInput.value = "";
       phoneInput.style.borderBottom = "";
-      const htmlElement = document.documentElement;
-
-      const langAttribute = htmlElement.getAttribute("lang");
 
       if (langAttribute === "en") {
         selectInput.textContent =
@@ -438,6 +442,10 @@ if (contactSendMessage) {
 
     const selected = contactSelect.textContent.trim();
     if (inputValidate()) {
+      const htmlElement = document.documentElement;
+
+      const langAttribute = htmlElement.getAttribute("lang");
+
       const now = new Date(); // Hozirgi vaqtni oladi
 
       const year = now.getFullYear(); // Yil
@@ -447,7 +455,9 @@ if (contactSendMessage) {
       const minutes = now.getMinutes(); // Daqiqa
       const seconds = now.getSeconds(); // Sekund
 
-      message = `New contact message: \n\n\n Name: ${contactName.value.trim()}, \n Selected: ${selected} \n Phone: ${contactPhone.value.trim()} \n Email: ${contactEmail.value.trim()} \n\n\n ${year}-${month}-${date} - ${hours}:${minutes}:${seconds}`;
+      message = `Sultanseeds.uz dan yangi kontakt #kontakt  Til: ${
+        langAttribute === "en" ? "English" : "Russian"
+      }: \n\n\nFISH: ${contactName.value.trim()}\nMaqsad: ${selected}\nTelifon: ${contactPhone.value.trim()}\nEmail: ${contactEmail.value.trim()} \n\n\n ${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
       console.log("Input valid, form can be submitted");
       sendMessageToTelegram();
 
@@ -455,9 +465,6 @@ if (contactSendMessage) {
       contactEmail.style.borderBottom = "";
       contactPhone.value = "";
       contactPhone.style.borderBottom = "";
-      const htmlElement = document.documentElement;
-
-      const langAttribute = htmlElement.getAttribute("lang");
 
       if (langAttribute === "en") {
         contactSelect.textContent = "Select your option";
