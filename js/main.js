@@ -2,29 +2,6 @@ import { initLanguageSwitcher as e } from "./initLanguageSwitcher.js";
 import { setupHamburgerMenu as t } from "./hamburgerMenuToggle.js";
 import { initializeSelectMenus as l } from "./selectMenu.js";
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector(".order-form")) {
-    const modal = document.querySelector(".modal-wrapper");
-    const introButton = document.querySelector(".intro-content__button");
-    const featuresButton = document.querySelector(".features__item-link");
-
-    const toggleForm = (clickableItem, addToClass) => {
-      clickableItem.addEventListener("click", () => {
-        modal.classList.add(addToClass);
-        document.body.classList.add("no-scroll");
-      });
-    };
-
-    toggleForm(introButton, "show");
-    toggleForm(featuresButton, "show");
-
-    document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("modal-wrapper")) {
-        modal.classList.remove("show");
-        document.body.classList.remove("no-scroll");
-      }
-    });
-  }
-
   let s = document.querySelector(".nav-language-switcher"),
     a = new URLSearchParams(window.location.search),
     r = a.get("lang") || "ru",

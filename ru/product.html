@@ -633,17 +633,18 @@
           </form>
         </div>
       </div>
-
     </div>
     <script type="module" src="../js/main.js" defer></script>
-      <script>
-        const openModal = document.querySelector(".products-order__button");
-        if (openModal) {
-          openModal.addEventListener("click", (e) => {
-            e.preventDefault();
-            document.querySelector(".modal-wrapper").classList.add("show");
-          });
-        }
-      </script>
+    <script src="../js/sendMessage.js"></script>
+
+    <script>
+      const openModal = document.querySelector(".products-order__button");
+      if (openModal) {
+        openModal.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(".modal-wrapper").classList.add("show");
+        });
+      }
+    </script>
   </body>
 </html>

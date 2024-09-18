@@ -561,37 +561,44 @@
                 class="form-emil"
                 type="email"
                 placeholder="Type your company e-mail"
+                name="email"
+                required
               />
             </div>
             <div class="form-control">
               <div class="select-menu">
                 <div class="select-menu__button" id="select__menu">
-                  <span class="select-menu__button-text"
-                    >I am interested in receiving offer (MOQ is 20tons)</span
-                  >
+                  <span class="select-menu__button-text">
+                    I am interested in receiving offer (MOQ is 20tons)
+                  </span>
                   <img
                     src="./photo/icon/arrow-ios-down.png"
                     alt="Arrow"
                     class="select-menu__arrow"
                   />
                 </div>
-
+  
                 <ul class="select-menu__options">
                   <li class="select-menu__option">
-                    <span class="select-menu__option-text"
-                      >I am interested in importing 20tons;</span
-                    >
+                    <span class="select-menu__option-text">
+                      I am interested in importing 20tons;
+                    </span>
                   </li>
                   <li class="select-menu__option">
-                    <span class="select-menu__option-text"
-                      >I am interested in importing in big volumes;</span
-                    >
+                    <span class="select-menu__option-text">
+                      I am interested in importing in big volumes;
+                    </span>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="form-control form-phone">
-              <input type="tel" placeholder="Type your phone number" />
+              <input
+                type="tel"
+                placeholder="Type your phone number"
+                name="phone"
+                required
+              />
             </div>
             <div class="form-control from-message">
               <textarea
@@ -603,31 +610,36 @@
             </div>
             <div class="form-control terms-checkbox">
               <div class="checkbox-control">
-                <input type="checkbox" />
-                <label
-                  >I have read and agree with the provisions of the Privacy
-                  Policy, and I leave my contact details consciously and
-                  voluntarily. I am aware that I can request correction of my
-                  personal data, restriction of their processing or
-                  removal.</label
-                >
+                <input
+                  type="checkbox"
+                  id="privacy-policy"
+                  name="privacy-policy"
+                  required
+                />
+                <label for="privacy-policy">
+                  I have read and agree with the provisions of the Privacy Policy,
+                  and I leave my contact details consciously and voluntarily. I am
+                  aware that I can request correction of my personal data,
+                  restriction of their processing or removal.
+                </label>
               </div>
               <div class="checkbox-control">
-                <input type="checkbox" />
-                <label
-                  >I consent to the processing of my personal data provided in
-                  the form by
-                  <a href="https://sultanseeds.uz">Sultanseeds.uz</a></label
-                >
+                <input type="checkbox" id="data-consent" name="data-consent" required/>
+                <label for="data-consent">
+                  I consent to the processing of my personal data provided in the
+                  form by
+                  <a href="https://sultanseeds.uz">Sultanseeds.uz</a>
+                </label>
               </div>
             </div>
             <div class="form-control form-actions">
-              <button>Send offer</button>
+              <button type="submit">Send offer</button>
             </div>
           </form>
         </div>
       </div>
       <script type="module" src="../js/main.js" defer></script>
+      <script src="../js/sendMessage.js"></script>
       <script>
         const openModal = document.querySelector(".products-order__button");
         if (openModal) {
