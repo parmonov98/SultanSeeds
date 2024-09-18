@@ -4,16 +4,12 @@ const productSendMessage = document.querySelector(".products-order__button");
 const orderSendMessage = document.querySelector(".order .order-form button");
 const contactSendMessage = document.querySelector(".contact-us__button");
 
-// Bot tokeningizni bu yerga joylashtiring
 const botToken = "7059505881:AAHlU_yTsaa6_XwS9yg7MCmLjIv8rsoKEhE";
 
-// Guruh chat ID sini bu yerga qo'ying (masalan, -1001234567890)
-const chatId = "-1002477600463";
+const chatId = "-1002280125655";
 
-// Yuboriladigan xabar
 let message = "";
 
-// Xabarni yuborish uchun fetch API dan foydalanish
 function sendMessageToTelegram() {
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: "POST",
