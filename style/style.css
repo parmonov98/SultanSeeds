@@ -235,6 +235,10 @@ button {
   gap: 1.25rem;
 }
 
+.header__contact-social svg:hover path {
+  fill: #f99900;
+}
+
 .header__phone,
 .header__email,
 .header__contact-social p {
@@ -1266,6 +1270,10 @@ button {
 .footer__menu-item:not(:last-child),
 .footer__contact-item:not(:last-child) {
   margin-bottom: 1.25rem;
+}
+
+.footer__social-item svg:hover path {
+  fill: #f99900;
 }
 
 .footer__contact-link {
