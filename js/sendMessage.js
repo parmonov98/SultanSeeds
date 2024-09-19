@@ -44,7 +44,7 @@ function sendNewsLetterEmail() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      emailData: newsLetterEmail,
+      email: newsLetterEmail,
     }),
   })
     .then((data) => {

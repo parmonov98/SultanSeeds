@@ -118,20 +118,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
   let o = document.querySelector(".page-loader");
-  o &&
-    (document.body.classList.add("no-scroll"),
-    o.classList.contains("hide")
-      ? (o.classList.remove("hide"),
-        document.body.classList.remove("no-scroll"),
-        console.log("salom"))
-      : setTimeout(() => {
-          o.classList.add("hide"),
-            o.classList.contains("hide") &&
-              document.body.classList.remove("no-scroll");
-        }, 5000));
+
+  setTimeout(() => {
+    o.classList.add("hide");
+    if (o.classList.contains("hide")){
+      document.body.classList.remove("no-scroll");
+    }  
+  }, 0);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("no-scroll");
   const htmlElement = document.documentElement;
 
   const langAttribute = htmlElement.getAttribute("lang");
@@ -146,4 +143,5 @@ document.addEventListener("DOMContentLoaded", () => {
       lan.classList.remove("selected");
     }
   });
+
 });
