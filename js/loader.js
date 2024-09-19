@@ -494,7 +494,7 @@ window.onload = () => {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  let hiddenSections = document.querySelectorAll(".hidden");
+  let hiddenSections = document.querySelectorAll(".hidden-section");
 
   let observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
