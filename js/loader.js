@@ -442,22 +442,6 @@
   } );
 
 window.onload = () => {
-  let lazyVideo = document.querySelector(".intro-back__video");
-
-  if ("IntersectionObserver" in window) {
-    let observer = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          let videoElement = entry.target;
-          let videoSource = videoElement.querySelector("source");
-          videoSource.src = videoElement.dataset.src;
-          videoElement.load(); // Load the video only when it comes into view
-          observer.unobserve(videoElement); // Stop observing after loading
-        }
-      });
-    });
-    observer.observe(lazyVideo);
-  }
 
   // Select the content container
   var content = document.querySelector('body')
