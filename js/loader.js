@@ -18,11 +18,13 @@ document.addEventListener('load', () => {
   });
 
   
-  const loader_interval = setInterval(() => {
-    if (is_img && is_video) {
-      document.body.classList.remove("no-scroll");
-      document.querySelector(".page-loader")?.classList.add('hide')      
-      clearInterval(loader_interval);
-    }
-  }, 100)
+  setTimeout(() => {
+    const loader_interval = setInterval(() => {
+      if (is_img && is_video) {
+        document.body.classList.remove("no-scroll");
+        document.querySelector(".page-loader")?.classList.add('hide')      
+        clearInterval(loader_interval);
+      }
+    }, 100)
+  }, 500)
 })
