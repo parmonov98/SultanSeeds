@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("load", () => {
-  let o = document.querySelector(".page-loader");
+  let loader = document.querySelector(".page-loader");
 
   const mediaElements = document.querySelectorAll('img, video');
   
@@ -133,7 +133,9 @@ window.addEventListener("load", () => {
   });
 
   Promise.all(promises).then(() => {
-    o.classList.add("hide");
+    console.log(1);
+    
+    loader.classList.add("hide");
     document.body.classList.remove("no-scroll");
   });
 });
