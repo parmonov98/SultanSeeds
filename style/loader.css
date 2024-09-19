@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    animation: hide 5s linear forwards;
+    animation: hide 1s linear forwards;
     animation-delay: 1s;
   }
   
