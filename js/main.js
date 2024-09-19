@@ -119,12 +119,25 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   let o = document.querySelector(".page-loader");
 
-  setTimeout(() => {
-    o.classList.add("hide");
-    if (o.classList.contains("hide")){
+  const mediaElements = document.querySelectorAll('img, video');
+  
+  const promises = Array.from(mediaElements).map(element => {
+    return new Promise((resolve) => {
+      if (element.complete) {
+        resolve();
+      } else {
+        element.onload = resolve;
+        element.onerror = resolve;  // In case there's an error, resolve the promise to prevent blocking.
+      }
+    });
+  });
+
+  Promise.all(promises).then(() => {
+    setTimeout(() => {
+      o.classList.add("hide");
       document.body.classList.remove("no-scroll");
-    }  
-  }, 0);
+    }, 0);
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
