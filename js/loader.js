@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove("no-scroll");
       setTimeout(() => {
         document.querySelector(".page-loader")?.classList.add('hide')
-      }, 1000)
+      }, 0)
     // Proceed to check other assets
   });
 })
