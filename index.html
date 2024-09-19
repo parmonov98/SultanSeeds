@@ -140,11 +140,15 @@
                     alt="Selected Language Flag"
                     class="header__language-flag"
                     id="selected-lang-flag"
+                    width="25"
+                    height="25"
                   />
                   <span id="selected-lang-text">English</span>
                   <img
                     src="./photo/icon/arrow-ios-down.png"
                     alt="Arrow"
+                    width="14"
+                    height="14"
                     class="header__arrow-icon"
                   />
                 </div>
@@ -199,14 +203,20 @@
             />
           </picture>
           <div class="video-back">
-            <video autoplay muted loop class="intro-back__video">
+            <video class="intro-back__video" muted loop data-src="https://ik.imagekit.io/testcloud/SultanSeeds/6722850_Rapeseed%20Field_Aerial%20View_1920x1080.mp4?updatedAt=1726163353190" preload="auto" width="100%">
+              <source src="" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- <div class="video-back">
+            <video autoplay muted loop class="intro-back__video" preload="auto" width="100%">
               <source
                 src="https://ik.imagekit.io/testcloud/SultanSeeds/6722850_Rapeseed%20Field_Aerial%20View_1920x1080.mp4?updatedAt=1726163353190"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
-          </div>
+          </div> -->
           <div class="container">
             <div class="intro-content">
               <h1 class="intro-content__title">
@@ -275,6 +285,8 @@
                 src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/barg.png?updatedAt=1725041165788"
                 alt="img3"
                 class="about__photo-image--top-right"
+                width="220"
+                height="360"
               />
             </div>
           </div>
@@ -423,17 +435,23 @@
               src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/barg.png?updatedAt=1725041165788"
               alt="img3"
               class="working__image--top-right"
+              width="220"
+              height="360"
             />
             <img
               src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/barg.png?updatedAt=1725041165788"
               alt="img"
               class="working__image--top-right-1144"
+              width="220"
+              height="360"
             />
             <img
               src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/icon/380-leaf.png?updatedAt=1725041173155"
               alt="leaf"
               class="working__image--top-right-380"
               loading="lazy"
+              width="220"
+              height="360"
             />
           </div>
           <div class="container">
@@ -551,6 +569,8 @@
               src="https://ik.imagekit.io/testcloud/SultanSeeds/photo/1144-leaf-3.png?updatedAt=1725041169544"
               alt="leaf"
               class="order__sub-photo-leaf-1144"
+              width="217"
+              height="360"
             />
           </div>
           <div class="order__container container">
@@ -1096,7 +1116,26 @@
         </svg>
       </button>
     </div>
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let lazyVideo = document.querySelector(".intro-back__video");
+    
+        if ("IntersectionObserver" in window) {
+          let observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let videoElement = entry.target;
+                let videoSource = videoElement.querySelector("source");
+                videoSource.src = videoElement.dataset.src;
+                videoElement.load(); // Load the video only when it comes into view
+                observer.unobserve(videoElement); // Stop observing after loading
+              }
+            });
+          });
+          observer.observe(lazyVideo);
+        }
+      });
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
