@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('load', () => {
   // Select the content container
   var content = document.querySelector('body')
 
