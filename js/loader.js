@@ -26,5 +26,5 @@ document.addEventListener('load', () => {
         clearInterval(loader_interval);
       }
     }, 100)
-  }, 500)
+  }, 1000)
 })
