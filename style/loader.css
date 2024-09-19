@@ -1,6 +1,10 @@
   body.no-scroll {
     overflow: hidden !important;
   }
+
+  .wrapper.hide{
+    display: none;
+  }
   
   .status-liner {
     background: var(--Dark-Green, #2f4135);

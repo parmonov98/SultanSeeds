@@ -23,6 +23,7 @@ document.addEventListener('load', () => {
       if (is_img && is_video) {
         document.body.classList.remove("no-scroll");
         document.querySelector(".page-loader")?.classList.add('hide')      
+        document.querySelector(".wrapper")?.classList.remove('hide')      
         clearInterval(loader_interval);
       }
     }, 100)
