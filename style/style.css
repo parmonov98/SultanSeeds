@@ -398,7 +398,7 @@ button {
 
 /* about */
 .about {
-  background: url("https://ik.imagekit.io/testcloud/SultanSeeds/photo/sunflower%20texture.webp?updatedAt=1726073443742");
+  background: url("/photo/sunflower-texture.webp");
   position: relative;
 }
 .about__container {
