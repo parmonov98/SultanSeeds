@@ -133,10 +133,8 @@ window.addEventListener("load", () => {
   });
 
   Promise.all(promises).then(() => {
-    setTimeout(() => {
-      o.classList.add("hide");
-      document.body.classList.remove("no-scroll");
-    }, 0);
+    o.classList.add("hide");
+    document.body.classList.remove("no-scroll");
   });
 });
 
