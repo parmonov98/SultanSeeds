@@ -36,6 +36,29 @@ function sendMessageToTelegram() {
     });
 }
 
+let newsLetterEmail = "";
+function sendNewsLetterEmail() {
+  fetch("https://sultanseeds-bot.devdata.uz/save-email", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      emailData: newsLetterEmail,
+    }),
+  })
+    .then((data) => {
+      if (data.status === 200) {
+        console.log("Newsletter email successfully saved");
+      } else {
+        console.error("Error saving newsletter email:", data);
+      }
+    })
+    .catch((error) => {
+      console.error("Fetch API xatosi:", error);
+    });
+}
+
 const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
   // Bot tokeningizni bu yerga joylashtiring
   const botToken = "7223048769:AAGMEnq7qqd04_wj_9gCKbnPfLIN8cr-rss";
@@ -664,22 +687,25 @@ if (sendNewsLetter) {
     }
 
     if (inputValidate()) {
-      const now = new Date(); // Hozirgi vaqtni oladi
+      const now = new Date();
 
-      const year = now.getFullYear(); // Yil
-      const month = now.getMonth() + 1; // Oyning raqami (0 dan boshlanadi, shuning uchun 1 qo'shiladi)
-      const date = now.getDate(); // Kun
-      const hours = now.getHours(); // Soat
-      const minutes = now.getMinutes(); // Daqiqa
-      const seconds = now.getSeconds(); // Sekund
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const date = now.getDate();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
       message = `Yangi obunachi #obunachi Til: ${
         langAttribute === "en" ? "English" : "Russian"
       } \n\n\n Email: ${newsLetterInput.value.trim()}\n\n\n${date}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
 
       sendMessageToTelegram();
 
+      newsLetterEmail = newsLetterInput.value.trim();
+      sendNewsLetterEmail();
+
       newsLetterInput.style.borderBottom = "";
       subscription.style.boxShadow = "";
-    } 
+    }
   });
 }
