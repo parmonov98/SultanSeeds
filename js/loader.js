@@ -458,7 +458,7 @@ window.onload = () => {
     });
     observer.observe(lazyVideo);
   }
-  
+
   // Select the content container
   var content = document.querySelector('body')
   console.log(content);
@@ -489,6 +489,6 @@ window.onload = () => {
         clearInterval(loader_interval);
       }
     }, 100)
-  }, 1000)
+  }, 1500)
   
 }
