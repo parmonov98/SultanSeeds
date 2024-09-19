@@ -116,32 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// window.addEventListener("load", () => {
-//   let loader = document.querySelector(".page-loader");
-
-//   const mediaElements = document.querySelectorAll('img, video');
-//   console.log(mediaElements);
-  
-  
-//   const promises = Array.from(mediaElements).map(element => {
-//     return new Promise((resolve) => {
-//       if (element.complete) {
-//         resolve();
-//       } else {
-//         element.onload = resolve;
-//         element.onerror = resolve;  // In case there's an error, resolve the promise to prevent blocking.
-//       }
-//     });
-//   });
-
-//   Promise.all(promises).then(() => {
-//     console.log(1);
-    
-//     loader.classList.add("hide");
-//     document.body.classList.remove("no-scroll");
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
   const htmlElement = document.documentElement;
 
