@@ -483,7 +483,7 @@ window.onload = () => {
   setTimeout(() => {
     const loader_interval = setInterval(() => {
       if (is_img && is_video) {
-        document.body.classList.remove("no-scroll");
+        // document.body.classList.remove("no-scroll");
         document.querySelector(".page-loader")?.classList.add('hide')      
         document.querySelector(".wrapper")?.classList.remove('hide')      
         clearInterval(loader_interval);
