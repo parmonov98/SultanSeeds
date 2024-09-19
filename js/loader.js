@@ -28,4 +28,26 @@ document.addEventListener('load', () => {
       }
     }, 100)
   }, 1000)
+
+  
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+  let lazyBackgrounds = [].slice.call(document.querySelectorAll(".about"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyBackground = entry.target;
+          lazyBackground.style.backgroundImage = 'url(' + lazyBackground.dataset.bg + ')';
+          lazyBackgroundObserver.unobserve(lazyBackground);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
+});

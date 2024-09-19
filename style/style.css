@@ -398,7 +398,7 @@ button {
 
 /* about */
 .about {
-  background: url("/photo/sunflower-texture.webp");
+  /* background: url("/photo/sunflower-texture.webp"); */
   position: relative;
 }
 .about__container {
