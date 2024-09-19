@@ -41,8 +41,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    animation: 0.1s hide forwards;
-    animation-delay: 1s;
+    animation: hide forwards;
+    animation-delay: 2s;
   }
   
   .page-loader.hide {
