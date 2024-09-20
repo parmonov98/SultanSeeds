@@ -338,7 +338,7 @@ button {
 .intro-edge-bottom {
   width: 100%;
   position: absolute;
-  bottom: -22px;
+  bottom: -23px;
 }
 
 .intro-edge img,
@@ -1278,10 +1278,39 @@ button {
 }
 
 /* media */
+@media screen and (min-width: 2200px) {
+  .intro-edge {
+    top: -26px;
+  }
+  .intro-edge-bottom {
+    bottom: -28px;
+  }
+}
+@media screen and (min-width: 2600px) {
+  .intro-edge {
+    top: -30px;
+  }
+  .intro-edge-bottom {
+    bottom: -30px;
+  }
+}
+@media screen and (min-width: 2680px) {
+  .intro-edge {
+    top: -40px;
+  }
+  .intro-edge-bottom {
+    bottom: -40px;
+  }
+}
 /* 1400px  */
 @media screen and (max-width: 1400px) {
   .container {
     max-width: calc(100% - 4rem);
+  }
+
+  .intro,
+  .video-back {
+    height: unset;
   }
   /* about */
   .about__container {
