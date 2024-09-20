@@ -33,6 +33,11 @@
   gap: 2rem;
   margin-bottom: 2rem;
 }
+.details__contact-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .contact-details__contact-item {
   display: flex;
   align-items: center;
