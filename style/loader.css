@@ -11,9 +11,9 @@
     position: fixed;
     width: 100%;
     height: 0.5rem;
-    top: 0; /* Yuqoridan masofa */
-    left: 0; /* Chapdan masofa */
-    z-index: 1000; /* Boshqa elementlardan yuqorida bo'lishi uchun */
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
     scale: 0 1;
     display: none;
     transform-origin: left;
