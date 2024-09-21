@@ -129,11 +129,9 @@ button {
 .header__email,
 .header__contact-social p {
   color: var(--black-white, #fff);
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-size: 1rem;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 
 .header__separator {
