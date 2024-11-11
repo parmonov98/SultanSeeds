@@ -6,6 +6,9 @@ const contactSendMessage = document.querySelector(".contact-us__button");
 const faqSendQuestion = document.querySelector(".faq__button");
 const sendNewsLetter = document.querySelector(".newsletter__button");
 
+const successAlert = document.querySelector(".success__card");
+const errorAlert = document.querySelector(".error__card");
+
 const botToken = "7223048769:AAGMEnq7qqd04_wj_9gCKbnPfLIN8cr-rss";
 
 const chatId = "-1002280125655";
@@ -30,6 +33,23 @@ function sendMessageToTelegram() {
       } else {
         console.error("Xatolik yuz berdi:", data);
       }
+      if (data.ok) {
+        successAlert.classList.add("success__card--active");
+        setTimeout(() => {
+          successAlert.classList.add("success__card--hide");
+          successAlert.classList.remove("success__card--active");
+          setTimeout(() => {
+            successAlert.classList.remove("success__card--hide");
+          }, 1000);
+        }, 5000);
+      }
+      if (!data.ok) {
+        errorAlert.classList.add("error__card--active");
+        setTimeout(() => {
+          errorAlert.classList.add("error__card--hide");
+          errorAlert.classList.remove("error__card--active");
+        }, 5000);
+      }
     })
     .catch((error) => {
       console.error("Fetch API xatosi:", error);
@@ -52,6 +72,23 @@ function sendNewsLetterEmail() {
         console.log("Newsletter email successfully saved");
       } else {
         console.error("Error saving newsletter email:", data);
+      }
+      if (data.ok) {
+        successAlert.classList.add("success__card--active");
+        setTimeout(() => {
+          successAlert.classList.add("success__card--hide");
+          successAlert.classList.remove("success__card--active");
+          setTimeout(() => {
+            successAlert.classList.remove("success__card--hide");
+          }, 1000);
+        }, 5000);
+      }
+      if (!data.ok) {
+        errorAlert.classList.add("error__card--active");
+        setTimeout(() => {
+          errorAlert.classList.add("error__card--hide");
+          errorAlert.classList.remove("error__card--active");
+        }, 5000);
       }
     })
     .catch((error) => {
@@ -87,6 +124,23 @@ const sendMessage = (sendMessageEl, modalWrapper, modalName) => {
           console.log("Xabar muvaffaqiyatli yuborildi:", data);
         } else {
           console.error("Xatolik yuz berdi:", data);
+        }
+        if (data.ok) {
+          successAlert.classList.add("success__card--active");
+          setTimeout(() => {
+            successAlert.classList.add("success__card--hide");
+            successAlert.classList.remove("success__card--active");
+            setTimeout(() => {
+              successAlert.classList.remove("success__card--hide");
+            }, 1000);
+          }, 5000);
+        }
+        if (!data.ok) {
+          errorAlert.classList.add("error__card--active");
+          setTimeout(() => {
+            errorAlert.classList.add("error__card--hide");
+            errorAlert.classList.remove("error__card--active");
+          }, 5000);
         }
       })
       .catch((error) => {
